@@ -19,7 +19,7 @@ const Herosection = () => {
       <div className="bg-black text-white min-h-[100vh] px-4 py-3 flex flex-col lg:flex-row gap-8">
         {/* Left Section */}
         <motion.div
-          className="flex-1 flex flex-col justify-center ml-4"
+          className="flex-1 flex flex-col justify-center md:ml-4"
           initial={{ opacity: 0, x: -60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
