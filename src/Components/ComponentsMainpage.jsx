@@ -14,6 +14,7 @@ import AlertPage from "../UiComponents/Alerts/AlertPage";
 import { Outlet } from "react-router";
 import { Link } from "react-router-dom";
 
+// eslint-disable-next-line no-unused-vars
 const alerts = [
   {
     icon: <CheckCircle className="text-green-500 w-5 h-5" />,
@@ -47,9 +48,12 @@ const alerts = [
 ];
 
 const ComponentMainpage = () => {
+  // eslint-disable-next-line no-unused-vars
   const [tab, setTab] = useState("preview");
+  // eslint-disable-next-line no-unused-vars
   const [copied, setCopied] = useState(false);
 
+  // eslint-disable-next-line no-unused-vars
   const codeString = `
 import React from "react";
 import { CheckCircle, Trash2, AlertCircle } from "lucide-react";
@@ -159,7 +163,7 @@ export default Alert;
         </main>
 
         {/* CTA Section */}
-        <div className="hidden xl:block w-72 p-6 bg-neutral-900 border-l border-gray-800 flex-shrink-0 h-full">
+        <div className="hidden md:block w-72 p-6 bg-neutral-900 border-l border-gray-800 flex-shrink-0 h-full">
           <h2 className="text-white font-semibold">
             Deploy your shadcn/ui app on Vercel
           </h2>
