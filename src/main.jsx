@@ -15,10 +15,16 @@ const browserRouter = new createBrowserRouter([
   {
     path: "/components",
     element: <ComponentMainpage />,
-    children: [{
-      path: "/components/alerts",
-      element:<AlertPage/>
-    }],
+    children: [
+      {
+        path: "/components/alerts",
+        element: <AlertPage />,
+      },
+      {
+        path: "/components/card",
+        element:<LoginPage/>
+      },
+    ],
   },
 ]);
 
