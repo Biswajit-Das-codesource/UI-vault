@@ -204,7 +204,7 @@ function AlertPage() {
 
       {/* second one  */}
 
-      <h2 className="text-xl font-bold mt-4">Theme : Obsidian</h2>
+      <h2 className="text-xl font-bold mt-4">Theme : Premimum Neon</h2>
       <button
         className="
           px-4 py-2 mt-3 rounded-full
