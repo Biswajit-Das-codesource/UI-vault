@@ -4,6 +4,7 @@ import { FiArrowRight, FiShare2 } from "react-icons/fi";
 import { HiOutlineExternalLink } from "react-icons/hi";
 import { FaCode } from "react-icons/fa";
 import "../App.css";
+import { Link } from "react-router";
 
 const Herosection = () => {
   const [previewSrc, setPreviewSrc] = useState(null);
@@ -58,9 +59,11 @@ const Herosection = () => {
           </div>
 
           <div className="mt-6 flex flex-col sm:flex-row gap-4">
+            <Link to="/components/alerts">
             <button className="relative bg-white bg-gradient-to-r from-pink-400 to-purple-500 text-black px-6 py-3 rounded-xl text-base font-semibold transition transform hover:scale-105 before:absolute before:inset-0 before:-z-10 before:rounded-xl before:blur-xl before:opacity-100 before:transition-all before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 cursor-pointer flex items-center gap-2">
               Browse Components <FiArrowRight />
             </button>
+            </Link>
 
             <button className="bg-gray-950 border border-white px-6 py-3 rounded-xl text-base font-semibold hover:bg-black transition cursor-pointer flex items-center gap-2">
               Go to Templates <FiArrowRight />
