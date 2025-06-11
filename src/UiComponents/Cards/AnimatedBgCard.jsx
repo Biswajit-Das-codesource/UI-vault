@@ -1,5 +1,4 @@
 import React from "react";
-// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import "../../App.css";
 
@@ -36,7 +35,7 @@ function AnimatedBgCard() {
       />
 
       {/* Card */}
-      <div className="relative z-10 bg-black border-2 border-gray-800 rounded-2xl p-6 sm:p-8 w-full max-w-sm shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+      <div className="relative z-10 bg-black border-2 border-gray-800 rounded-2xl p-6 sm:p-8 w-full max-w-sm shadow-[0_0_20px_rgba(255,255,255,0.1)] overflow-hidden">
         <h2 className="text-3xl font-bold text-white mb-2">Login</h2>
         <p className="text-gray-300 mb-6">
           Enter your credentials to access your account.
@@ -87,6 +86,21 @@ function AnimatedBgCard() {
             </button>
           </div>
         </form>
+
+        {/* Mirror Shine Effect */}
+        <motion.div
+          className="absolute inset-0 rounded-2xl pointer-events-none z-20"
+          initial={{ x: "-150%", y: "-150%", rotate: 45 }}
+          animate={{ x: "150%", y: "150%" }}
+          transition={{
+            duration: 1.2,
+            repeat: Infinity,
+            repeatDelay: 3,
+            ease: "easeInOut",
+          }}
+        >
+          <div className="w-full h-full bg-gradient-to-tr from-transparent via-violet-400/30 to-transparent blur-sm opacity-50" />
+        </motion.div>
       </div>
     </div>
   );
