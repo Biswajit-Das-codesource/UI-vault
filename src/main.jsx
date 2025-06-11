@@ -10,6 +10,7 @@ import React from "react";
 import BarchartPage from "./UiComponents/Barcharts/BarchartPage.jsx";
 import PricingPage from "./UiComponents/Pricing/PricingPage.jsx";
 import AichatPage from "./UiComponents/AIchat/Alchatpage.jsx";
+import FeedbackPage from "./UiComponents/FeedBack/FeedbackPage.jsx";
 const browserRouter = new createBrowserRouter([
   {
     path: "/",
@@ -25,19 +26,24 @@ const browserRouter = new createBrowserRouter([
       },
       {
         path: "/components/card",
-        element:<LoginPage/>
-      },{
-        path: "/components/barchart",
-        element: <BarchartPage/>
-      },{
-        path: "/components/Pricing",
-        element: <PricingPage/>
+        element: <LoginPage />,
       },
       {
-        path:"/components/aichat",
-        element:<AichatPage/>
-      }
-      
+        path: "/components/barchart",
+        element: <BarchartPage />,
+      },
+      {
+        path: "/components/Pricing",
+        element: <PricingPage />,
+      },
+      {
+        path: "/components/aichat",
+        element: <AichatPage />,
+      },
+      {
+        path: "/components/feedback",
+        element: <FeedbackPage />,
+      },
     ],
   },
 ]);
