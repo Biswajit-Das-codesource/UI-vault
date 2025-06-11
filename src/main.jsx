@@ -8,6 +8,7 @@ import AlertPage from "./UiComponents/Alerts/AlertPage.jsx";
 import LoginPage from "./UiComponents/Cards/LoginPage.jsx";
 import React from "react";
 import BarchartPage from "./UiComponents/Barcharts/BarchartPage.jsx";
+import PricingPage from "./UiComponents/Pricing/PricingPage.jsx";
 const browserRouter = new createBrowserRouter([
   {
     path: "/",
@@ -27,7 +28,11 @@ const browserRouter = new createBrowserRouter([
       },{
         path: "/components/barchart",
         element: <BarchartPage/>
+      },{
+        path: "/components/Pricing",
+        element: <PricingPage/>
       }
+      
     ],
   },
 ]);
