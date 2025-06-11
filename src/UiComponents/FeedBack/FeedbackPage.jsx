@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-import ChartCard from "./BlackBarchart";
-import GradientChartCard from "./GradientBarchart";
+import FeedbackCard from "./Feedbackcard";
 import { Clipboard, ClipboardCheck } from "lucide-react";
+import GradientFeedbackcard from "./GradientFeedbackpage";
 
-function BarchartPage() {
-  const [copied, setCopied] = useState(false);
+function FeedbackPage() {
   const [tab, setTab] = useState("preview");
+  const [copied, setCopied] = useState(false);
+
   return (
     <div>
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-4xl font-bold">Alert</h1>
+        <h1 className="text-4xl font-bold">Feedback Card</h1>
         <p className="text-gray-400 mt-1">
           Displays a callout for user attention.
         </p>
@@ -21,15 +22,15 @@ function BarchartPage() {
         <div class="flex gap-3 mb-5">
           <button class="bg-neutral-900 text-white px-4 py-2 rounded-md font-medium hover:bg-gray-700">
             npm
-          </button> 
+          </button>
         </div>
         <div className="flex items-center bg-neutral-900 p-4 rounded-lg">
           <code className="flex-grow  text-sm font-medium">
-            npx ui-vault alert
+            npx ui-vault Feedback
           </code>
           <button
             onClick={() => {
-              navigator.clipboard.writeText("npx ui-vault alert");
+              navigator.clipboard.writeText("npx ui-vault Feedback");
               setCopied(true);
               setTimeout(() => setCopied(false), 2000);
             }}
@@ -50,8 +51,7 @@ function BarchartPage() {
           </button>
         </div>
 
-        <ChartCard />
-
+        <FeedbackCard />
         <h2 className="text-xl font-bold mt-4">Theme : Obsidian</h2>
         <h1 class="text-2xl font-bold mb-2 mt-4">Installation</h1>
         <h2 class="text-lg text-gray-400 mb-4">CLI</h2>
@@ -63,11 +63,11 @@ function BarchartPage() {
         </div>
         <div className="flex items-center bg-neutral-900 p-4 rounded-lg">
           <code className="flex-grow  text-sm font-medium">
-            npx ui-vault alert
+            npx ui-vault Feedback
           </code>
           <button
             onClick={() => {
-              navigator.clipboard.writeText("npx ui-vault alert");
+              navigator.clipboard.writeText("npx ui-vault Feedback");
               setCopied(true);
               setTimeout(() => setCopied(false), 2000);
             }}
@@ -77,7 +77,7 @@ function BarchartPage() {
           </button>
         </div>
         {/* Tabs */}
-        <div className="mt-6 flex gap-6 items-center border-b border-gray-800 pb-4">
+        <div className="mt-6 flex gap-6 items-center border-b border-gray-800 pb-2">
           <button
             onClick={() => setTab("preview")}
             className={`${
@@ -87,11 +87,10 @@ function BarchartPage() {
             Preview
           </button>
         </div>
-
-        <GradientChartCard />
+        <GradientFeedbackcard />
       </div>
     </div>
   );
 }
 
-export default BarchartPage;
+export default FeedbackPage;
