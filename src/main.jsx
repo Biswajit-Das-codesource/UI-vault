@@ -11,7 +11,6 @@ import BarchartPage from "./UiComponents/Barcharts/BarchartPage.jsx";
 import PricingPage from "./UiComponents/Pricing/PricingPage.jsx";
 import AichatPage from "./UiComponents/AIchat/Alchatpage.jsx";
 import FeedbackPage from "./UiComponents/FeedBack/FeedbackPage.jsx";
-import ProfileCardPage from "./UiComponents/ProfileCards/ProfileCardPage.jsx";
 const browserRouter = new createBrowserRouter([
   {
     path: "/",
@@ -44,10 +43,6 @@ const browserRouter = new createBrowserRouter([
       {
         path: "/components/feedback",
         element: <FeedbackPage />,
-      },
-      {
-        path:"/components/profilecard",
-        element:<ProfileCardPage/>
       },
     ],
   },
