@@ -16,6 +16,7 @@ function App() {
       <WelcomePage/>
       <Footer/>
       <Footer2/>
+    
     </>
   );
 }

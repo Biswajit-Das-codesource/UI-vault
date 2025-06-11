@@ -8,6 +8,7 @@ import {
   Trash2,
 } from "lucide-react";
 import PremimumAlert from "./PremimumAlert";
+import Alert from "./Alertblack";
 
 const alerts = [
   {
@@ -148,58 +149,10 @@ function AlertPage() {
           >
             Preview
           </button>
-          <button
-            onClick={() => setTab("code")}
-            className={`${
-              tab === "code" ? "text-white font-medium" : "text-gray-500"
-            }`}
-          >
-            Code
-          </button>
         </div>
 
         {/* Content */}
-        <div className="mt-6 space-y-4 pb-10">
-          {tab === "preview" ? (
-            alerts.map((alert, idx) => (
-              <div
-                key={idx}
-                className={`flex items-start gap-4 p-4 rounded-lg border border-gray-700 ${alert.bg} ${alert.text}`}
-              >
-                {alert.icon}
-                <div>
-                  <p className="font-semibold">{alert.title}</p>
-                  {alert.description && (
-                    <div className="text-sm mt-1 text-gray-400">
-                      {alert.description}
-                    </div>
-                  )}
-                </div>
-              </div>
-            ))
-          ) : (
-            <div className="relative">
-              <button
-                onClick={() => {
-                  navigator.clipboard.writeText(codeString);
-                  setCopied(true);
-                  setTimeout(() => setCopied(false), 2000);
-                }}
-                className="absolute top-3 right-3 text-gray-400 hover:text-white transition-colors"
-              >
-                {copied ? (
-                  <ClipboardCheck size={18} />
-                ) : (
-                  <Clipboard size={18} />
-                )}
-              </button>
-
-              <pre className="bg-[#0d1117] text-[#c9d1d9] text-sm rounded-lg p-4 overflow-x-auto border border-gray-700 font-mono leading-relaxed">
-                <code>{codeString}</code>
-              </pre>
-            </div>
-          )}
-        </div>
+        <Alert />
       </div>
 
       {/* second one  */}
@@ -247,107 +200,6 @@ function AlertPage() {
       <PremimumAlert />
 
       {/* third option start here  */}
-
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-4xl font-bold">Alert</h1>
-        <p className="text-gray-400 mt-1">
-          Displays a callout for user attention.
-        </p>
-
-        <h2 className="text-xl font-bold mt-4">Theme : Obsidian</h2>
-        <h1 class="text-2xl font-bold mb-2 mt-4">Installation</h1>
-        <h2 class="text-lg text-gray-400 mb-4">CLI</h2>
-
-        <div class="flex gap-3 mb-5">
-          <button class="bg-neutral-900 text-white px-4 py-2 rounded-md font-medium hover:bg-gray-700">
-            npm
-          </button>
-        </div>
-        <div className="flex items-center bg-neutral-900 p-4 rounded-lg">
-          <code className="flex-grow  text-sm font-medium">
-            npx ui-vault alert
-          </code>
-          <button
-            onClick={() => {
-              navigator.clipboard.writeText("npx ui-vault alert");
-              setCopied(true);
-              setTimeout(() => setCopied(false), 2000);
-            }}
-            className="text-gray-400 hover:text-white ml-2"
-          >
-            {copied ? <ClipboardCheck size={18} /> : <Clipboard size={18} />}
-          </button>
-        </div>
-        {/* Tabs */}
-        <div className="mt-6 flex gap-6 items-center border-b border-white pb-2">
-          <button
-            onClick={() => setTab("preview")}
-            className={`${
-              tab === "preview" ? "text-white font-medium" : "text-gray-500"
-            }`}
-          >
-            Preview
-          </button>
-          <button
-            onClick={() => setTab("code")}
-            className={`${
-              tab === "code" ? "text-white font-medium" : "text-gray-500"
-            }`}
-          >
-            Code
-          </button>
-        </div>
-
-        {/* Content */}
-        <div className="mt-6 space-y-4 pb-10">
-          {tab === "preview" ? (
-            alerts.map((alert, idx) => (
-              <div
-                key={idx}
-                className={`bg-gray-200 text-black flex items-start gap-4 p-4 rounded-lg border border-gray-700 `}
-              >
-                {alert.icon}
-                <div>
-                  <p className="font-semibold ">{alert.title}</p>
-                  {alert.description && (
-                    <div className="text-sm mt-1 text-gray-700">
-                      {alert.description}
-                    </div>
-                  )}
-                </div>
-              </div>
-            ))
-          ) : (
-            <div className="relative">
-              <button
-                onClick={() => {
-                  navigator.clipboard.writeText(codeString);
-                  setCopied(true);
-                  setTimeout(() => setCopied(false), 2000);
-                }}
-                className="absolute top-3 right-3 text-gray-400 hover:text-white transition-colors"
-              >
-                {copied ? (
-                  <ClipboardCheck size={18} />
-                ) : (
-                  <Clipboard size={18} />
-                )}
-              </button>
-
-              <pre className="bg-[#0d1117] text-[#c9d1d9] text-sm rounded-lg p-4 overflow-x-auto border border-gray-700 font-mono leading-relaxed">
-                <code>{codeString}</code>
-              </pre>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/*  */}
-
-      <h1 className="text-4xl font-bold">Alert</h1>
-      <p className="text-gray-400 mt-1">
-        Displays a callout for user attention.
-      </p>
 
       <h2 className="text-xl font-bold mt-4">Theme : Obsidian</h2>
       <h1 class="text-2xl font-bold mb-2 mt-4">Installation</h1>

@@ -31,7 +31,7 @@ const alerts = [
 
 const Alert = () => {
   return (
-    <div className="flex flex-col gap-4 p-6 bg-black min-h-screen">
+    <div className="flex flex-col gap-4 bg-black min-h">
       {alerts.map((alert, index) => (
         <div
           key={index}

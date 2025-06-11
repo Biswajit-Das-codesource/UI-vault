@@ -43,7 +43,7 @@ const getShadow = (type) => {
 
 const PremimumAlert = () => {
   return (
-    <div className="flex flex-col gap-6 bg-black min-h pb-10 font-sans">
+    <div className="flex flex-col gap-6 bg-black min-h pb-10 font-sans p-10">
       {alerts.map((alert, index) => (
         <div
           key={index}
