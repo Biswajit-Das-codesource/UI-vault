@@ -125,26 +125,17 @@ export default Alert;
             {[
               "Accordion",
               "Alerts",
-              "Alert Dialog",
-              "Aspect Ratio",
-              "Avatar",
-              "Badge",
-              "Breadcrumb",
               "Button",
               "Calendar",
               "Card",
               "Carousel",
-              "Chart",
-              "Checkbox",
-              "Collapsible",
-              "Dropdown",
-              "Dialog",
-              "Input",
-              "KBD",
-              "Label",
-              "Menu",
-              "Popover",
-              "Progress",
+              "Pricing",
+              "Barchart",
+              "AIchat",
+              "Signup",
+              "Feedback",
+              "Rating",
+              "Profilecard"
             ].map((item, index) => (
               <li key={index}>
                 <Link

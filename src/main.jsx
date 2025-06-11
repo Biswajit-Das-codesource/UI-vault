@@ -6,7 +6,8 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import ComponentMainpage from "./Components/ComponentsMainpage.jsx";
 import AlertPage from "./UiComponents/Alerts/AlertPage.jsx";
 import LoginPage from "./UiComponents/Cards/LoginPage.jsx";
-
+import React from "react";
+import BarchartPage from "./UiComponents/Barcharts/BarchartPage.jsx";
 const browserRouter = new createBrowserRouter([
   {
     path: "/",
@@ -23,7 +24,10 @@ const browserRouter = new createBrowserRouter([
       {
         path: "/components/card",
         element:<LoginPage/>
-      },
+      },{
+        path: "/components/barchart",
+        element: <BarchartPage/>
+      }
     ],
   },
 ]);
