@@ -9,6 +9,7 @@ import LoginPage from "./UiComponents/Cards/LoginPage.jsx";
 import React from "react";
 import BarchartPage from "./UiComponents/Barcharts/BarchartPage.jsx";
 import PricingPage from "./UiComponents/Pricing/PricingPage.jsx";
+import AichatPage from "./UiComponents/AIchat/Alchatpage.jsx";
 const browserRouter = new createBrowserRouter([
   {
     path: "/",
@@ -31,6 +32,10 @@ const browserRouter = new createBrowserRouter([
       },{
         path: "/components/Pricing",
         element: <PricingPage/>
+      },
+      {
+        path:"/components/aichat",
+        element:<AichatPage/>
       }
       
     ],
