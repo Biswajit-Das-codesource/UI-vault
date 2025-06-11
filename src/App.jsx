@@ -1,14 +1,23 @@
+import "./App.css";
+import DashboardUI from "./Components/Dashboard";
+import WelcomePage from "./Components/Dashboard2";
+import Footer from "./Components/Footer";
+import Footer2 from "./Components/Footer2";
 
-import './App.css'
+import Herosection from "./Components/Herosection";
+import Navbar from "./Components/Navbar";
 
 function App() {
   return (
     <>
-      <h1 className='text-2xl bg-amber-100'>ui library</h1>
-      <h2>my name is biswajit das</h2>
-      <h3>my name is biswabhusan sahoo</h3>
+      <Navbar />
+      <Herosection />
+      <DashboardUI />
+      <WelcomePage/>
+      <Footer/>
+      <Footer2/>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
