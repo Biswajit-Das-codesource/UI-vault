@@ -116,53 +116,51 @@ export default Alert;
       <Navbar />
       <div className="h-[88.5vh] flex bg-black text-white overflow-hidden">
         {/* Sidebar */}
-      
-      
-      <aside className="w-60 p-6 border-r border-gray-800 hidden md:block flex-shrink-0 h-full overflow-y-auto scrollbar-hide">
-  <h2 className="text-gray-400 text-sm font-semibold mb-4">
-    Components
-  </h2>
-  <ul className="space-y-2 pr-2">
-    {[
-      "Accordion",
-      "Alerts",
-      "Alert Dialog",
-      "Aspect Ratio",
-      "Avatar",
-      "Badge",
-      "Breadcrumb",
-      "Button",
-      "Calendar",
-      "Card",
-      "Carousel",
-      "Chart",
-      "Checkbox",
-      "Collapsible",
-      "Dropdown",
-      "Dialog",
-      "Input",
-      "KBD",
-      "Label",
-      "Menu",
-      "Popover",
-      "Progress",
-    ].map((item, index) => (
-      <li key={index}>
-        <Link
-          to={`/components/${item.toLowerCase().replace(/\s+/g, "-")}`}
-          className={`block px-2 py-2 rounded text-sm font-semibold ${
-            item === "Alert"
-              ? "bg-gray-700 text-white"
-              : "text-gray-400 hover:text-white"
-          }`}
-        >
-          {item}
-        </Link>
-      </li>
-    ))}
-  </ul>
-</aside>
 
+        <aside className="w-60 p-6 border-r border-gray-800 hidden md:block flex-shrink-0 h-full overflow-y-auto scrollbar-hide">
+          <h2 className="text-gray-400 text-sm font-semibold mb-4">
+            Components
+          </h2>
+          <ul className="space-y-2 pr-2">
+            {[
+              "Accordion",
+              "Alerts",
+              "Alert Dialog",
+              "Aspect Ratio",
+              "Avatar",
+              "Badge",
+              "Breadcrumb",
+              "Button",
+              "Calendar",
+              "Card",
+              "Carousel",
+              "Chart",
+              "Checkbox",
+              "Collapsible",
+              "Dropdown",
+              "Dialog",
+              "Input",
+              "KBD",
+              "Label",
+              "Menu",
+              "Popover",
+              "Progress",
+            ].map((item, index) => (
+              <li key={index}>
+                <Link
+                  to={`/components/${item.toLowerCase().replace(/\s+/g, "-")}`}
+                  className={`block px-2 py-2 rounded text-sm font-semibold ${
+                    item === "Alert"
+                      ? "bg-gray-700 text-white"
+                      : "text-gray-400 hover:text-white"
+                  }`}
+                >
+                  {item}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </aside>
 
         {/* Main Content */}
         <main className="flex-1 overflow-y-scroll  p-6 scrollbar-hide">
@@ -170,7 +168,7 @@ export default Alert;
         </main>
 
         {/* CTA Section */}
-        <div className="hidden xl:block w-72 p-6 bg-neutral-900 border-l border-gray-800 flex-shrink-0 h-full">
+        <div className="hidden md:block w-72 p-6 bg-neutral-900 border-l border-gray-800 flex-shrink-0 h-full">
           <h2 className="text-white font-semibold">
             Deploy your shadcn/ui app on Vercel
           </h2>
