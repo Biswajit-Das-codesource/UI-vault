@@ -3,21 +3,49 @@ import { FiMenu, FiX } from "react-icons/fi";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
-  const navLinks = ["Docs", "Component", "Blocks", "Charts", "Themes", "Colors"];
+  const navLinks = [
+    "Docs",
+    "Component",
+    "Blocks",
+    "Charts",
+    "Themes",
+    "Colors",
+    "Accordion",
+    "Alert",
+    "Alert Dialog",
+    "Aspect Ratio",
+    "Avatar",
+    "Badge",
+    "Breadcrumb",
+    "Button",
+    "Calendar",
+    "Card",
+    "Carousel",
+    "Chart",
+    "Checkbox",
+    "Collapsible",
+    "Dropdown",
+    "Dialog",
+    "Input",
+    "KBD",
+    "Label",
+    "Menu",
+    "Popover",
+    "Progress",
+  ];
 
   return (
-    <div className="overlow-hidden">
+    <div className="overflow-hidden">
       <nav className="bg-black text-white p-5 overflow-hidden">
-        <div className="flex items-center justify-between overflow-hidden" >
-          {/* Left section: logo or brand (optional) */}
+        <div className="flex items-center justify-between overflow-hidden">
+          {/* Logo */}
           <div className="text-xl font-bold">UI Vault</div>
 
-          {/* Desktop Nav Links */}
+          {/* Desktop Nav (limit to first 6 links) */}
           <div className="hidden md:flex items-center space-x-6 overflow-hidden">
-            {navLinks.map((link) => (
+            {navLinks.slice(0, 6).map((link) => (
               <a
                 key={link}
                 href="#"
@@ -28,7 +56,7 @@ function Navbar() {
             ))}
           </div>
 
-          {/* Search bar */}
+          {/* Desktop Search */}
           <div className="hidden md:block">
             <input
               type="text"
@@ -37,7 +65,7 @@ function Navbar() {
             />
           </div>
 
-          {/* Hamburger Icon (mobile only) */}
+          {/* Hamburger Icon */}
           <div className="md:hidden overflow-hidden">
             <button onClick={toggleMenu} className="text-2xl">
               {isMenuOpen ? <FiX /> : <FiMenu />}
@@ -45,9 +73,9 @@ function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Nav (show full list) */}
         {isMenuOpen && (
-          <div className="mt-4 md:hidden space-y-3 absolute z-999 bg-black p-14 ">
+          <div className="mt-4 md:hidden space-y-3 absolute z-[999] bg-black p-6 w-full left-0">
             {navLinks.map((link) => (
               <a
                 key={link}
@@ -57,7 +85,6 @@ function Navbar() {
                 {link}
               </a>
             ))}
-
             {/* Mobile search bar */}
             <input
               type="text"
