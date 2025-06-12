@@ -132,6 +132,7 @@ export default Alert;
               "Profilecard",
               "Pricing",
               "Button",
+              "Paymentcard",
               "Calendar",
               "Carousel",
               "Barchart",
