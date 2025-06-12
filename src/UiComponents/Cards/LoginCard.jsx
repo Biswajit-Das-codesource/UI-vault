@@ -35,7 +35,7 @@ const TiltLoginCard = () => {
       >
         {/* Glowing cursor effect */}
         <motion.div
-          className="absolute w-40 h-40 bg-violet-900/50 blur-2xl rounded-full pointer-events-none z-0"
+          className="absolute w-40 h-40 bg-cyan-700/20 blur-2xl rounded-full pointer-events-none z-0"
           style={{
             left: glowX,
             top: glowY,
@@ -43,8 +43,15 @@ const TiltLoginCard = () => {
           }}
         />
 
-        {/* Login content */}
-        <div className="relative z-10 p-7">
+        {/* Mirror shine effect */}
+        <motion.div
+          className="absolute top-0 left-[-75%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/10 to-transparent rotate-3 z-10 pointer-events-none"
+          animate={{ left: ["-75%", "125%"] }}
+          transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
+        />
+
+        {/* Login Content */}
+        <div className="relative z-20 p-7">
           <h2 className="text-3xl font-bold text-white mb-2">Welcome Back</h2>
           <p className="text-gray-400 mb-6 text-sm">Login to continue</p>
 
