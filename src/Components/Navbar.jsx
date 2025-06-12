@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { Link } from "react-router-dom";
@@ -15,6 +16,7 @@ function Navbar() {
     "Alerts",
     "Card",
     "Profilecard",
+    "TweetCard",
     "Pricing",
     "Button",
     "AIchat",

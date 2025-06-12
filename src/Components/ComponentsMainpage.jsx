@@ -130,6 +130,7 @@ export default Alert;
               "Alerts",
               "Card",
               "Profilecard",
+              "TweetCard",
               "Pricing",
               "Button",
               "Paymentcard",
