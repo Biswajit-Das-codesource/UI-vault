@@ -10,9 +10,9 @@ function GradientPaymentCard() {
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="bg-gradient-to-br from-pink-600 via-fuchsia-600 to-violet-600 rounded-2xl p-1 shadow-[0_0_40px_#ff00ff55] w-full max-w-sm border border-[#2c2c2c]"
+        className="bg-gradient-to-br from-pink-600 via-fuchsia-600 to-violet-600 rounded-2xl p-1 shadow-[0_0_40px_#ff00ff55] w-full max-w-sm border border-black"
       >
-        <div className="bg-[#0f0f0f] rounded-2xl p-6 sm:p-8">
+        <div className="bg-gray-950 rounded-2xl p-6 sm:p-8">
           <h2 className="text-2xl font-bold text-white mb-1 drop-shadow-[0_0_10px_#ff00ff]">
             Send Payment
           </h2>

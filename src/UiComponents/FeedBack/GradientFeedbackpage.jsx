@@ -10,7 +10,7 @@ const GradientFeedbackcard = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 bg-black">
+    <div className="min-h mt-5 flex items-center justify-center px-4 bg-black">
       <div className="max-w-sm w-full p-6 rounded-2xl bg-black text-white shadow-[inset_4px_4px_10px_rgba(255,255,255,0.1),inset_-4px_-4px_10px_rgba(255,0,128,0.2)] space-y-4 border border-[#2c2c2c]">
         <h2 className="text-xl font-bold">Feedback</h2>
         <p className="text-gray-400 text-sm">Help us improve our product</p>
