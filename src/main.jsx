@@ -16,6 +16,7 @@ import ButtonPage from "./UiComponents/Button/ButtonPage.jsx";
 import PaymentcardPage from "./UiComponents/Paymentcard/PaymentcardPage.jsx";
 import AnimatedTextpage from "./UiComponents/TextAnimated/AnimatedTextpage.jsx";
 import TweetCardPage from "./UiComponents/TweetCard/TweetCardPage.jsx";
+import RatingPage from "./UiComponents/RatingCards/RatingPage.jsx";
 const browserRouter = new createBrowserRouter([
   {
     path: "/",
@@ -69,6 +70,10 @@ const browserRouter = new createBrowserRouter([
         path: "/components/tweetcard",
         element:<TweetCardPage/>
       },
+      {
+        path:"/components/rating",
+        element:<RatingPage/>
+      }
       
     ],
   },
