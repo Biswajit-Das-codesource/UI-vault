@@ -9,7 +9,7 @@ import LoginPage from "./UiComponents/Cards/LoginPage.jsx";
 import React from "react";
 import BarchartPage from "./UiComponents/Barcharts/BarchartPage.jsx";
 import PricingPage from "./UiComponents/Pricing/PricingPage.jsx";
-import AichatPage from "./UiComponents/AIchat/Alchatpage.jsx";
+
 import FeedbackPage from "./UiComponents/FeedBack/FeedbackPage.jsx";
 import ProfileCardPage from "./UiComponents/ProfileCards/ProfileCardPage.jsx";
 import ButtonPage from "./UiComponents/Button/ButtonPage.jsx";
@@ -42,10 +42,7 @@ const browserRouter = new createBrowserRouter([
         path: "/components/Pricing",
         element: <PricingPage />,
       },
-      {
-        path: "/components/aichat",
-        element: <AichatPage />,
-      },
+     
       {
         path: "/components/feedback",
         element: <FeedbackPage />,

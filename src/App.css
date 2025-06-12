@@ -20,9 +20,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
 
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+.custom-code-font {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
+
+.jetbrains-mono {
+  font-family: "JetBrains Mono", monospace !important;
+}
 
 .geist-mono {
   font-family: "Archivo Black", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
+
