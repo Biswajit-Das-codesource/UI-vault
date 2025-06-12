@@ -19,12 +19,14 @@ function Navbar() {
     "TweetCard",
     "Pricing",
     "Button",
-    "AIchat",
-    "Feedback",
-    "Barchart",
+    "Paymentcard",
     "Calendar",
     "Carousel",
-    "Signup",
+    "Barchart",
+    "AIchat",
+    "Shinytext",
+    "CircularText",
+    "Feedback",
     "Rating",
   ];
 
