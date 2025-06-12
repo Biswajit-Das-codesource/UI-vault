@@ -137,7 +137,8 @@ export default Alert;
               "Carousel",
               "Barchart",
               "AIchat",
-              "Signup",
+              "Shinytext",
+              "CircularText",
               "Feedback",
               "Rating",
             ].map((item, index) => (
@@ -162,22 +163,7 @@ export default Alert;
           <Outlet />
         </main>
 
-        {/* CTA Section */}
-        <div className="hidden md:block w-72 p-6 bg-neutral-900 border-l border-gray-800 flex-shrink-0 h-full">
-          <h2 className="text-white font-semibold">
-            Deploy your shadcn/ui app on Vercel
-          </h2>
-          <p className="text-gray-400 mt-2 text-sm">
-            Trusted by OpenAI, Sonos, Chick-fil-A, and more.
-          </p>
-          <p className="text-gray-400 mt-2 text-sm">
-            Vercel provides tools and infrastructure to deploy apps and features
-            at scale.
-          </p>
-          <button className="mt-4 px-4 py-2 rounded bg-white text-black font-semibold">
-            Deploy Now
-          </button>
-        </div>
+       
       </div>
     </div>
   );
