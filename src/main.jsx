@@ -14,6 +14,7 @@ import FeedbackPage from "./UiComponents/FeedBack/FeedbackPage.jsx";
 import ProfileCardPage from "./UiComponents/ProfileCards/ProfileCardPage.jsx";
 import ButtonPage from "./UiComponents/Button/ButtonPage.jsx";
 import PaymentcardPage from "./UiComponents/Paymentcard/PaymentcardPage.jsx";
+import AnimatedTextpage from "./UiComponents/TextAnimated/AnimatedTextpage.jsx";
 import TweetCardPage from "./UiComponents/TweetCard/TweetCardPage.jsx";
 const browserRouter = new createBrowserRouter([
   {
@@ -60,10 +61,15 @@ const browserRouter = new createBrowserRouter([
         path: "/components/paymentcard",
         element: <PaymentcardPage/>,
       },
+       {
+        path: "/components/shinytext",
+        element: <AnimatedTextpage/>,
+      },
       {
         path: "/components/tweetcard",
         element:<TweetCardPage/>
       },
+      
     ],
   },
 ]);

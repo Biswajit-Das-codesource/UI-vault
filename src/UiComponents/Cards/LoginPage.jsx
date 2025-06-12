@@ -14,7 +14,7 @@ function LoginPage() {
   return (
     <div>
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-4xl font-bold">Card</h1>
+        <h1 className="text-4xl font-bold text-white">Card</h1>
         <p className="text-gray-400 mt-1">
           A card is a flexible and extensible content container. It includes
           options for headers and footers, a wide variety of content, contextual
