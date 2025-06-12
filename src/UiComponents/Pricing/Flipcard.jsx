@@ -87,7 +87,7 @@ const AuroraPricingFlipCards = () => {
               style={{ transformStyle: "preserve-3d" }}
             >
               {/* Front Side */}
-              <div className="absolute w-full h-full bg-gray-950 rounded-2xl p-6 flex flex-col items-center justify-between shadow-[0_0_40px_#ffffff22] z-20 backface-hidden">
+              <div className="absolute w-full h-full bg-gray-950 border border-white rounded-2xl p-6 flex flex-col items-center justify-between shadow-[0_0_40px_#ffffff22] z-20 backface-hidden">
                 <img
                   src={card.img}
                   alt="Profile"

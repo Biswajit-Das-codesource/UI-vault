@@ -127,19 +127,18 @@ export default Alert;
           </h2>
           <ul className="space-y-2 pr-2">
             {[
-              "Accordion",
               "Alerts",
+              "Card",
+              "Profilecard",
+              "Pricing",
               "Button",
               "Calendar",
-              "Card",
               "Carousel",
-              "Pricing",
               "Barchart",
               "AIchat",
               "Signup",
               "Feedback",
               "Rating",
-              "Profilecard"
             ].map((item, index) => (
               <li key={index}>
                 <Link

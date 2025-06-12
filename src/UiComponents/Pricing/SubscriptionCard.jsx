@@ -50,7 +50,7 @@ function SubscriptionCard() {
         <motion.div
           className="absolute top-0 left-[-75%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/10 to-transparent rotate-3 z-10 pointer-events-none"
           animate={{ left: ["-75%", "125%"] }}
-          transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
+          transition={{ duration: 1, repeat: Infinity, repeatDelay: 1 }}
         />
 
         {/* Content */}
