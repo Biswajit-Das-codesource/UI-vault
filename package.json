@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-spring/web": "^10.0.1",
     "@tailwindcss/vite": "^4.1.8",
     "chart.js": "^4.4.9",
     "framer-motion": "^12.16.0",
