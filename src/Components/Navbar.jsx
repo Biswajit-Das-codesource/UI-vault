@@ -14,6 +14,7 @@ function Navbar() {
     "Installation",
     "Documentation",
     "Alerts",
+    "Bentogrid",
     "Card",
     "SocialCard",
     "Profilecard",

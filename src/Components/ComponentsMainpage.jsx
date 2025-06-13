@@ -128,12 +128,14 @@ export default Alert;
           <ul className="space-y-2 pr-2">
             {[
               "Alerts",
+              "Bentogrid",
               "Card",
               "SocialCard",
               "Profilecard",
               "TweetCard",
               "Pricing",
               "Button",
+
               "Paymentcard",
               "Testimonials",
               "Carousel",

@@ -20,6 +20,7 @@ import RatingPage from "./UiComponents/RatingCards/RatingPage.jsx";
 import CrouselPage from "./UiComponents/Crousels/CrouselPage.jsx";
 import SocialCardPage from "./UiComponents/SocialCards/SocialCardPage.jsx";
 import TestimonialPage from "./UiComponents/AnimatedTestimonials/TestimonialPage.jsx";
+import Bentogridpage from "./UiComponents/Bentogrid/Bentogridpage.jsx";
 const browserRouter = new createBrowserRouter([
   {
     path: "/",
@@ -85,6 +86,10 @@ const browserRouter = new createBrowserRouter([
       {
         path:"/components/testimonials",
         element:<TestimonialPage/>
+      },
+       {
+        path:"/components/bentogrid",
+        element:<Bentogridpage/>
       }
       
     ],
