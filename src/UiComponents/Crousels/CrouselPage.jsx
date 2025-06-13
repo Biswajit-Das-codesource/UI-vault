@@ -4,65 +4,225 @@ import {
   FaClipboardCheck as ClipboardCheck,
 } from "react-icons/fa";
 import DarkCarousel from "./DarkCarousel";
+import { Copy } from "lucide-react";
+import AutoCarousel from "./AutoCrousel";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { toast, Toaster } from "sonner";
+
+const DarkcarouselCodeString = `import React from "react";
+
+function DarkCarousel() {
+  return (
+    <div className="bg-black text-white p-4 rounded-xl">
+      <h1 className="text-pink-400">Dark Carousel</h1>
+    </div>
+  );
+}
+
+export default DarkCarousel;`;
+
+const AutocarouselCodeString = `import React from "react";
+
+function AutoCarousel() {
+  return (
+    <div className="bg-black text-white p-4 rounded-xl">
+      <h1 className="text-pink-400">Auto Carousel</h1>
+    </div>
+  );
+}
+
+export default AutoCarousel;`;
 
 function CrouselPage() {
   const [tab, setTab] = useState("preview");
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState(""); // store the id of the last copied button
+
+  const handleCopy = (text, id) => {
+    navigator.clipboard.writeText(text);
+    setCopied(id);
+    toast.success("Copied to clipboard! Paste it where you need.");
+    setTimeout(() => setCopied(""), 2000);
+  };
 
   return (
-    <div className="px-4 sm:px-6 lg:px-8 py-6">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl sm:text-4xl font-bold">Carousel Component</h1>
-        <p className="text-gray-400 mt-1 text-sm sm:text-base">
-          Smooth, animated carousel built with Framer Motion and a dark theme.
-        </p>
+    <div className="max-w-4xl mx-auto">
+      <Toaster richColors position="top-center" />
+      <h1 className="text-4xl font-bold text-white">Carousel Component</h1>
+      <p className="text-gray-300 mt-1">
+        Smooth, animated carousel built with Framer Motion and a dark theme.
+      </p>
 
-        {/* Carousel Theme Section */}
-        <section className="mt-8">
-          <h2 className="text-lg sm:text-xl font-semibold">Theme: Custom Dark Carousel</h2>
+      {/* Carousel Section */}
+      <h2 className="text-xl font-bold mt-6">Theme : Dark Carousel</h2>
+      <h1 className="text-2xl font-bold mb-2 mt-4">Installation</h1>
 
-          <div className="mt-4">
-            <h3 className="text-xl font-bold mb-1">Installation</h3>
-            <p className="text-sm text-gray-400 mb-3">CLI</p>
-
-            <div className="flex gap-2 mb-4">
-              <button className="bg-neutral-900 text-white px-4 py-2 text-sm rounded-md font-medium hover:bg-gray-700">
-                npm
-              </button>
-            </div>
-
-            <div className="flex flex-wrap items-center bg-neutral-900 p-3 rounded-lg mb-6 text-sm">
-              <code className="flex-grow font-medium overflow-x-auto whitespace-nowrap">
-                npx ui-vault carousel-DarkCarousel
-              </code>
-              <button
-                onClick={() => {
-                  navigator.clipboard.writeText("npx ui-vault carousel-DarkCarousel");
-                  setCopied(true);
-                  setTimeout(() => setCopied(false), 2000);
-                }}
-                className="text-gray-400 hover:text-white ml-2"
-              >
-                {copied ? <ClipboardCheck size={18} /> : <Clipboard size={18} />}
-              </button>
-            </div>
-
-            <div className="flex gap-6 items-center border-b border-gray-800 pb-2 mb-4">
-              <button
-                onClick={() => setTab("preview")}
-                className={`${
-                  tab === "preview" ? "text-white font-medium" : "text-gray-500"
-                }`}
-              >
-                Preview
-              </button>
-            </div>
-
-                <DarkCarousel/>
-             
-          </div>
-        </section>
+      <div className="flex border-b border-white/10 mt-7">
+        <button className="px-4 py-2 text-white font-medium border-b-2 border-white">
+          CLI
+        </button>
       </div>
+      <div className="px-2 pt-4 pb-2 text-white">
+        <p className="font-medium">Run the following command</p>
+      </div>
+      <div className="flex items-center justify-between bg-[#1a1a1a] border border-gray-700 text-green-400 px-5 py-4 text-sm rounded-2xl mt-4">
+        <code
+          className="geist-mono overflow-x-auto text-sm"
+          style={{ letterSpacing: "1px" }}
+        >
+          <span className="text-cyan-400">npx</span> ui-vault carousel-DarkCarousel
+        </code>
+        <button
+          onClick={() => handleCopy("npx ui-vault carousel-DarkCarousel", "carousel-cli")}
+          className="ml-4 text-white transition"
+          title="Copy to clipboard"
+        >
+          {copied === "carousel-cli" ? (
+            <ClipboardCheck size={18} />
+          ) : (
+            <Clipboard size={18} />
+          )}
+        </button>
+      </div>
+      <div className="flex border-b border-white/10 mt-5">
+        <button
+          onClick={() => setTab("preview")}
+          className={`px-4 py-2 font-medium ${
+            tab === "preview"
+              ? "text-white border-b-2 border-white"
+              : "text-white/50"
+          }`}
+        >
+          Preview
+        </button>
+        <button
+          onClick={() => setTab("code")}
+          className={`px-4 py-2 font-medium ${
+            tab === "code"
+              ? "text-white border-b-2 border-white"
+              : "text-white/50"
+          }`}
+        >
+          Code
+        </button>
+      </div>
+      {tab === "preview" && (
+        <div className="mt-3 bg-black">
+          <DarkCarousel />
+        </div>
+      )}
+      {tab === "code" && (
+        <div className="relative bg-[#1a1a1a] mt-5 p-3 rounded-3xl text-base font-mono">
+          <SyntaxHighlighter
+            language="jsx"
+            style={dracula}
+            customStyle={{
+              fontFamily: "JetBrains Mono, monospace",
+              fontSize: "15px",
+              background: "#1a1a1a",
+              padding: "1.5rem",
+              borderRadius: "0.75rem",
+              lineHeight: "1.7",
+            }}
+            className="text-sm geist-mono mt-5"
+          >
+            {DarkcarouselCodeString}
+          </SyntaxHighlighter>
+          <button
+            onClick={() => handleCopy(AutocarouselCodeString, "carousel-code")}
+            className="absolute top-4 right-4 text-xs bg-white text-black px-2 py-1 rounded hover:bg-gray-200 flex items-center gap-1"
+          >
+            {copied === "carousel-code" ? "Copied!" : <Copy size={16} />}
+          </button>
+        </div>
+      )}
+
+    {/* You can add more carousel themes below in the same style */}
+
+    <h2 className="text-xl font-bold mt-6">Theme : AUto Carousel</h2>
+      <h1 className="text-2xl font-bold mb-2 mt-4">Installation</h1>
+
+      <div className="flex border-b border-white/10 mt-7">
+        <button className="px-4 py-2 text-white font-medium border-b-2 border-white">
+          CLI
+        </button>
+      </div>
+      <div className="px-2 pt-4 pb-2 text-white">
+        <p className="font-medium">Run the following command</p>
+      </div>
+      <div className="flex items-center justify-between bg-[#1a1a1a] border border-gray-700 text-green-400 px-5 py-4 text-sm rounded-2xl mt-4">
+        <code
+          className="geist-mono overflow-x-auto text-sm"
+          style={{ letterSpacing: "1px" }}
+        >
+          <span className="text-cyan-400">npx</span> ui-vault carousel-AutoCarousel
+        </code>
+        <button
+          onClick={() => handleCopy("npx ui-vault carousel-AutoCrousel", "carousel-cli")}
+          className="ml-4 text-white transition"
+          title="Copy to clipboard"
+        >
+          {copied === "carousel-cli" ? (
+            <ClipboardCheck size={18} />
+          ) : (
+            <Clipboard size={18} />
+          )}
+        </button>
+      </div>
+      <div className="flex border-b border-white/10 mt-5">
+        <button
+          onClick={() => setTab("preview")}
+          className={`px-4 py-2 font-medium ${
+            tab === "preview"
+              ? "text-white border-b-2 border-white"
+              : "text-white/50"
+          }`}
+        >
+          Preview
+        </button>
+        <button
+          onClick={() => setTab("code")}
+          className={`px-4 py-2 font-medium ${
+            tab === "code"
+              ? "text-white border-b-2 border-white"
+              : "text-white/50"
+          }`}
+        >
+          Code
+        </button>
+      </div>
+      {tab === "preview" && (
+        <div className="mt-3 bg-black">
+          <AutoCarousel />
+        </div>
+      )}
+      {tab === "code" && (
+        <div className="relative bg-[#1a1a1a] mt-5 p-3 rounded-3xl text-base font-mono">
+          <SyntaxHighlighter
+            language="jsx"
+            style={dracula}
+            customStyle={{
+              fontFamily: "JetBrains Mono, monospace",
+              fontSize: "15px",
+              background: "#1a1a1a",
+              padding: "1.5rem",
+              borderRadius: "0.75rem",
+              lineHeight: "1.7",
+            }}
+            className="text-sm geist-mono mt-5"
+          >
+            {AutocarouselCodeString}
+          </SyntaxHighlighter>
+          <button
+            onClick={() => handleCopy(AutocarouselCodeString, "carousel-code")}
+            className="absolute top-4 right-4 text-xs bg-white text-black px-2 py-1 rounded hover:bg-gray-200 flex items-center gap-1"
+          >
+            {copied === "carousel-code" ? "Copied!" : <Copy size={16} />}
+          </button>
+        </div>
+      )}  
+
+    
     </div>
   );
 }
