@@ -135,12 +135,10 @@ export default Alert;
               "Pricing",
               "Button",
               "Paymentcard",
-              "Calendar",
+              "Testimonials",
               "Carousel",
               "Barchart",
-              "AIchat",
               "Shinytext",
-              "CircularText",
               "Feedback",
               "Rating",
             ].map((item, index) => (
@@ -164,8 +162,6 @@ export default Alert;
         <main className="flex-1 overflow-y-scroll  p-6 scrollbar-hide">
           <Outlet />
         </main>
-
-       
       </div>
     </div>
   );

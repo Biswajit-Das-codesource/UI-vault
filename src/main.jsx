@@ -19,6 +19,7 @@ import TweetCardPage from "./UiComponents/TweetCard/TweetCardPage.jsx";
 import RatingPage from "./UiComponents/RatingCards/RatingPage.jsx";
 import CrouselPage from "./UiComponents/Crousels/CrouselPage.jsx";
 import SocialCardPage from "./UiComponents/SocialCards/SocialCardPage.jsx";
+import TestimonialPage from "./UiComponents/AnimatedTestimonials/TestimonialPage.jsx";
 const browserRouter = new createBrowserRouter([
   {
     path: "/",
@@ -80,6 +81,10 @@ const browserRouter = new createBrowserRouter([
       {
         path:"/components/socialcard",
         element:<SocialCardPage/>
+      },
+      {
+        path:"/components/testimonials",
+        element:<TestimonialPage/>
       }
       
     ],

@@ -21,12 +21,10 @@ function Navbar() {
     "Pricing",
     "Button",
     "Paymentcard",
-    "Calendar",
+    "Testimonials",
     "Carousel",
     "Barchart",
-    "AIchat",
     "Shinytext",
-    "CircularText",
     "Feedback",
     "Rating",
   ];
