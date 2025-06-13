@@ -15,6 +15,7 @@ function Navbar() {
     "Documentation",
     "Alerts",
     "Card",
+    "SocialCard",
     "Profilecard",
     "TweetCard",
     "Pricing",

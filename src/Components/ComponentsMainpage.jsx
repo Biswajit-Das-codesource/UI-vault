@@ -129,6 +129,7 @@ export default Alert;
             {[
               "Alerts",
               "Card",
+              "SocialCard",
               "Profilecard",
               "TweetCard",
               "Pricing",
