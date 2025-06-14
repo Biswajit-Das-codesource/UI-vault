@@ -17,6 +17,8 @@ function Navbar() {
     "Installation",
     "Documentation",
     "Alerts",
+    "Globe",
+    "Lens",
     "Bentogrid",
     "Card",
     "SocialCard",
@@ -24,12 +26,16 @@ function Navbar() {
     "TweetCard",
     "Pricing",
     "Button",
+    "3D Image",
     "Paymentcard",
     "Testimonials",
     "Carousel",
     "Barchart",
     "Shinytext",
     "Feedback",
+    "Marquee",
+    
+
     "Rating",
   ];
 
@@ -73,13 +79,25 @@ function Navbar() {
 
             {/* Social Icons */}
             <div className="flex items-center gap-4 ml-2 text-white text-xl">
-              <a href="https://x.com/uivaultdev" target="_blank" rel="noreferrer">
+              <a
+                href="https://x.com/uivaultdev"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FaXTwitter className="hover:text-gray-400 transition" />
               </a>
-              <a href="https://instagram.com/uivaultdev" target="_blank" rel="noreferrer">
+              <a
+                href="https://instagram.com/uivaultdev"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FaInstagram className="hover:text-pink-400 transition" />
               </a>
-              <a href="https://github.com/uivaultdev/ui-vault" target="_blank" rel="noreferrer">
+              <a
+                href="https://github.com/uivaultdev/ui-vault"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FaGithub className="hover:text-gray-400 transition" />
               </a>
             </div>
@@ -129,13 +147,25 @@ function Navbar() {
 
               {/* Mobile Social Icons */}
               <div className="flex justify-center items-center gap-6 mt-5 text-2xl text-white">
-                <a href="https://x.com/uivaultdev" target="_blank" rel="noreferrer">
+                <a
+                  href="https://x.com/uivaultdev"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <FaXTwitter />
                 </a>
-                <a href="https://instagram.com/uivaultdev" target="_blank" rel="noreferrer">
+                <a
+                  href="https://instagram.com/uivaultdev"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <FaInstagram />
                 </a>
-                <a href="https://github.com/uivaultdev/ui-vault" target="_blank" rel="noreferrer">
+                <a
+                  href="https://github.com/uivaultdev/ui-vault"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <FaGithub />
                 </a>
               </div>
