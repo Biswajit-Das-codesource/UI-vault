@@ -136,6 +136,7 @@ export default Alert;
               "Pricing",
               "Button",
                 "3D Image",
+              "OrbitingLogo",
               "Paymentcard",
               "Testimonials",
               "Carousel",

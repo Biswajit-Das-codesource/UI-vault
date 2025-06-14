@@ -6,6 +6,9 @@ import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { toast, Toaster } from "sonner";
 import CyberGridBackground from "./CyberGridBackground";
 import BeamsBackground from "./BeamsBackground";
+import GeminiThreads from "../Backgrounds/GeminiThreads";
+
+
 
 function BackgroundPage() {
 const [auroraTab, setAuroraTab] = useState("preview");
@@ -38,6 +41,16 @@ return (
 );
 }
 export default CyberGridBackground;`;
+
+const UiThread = `import React from "react";
+function GeminiThreads() {
+return (
+    <div className="bg-black text-neon-green h-screen">
+    {/* Ui Threads */}
+    </div>
+);
+}
+export default GeminiThreads;`;
 
 return (
     <div>
@@ -182,6 +195,7 @@ return (
         {cyberTab === "preview" && (
         <div className="mt-3 border-2 border-gray-500 bg-black rounded-xl">
             <CyberGridBackground/>
+           
         </div>
         )}
 
@@ -201,6 +215,90 @@ return (
             className="text-sm geist-mono mt-5"
             >
             {cyberCode}
+            </SyntaxHighlighter>
+            <button
+            onClick={() => handleCopy(cyberCode, "cyber-code")}
+            className="absolute top-4 right-4 text-xs bg-white text-black px-2 py-1 rounded hover:bg-gray-200 flex items-center gap-1"
+            >
+            {copied === "cyber-code" ? "Copied!" : <Copy size={16} />}
+            </button>
+        </div>
+        )}
+
+        {/* Gemini Threads */}
+        <h2 className="text-xl font-bold mt-6">Theme : Ui Threads</h2>
+        <h1 className="text-2xl font-bold mb-2 mt-4">Installation</h1>
+
+        {/* CLI Label */}
+        <div className="flex border-b border-white/10 mt-7">
+        <button className="px-4 py-2 text-white font-medium border-b-2 border-white">
+            CLI
+        </button>
+        </div>
+
+        <div className="px-2 pt-4 pb-2 text-white">
+        <p className="font-medium">Run the following command</p>
+        </div>
+        <div className="flex items-center justify-between bg-[#1a1a1a] border border-gray-700 text-green-400 px-5 py-4 text-sm rounded-2xl mt-4">
+        <code className="geist-mono text-sm overflow-x-auto" style={{ letterSpacing: "1px" }}>
+            <span className="text-cyan-400">npx</span> ui-vault background-UiThreads
+        </code>
+        <button
+            onClick={() => handleCopy("npx ui-vault background-UiThreads", "cyber-cli")}
+            className="ml-4 text-white transition"
+            title="Copy to clipboard"
+        >
+            {copied === "cyber-cli" ? <ClipboardCheck size={18} /> : <Clipboard size={18} />}
+        </button>
+        </div>
+
+        {/* Tabs */}
+        <div className="flex border-b border-white/10 mt-5">
+        <button
+            onClick={() => setCyberTab("preview")}
+            className={`px-4 py-2 font-medium ${
+            cyberTab === "preview"
+                ? "text-white border-b-2 border-white"
+                : "text-white/50"
+            }`}
+        >
+            Preview
+        </button>
+        <button
+            onClick={() => setCyberTab("code")}
+            className={`px-4 py-2 font-medium ${
+            cyberTab === "code"
+                ? "text-white border-b-2 border-white"
+                : "text-white/50"
+            }`}
+        >
+            Code
+        </button>
+        </div>
+
+        {cyberTab === "preview" && (
+        <div className="mt-3 border-2 border-gray-500 bg-black rounded-xl">
+            <GeminiThreads/>
+           
+        </div>
+        )}
+
+        {cyberTab === "code" && (
+        <div className="relative bg-[#1a1a1a] mt-5 p-3 rounded-3xl text-base font-mono">
+            <SyntaxHighlighter
+            language="jsx"
+            style={dracula}
+            customStyle={{
+                fontFamily: "JetBrains Mono, monospace",
+                fontSize: "15px",
+                background: "#1a1a1a",
+                padding: "1.5rem",
+                borderRadius: "0.75rem",
+                lineHeight: "1.7",
+            }}
+            className="text-sm geist-mono mt-5"
+            >
+            {UiThread}
             </SyntaxHighlighter>
             <button
             onClick={() => handleCopy(cyberCode, "cyber-code")}

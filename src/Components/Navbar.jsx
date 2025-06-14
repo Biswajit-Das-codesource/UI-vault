@@ -22,6 +22,7 @@ function Navbar() {
     "Bentogrid",
     "Card",
     "SocialCard",
+    "OrbitingLogo",
     "Profilecard",
     "TweetCard",
     "Pricing",

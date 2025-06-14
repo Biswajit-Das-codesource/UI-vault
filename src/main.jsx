@@ -26,6 +26,8 @@ import InfiniteScrollpage from "./UiComponents/InfiniteScroll/InfiniteScrollpage
 import GlobePage from "./UiComponents/Globe/GlobePage.jsx";
 import LensPage from "./UiComponents/Lens/LensPage.jsx";
 import Floatingcardpage from "./UiComponents/Floatingcard/Floatingcardpage.jsx";
+import OrbitLogoPage from "./UiComponents/OrbitLogo/OrbitLogoPage.jsx";
+
 
 const browserRouter = new createBrowserRouter([
   {
@@ -118,6 +120,14 @@ const browserRouter = new createBrowserRouter([
         path: "/components/3d-image",
         element: <Floatingcardpage />,
       },
+      {
+        path:"/components/backgrounds",
+        element:<BackgroundPage/>
+      },
+      {
+        path:"/components/orbitinglogo",
+        element:<OrbitLogoPage/>
+      }
     ],
   },
 ]);

@@ -190,6 +190,8 @@ export default GradientSignUpCard;`,
           </div>
         ))}
       </div>
+      
+      
     </div>
   );
 }
