@@ -135,13 +135,17 @@ export default Alert;
               "TweetCard",
               "Pricing",
               "Button",
-
+                "3D Image",
               "Paymentcard",
               "Testimonials",
               "Carousel",
               "Barchart",
               "Shinytext",
               "Feedback",
+              "Marquee",
+              "Globe",
+              "Lens",
+              
               "Rating",
             ].map((item, index) => (
               <li key={index}>

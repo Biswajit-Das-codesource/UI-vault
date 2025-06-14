@@ -22,7 +22,10 @@ import SocialCardPage from "./UiComponents/SocialCards/SocialCardPage.jsx";
 import TestimonialPage from "./UiComponents/AnimatedTestimonials/TestimonialPage.jsx";
 import Bentogridpage from "./UiComponents/Bentogrid/Bentogridpage.jsx";
 import BackgroundPage from "./UiComponents/Backgrounds/BackgroundPage.jsx";
-
+import InfiniteScrollpage from "./UiComponents/InfiniteScroll/InfiniteScrollpage.jsx";
+import GlobePage from "./UiComponents/Globe/GlobePage.jsx";
+import LensPage from "./UiComponents/Lens/LensPage.jsx";
+import Floatingcardpage from "./UiComponents/Floatingcard/Floatingcardpage.jsx";
 
 const browserRouter = new createBrowserRouter([
   {
@@ -49,58 +52,72 @@ const browserRouter = new createBrowserRouter([
         path: "/components/Pricing",
         element: <PricingPage />,
       },
-     
+
       {
         path: "/components/feedback",
         element: <FeedbackPage />,
       },
       {
         path: "/components/profilecard",
-        element: <ProfileCardPage/>,
+        element: <ProfileCardPage />,
       },
       {
         path: "/components/button",
-        element: <ButtonPage/>,
+        element: <ButtonPage />,
       },
       {
         path: "/components/paymentcard",
-        element: <PaymentcardPage/>,
+        element: <PaymentcardPage />,
       },
-       {
+      {
         path: "/components/shinytext",
-        element: <AnimatedTextpage/>,
+        element: <AnimatedTextpage />,
       },
       {
         path: "/components/tweetcard",
-        element:<TweetCardPage/>
+        element: <TweetCardPage />,
       },
       {
-        path:"/components/rating",
-        element:<RatingPage/>
+        path: "/components/rating",
+        element: <RatingPage />,
       },
       {
-        path:"/components/carousel",
-        element:<CrouselPage/>
+        path: "/components/carousel",
+        element: <CrouselPage />,
       },
       {
-        path:"/components/socialcard",
-        element:<SocialCardPage/>
+        path: "/components/socialcard",
+        element: <SocialCardPage />,
       },
       {
-        path:"/components/testimonials",
-        element:<TestimonialPage/>
+        path: "/components/testimonials",
+        element: <TestimonialPage />,
       },
 
-       {
-        path:"/components/bentogrid",
-        element:<Bentogridpage/>
-       },
       {
-        path:"/components/backgrounds",
-        element:<BackgroundPage/>
-
-      }
-      
+        path: "/components/bentogrid",
+        element: <Bentogridpage />,
+      },
+      {
+        path: "/components/backgrounds",
+        element: <BackgroundPage />,
+      },
+      {
+        path: "/components/marquee",
+        element: <InfiniteScrollpage />,
+      },
+      {
+        path: "/components/globe",
+        element: <GlobePage />,
+      },
+      {
+        path: "/components/Lens",
+        element: <LensPage />,
+      },
+      {
+        path: "/components/3d-image",
+        element: <Floatingcardpage />,
+      },
     ],
   },
 ]);
