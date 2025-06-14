@@ -27,6 +27,7 @@ import GlobePage from "./UiComponents/Globe/GlobePage.jsx";
 import LensPage from "./UiComponents/Lens/LensPage.jsx";
 import Floatingcardpage from "./UiComponents/Floatingcard/Floatingcardpage.jsx";
 import Flowingmenupage from "./UiComponents/Flowingmenu/Flowingmenupage.jsx";
+import OrbitLogoPage from "./UiComponents/OrbitLogo/OrbitLogoPage.jsx";
 
 const browserRouter = new createBrowserRouter([
   {
@@ -121,7 +122,7 @@ const browserRouter = new createBrowserRouter([
       },
       {
         path: "/components/orbitinglogo",
-        element: <Floatingcardpage />,
+        element: <OrbitLogoPage />,
       },
        {
         path: "/components/flowingmenu",

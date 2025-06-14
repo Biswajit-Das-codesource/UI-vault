@@ -30,6 +30,7 @@ function Navbar() {
     "Alerts",
     "Card",
     "SocialCard",
+    "OrbitingLogo",
     "Profilecard",
     "TweetCard",
     "Pricing",
