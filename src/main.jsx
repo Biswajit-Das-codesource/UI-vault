@@ -26,6 +26,7 @@ import InfiniteScrollpage from "./UiComponents/InfiniteScroll/InfiniteScrollpage
 import GlobePage from "./UiComponents/Globe/GlobePage.jsx";
 import LensPage from "./UiComponents/Lens/LensPage.jsx";
 import Floatingcardpage from "./UiComponents/Floatingcard/Floatingcardpage.jsx";
+import Flowingmenupage from "./UiComponents/Flowingmenu/Flowingmenupage.jsx";
 
 const browserRouter = new createBrowserRouter([
   {
@@ -115,8 +116,16 @@ const browserRouter = new createBrowserRouter([
         element: <LensPage />,
       },
       {
-        path: "/components/3d-image",
+        path: "/components/Imageeffect",
         element: <Floatingcardpage />,
+      },
+      {
+        path: "/components/orbitinglogo",
+        element: <Floatingcardpage />,
+      },
+       {
+        path: "/components/flowingmenu",
+        element: <Flowingmenupage />,
       },
     ],
   },
