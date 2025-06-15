@@ -36,7 +36,7 @@ import Hoverswitchpage from "./UiComponents/HoverSwitchCard/HoverSwitchcardpage.
 import NeonLambpage from "./UiComponents/Neonlamp/Neonlamppage.jsx";
 import PointerGridBackgroundPage from "./UiComponents/PointerGridBackground/PointerGridPage.jsx";
 import GridBackgroundPage from "./UiComponents/Gridbackground/Gridbackgroundpage.jsx";
-
+import VideoPopPage from "./UiComponents/VideoOverlay/VideoPopPage.jsx";
 const browserRouter = new createBrowserRouter([
   {
     path: "/",
@@ -165,6 +165,23 @@ const browserRouter = new createBrowserRouter([
         path: "/components/gridbackground",
         element:<GridBackgroundPage/>,
       },
+      {
+        path:"/components/bentogrid",
+        element:<Bentogridpage/>
+       },
+      {
+        path:"/components/backgrounds",
+        element:<BackgroundPage/>
+      },
+      {
+        path:"/components/orbitinglogo",
+        element:<OrbitLogoPage/>
+      },
+      {
+        path:"/components/iframepop",
+        element:<VideoPopPage/>
+      }
+
     ],
   },
 ]);

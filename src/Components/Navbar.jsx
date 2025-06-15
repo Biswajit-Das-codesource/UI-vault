@@ -35,6 +35,7 @@ function Navbar() {
     "Globe",
     "GridBackground",
     "Imageeffect",
+    "IframePop",
     "Marquee",
     "PointerGrid",
     "Tiltcard",

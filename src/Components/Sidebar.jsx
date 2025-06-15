@@ -68,10 +68,10 @@ const Sidebar = () => {
     "Globe",
     "GridBackground",
     "Imageeffect",
+    "IframePop",
     "Marquee",
     "PointerGrid",
     "Tiltcard",
-
     
   ];
 
