@@ -4,29 +4,12 @@
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/docs/:path*",
-      "destination": "/docs/index.html"
+      "source": "/components/:path*",
+      "destination": "/index.html"
     },
     {
-      "source": "/demos/:path*",
-      "destination": "/demos/index.html"
-    }
-  ],
-  "redirects": [
-    {
-      "source": "/old-docs",
-      "destination": "/docs",
-      "permanent": true
-    },
-    {
-      "source": "/react-ui-library",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/best-react-components",
-      "destination": "/",
-      "permanent": true
+      "source": "/:path*",
+      "destination": "/index.html"
     }
   ],
   "headers": [
