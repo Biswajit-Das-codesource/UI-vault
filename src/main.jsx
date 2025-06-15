@@ -26,8 +26,16 @@ import InfiniteScrollpage from "./UiComponents/InfiniteScroll/InfiniteScrollpage
 import GlobePage from "./UiComponents/Globe/GlobePage.jsx";
 import LensPage from "./UiComponents/Lens/LensPage.jsx";
 import Floatingcardpage from "./UiComponents/Floatingcard/Floatingcardpage.jsx";
-import Flowingmenupage from "./UiComponents/Flowingmenu/Flowingmenupage.jsx";
 import OrbitLogoPage from "./UiComponents/OrbitLogo/OrbitLogoPage.jsx";
+import Gradientlinepage from "./UiComponents/GradientLineBackground/Gradientlinepage.jsx";
+import BeamsbackgroundPage from "./UiComponents/BeamsBackground/BeamsbackgroundPage.jsx";
+import Cursorpage from "./UiComponents/Cursor/Cursorpage.jsx";
+import TiltCardpage from "./UiComponents/TiltCard/TiltCardpage.jsx";
+import HoverSwitchCard from "./UiComponents/HoverSwitchCard/HoverSwitchcard.jsx";
+import Hoverswitchpage from "./UiComponents/HoverSwitchCard/HoverSwitchcardpage.jsx";
+import NeonLambpage from "./UiComponents/Neonlamp/Neonlamppage.jsx";
+import PointerGridBackgroundPage from "./UiComponents/PointerGridBackground/PointerGridPage.jsx";
+import GridBackgroundPage from "./UiComponents/Gridbackground/Gridbackgroundpage.jsx";
 
 const browserRouter = new createBrowserRouter([
   {
@@ -124,9 +132,38 @@ const browserRouter = new createBrowserRouter([
         path: "/components/orbitinglogo",
         element: <OrbitLogoPage />,
       },
+     
+      {
+        path: "/components/CosmicRayBurst",
+        element: <Gradientlinepage />,
+      },
+      {
+        path: "/components/Beamsbackground",
+        element: <BeamsbackgroundPage />,
+      },
+      {
+        path: "/components/cursorAura",
+        element: <Cursorpage />,
+      },
        {
-        path: "/components/flowingmenu",
-        element: <Flowingmenupage />,
+        path: "/components/tiltcard",
+        element: <TiltCardpage/>,
+      },
+       {
+        path: "/components/hovercard", 
+        element:<Hoverswitchpage/>,
+      },
+        {
+        path: "/components/neonlamb", //add
+        element:<NeonLambpage/>,
+      },
+       {
+        path: "/components/pointergrid",
+        element:<PointerGridBackgroundPage/>,
+      },
+       {
+        path: "/components/gridbackground",
+        element:<GridBackgroundPage/>,
       },
     ],
   },

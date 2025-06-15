@@ -44,9 +44,11 @@ const Sidebar = () => {
     "Documentation",
     "Feedback",
     "Globe",
+    "Hovercard",
     "Imageeffect",
     "Lens",
     "Marquee",
+    "Neonlamb",
     "Paymentcard",
     "Pricing",
     "Profilecard",
@@ -60,9 +62,17 @@ const Sidebar = () => {
   const specialComponents = [
     "Lens",
     "Bentogrid",
+    "BeamsBackground",
+    "CosmicRayBurst",
+    "CursorAura",
     "Globe",
+    "GridBackground",
     "Imageeffect",
     "Marquee",
+    "PointerGrid",
+    "Tiltcard",
+
+    
   ];
 
   const normalComponents = allComponents.filter(

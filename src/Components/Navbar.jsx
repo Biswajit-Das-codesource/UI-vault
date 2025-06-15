@@ -25,23 +25,44 @@ function Navbar() {
     "Components",
     "Backgrounds",
   ];
-  const specialLinks = ["Lens", "Bentogrid", "Globe", "Imageeffect", "Marquee"];
+
+  const specialLinks = [
+    "Lens",
+    "Bentogrid",
+    "BeamsBackground",
+    "CosmicRayBurst",
+    "CursorAura",
+    "Globe",
+    "GridBackground",
+    "Imageeffect",
+    "Marquee",
+    "PointerGrid",
+    "Tiltcard",
+  ];
   const otherLinks = [
-    "Alerts",
-    "Card",
-    "SocialCard",
-    "OrbitingLogo",
-    "Profilecard",
-    "TweetCard",
-    "Pricing",
-    "Button",
-    "Paymentcard",
-    "Testimonials",
-    "Carousel",
+     "Alerts",
     "Barchart",
-    "Shinytext",
+    "Bentogrid",
+    "Backgrounds",
+    "Button",
+    "Card",
+    "Carousel",
+    "Documentation",
     "Feedback",
+    "Globe",
+    "Hovercard",
+    "Imageeffect",
+    "Lens",
+    "Marquee",
+    "Neonlamb",
+    "Paymentcard",
+    "Pricing",
+    "Profilecard",
     "Rating",
+    "Shinytext",
+    "SocialCard",
+    "Testimonials",
+    "TweetCard",
   ];
 
   const renderLink = (link) => (
@@ -127,7 +148,9 @@ function Navbar() {
               transition={{ duration: 0.4, ease: "easeInOut" }}
               className="overflow-y-auto max-h-[90vh] md:hidden absolute z-50 bg-black p-6 w-full left-0 top-full shadow-xl space-y-4 flex flex-col"
             >
-              <div className="space-y-2 flex flex-col">{coreLinks.map(renderLink)}</div>
+              <div className="space-y-2 flex flex-col">
+                {coreLinks.map(renderLink)}
+              </div>
 
               {/* Special Section */}
               <div className="mt-4">
@@ -143,7 +166,9 @@ function Navbar() {
               </div>
 
               {/* Other Links */}
-              <div className="mt-6 space-y-2 flex flex-col">{otherLinks.map(renderLink)}</div>
+              <div className="mt-6 space-y-2 flex flex-col">
+                {otherLinks.map(renderLink)}
+              </div>
 
               {/* GitHub Button */}
               <div className="pt-2">
