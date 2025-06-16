@@ -1,20 +1,15 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FiArrowRight, FiShare2 } from "react-icons/fi";
-import { HiOutlineExternalLink } from "react-icons/hi";
-import { FaCode } from "react-icons/fa";
-import "../App.css";
-import { Link } from "react-router";
+import { FiArrowRight } from "react-icons/fi";
 import { SiFramer, SiTailwindcss } from "react-icons/si";
 import { FaReact } from "react-icons/fa6";
+import { Link } from "react-router";
+import image from "../assets/image.png";
 
 const Herosection = () => {
   const [previewSrc, setPreviewSrc] = useState(null);
   const handleImageClick = (src) => setPreviewSrc(src);
   const closePreview = () => setPreviewSrc(null);
-
-  const profileImage =
-    "https://i.pinimg.com/736x/36/97/37/369737408e0047967fa989365ee899ec.jpg";
 
   const floatingVariants = {
     float: {
@@ -30,20 +25,17 @@ const Herosection = () => {
 
   return (
     <>
-      {/* Floating Glowing Bulb */}
       {/* Floating Glowing Bulb - Left */}
-      <motion.div
+      {/* <motion.div
         className="fixed top-20 left-14 z-[9999] pointer-events-none"
         variants={floatingVariants}
         animate="float"
       >
         <div className="w-60 h-40 bg-violet-700 rounded-full blur-3xl opacity-60 shadow-[0_0_40px_#fde047]" />
-      </motion.div>
-
-      {/* Floating Glowing Bulb - Right */}
+      </motion.div> */}
 
       {/* Hero Section */}
-      <div className="relative z-10 bg-black text-white min-h-[94vh] px-4 py-2 flex flex-col lg:flex-row gap-8">
+      <div className="relative z-10 bg-black text-white min-h-[94vh] px-4 py-2 flex flex-col lg:flex-row gap-8 overflow-hidden">
         {/* Left Section */}
         <motion.div
           className="flex-1 flex flex-col justify-center md:ml-4"
@@ -51,7 +43,7 @@ const Herosection = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <h1 className="text-4xl sm:text-6xl md:text-6xl font-extrabold leading-tight mt-8 sm:mt-1">
+          <h1 className="text-4xl sm:text-6xl md:text-5xl font-extrabold leading-tight mt-8 sm:mt-1">
             Design{" "}
             <span className="bg-gradient-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text">
               clarity
@@ -67,12 +59,12 @@ const Herosection = () => {
           <p className="mt-4 text-base sm:text-base text-gray-300 max-w-2xl">
             Elevate your UI game with{" "}
             <span className="font-bold text-white">
-              100+ hand-crafted components
+              20+ Animated components
             </span>
             ,<br />
-            styled using <span className="text-pink-400">Tailwind CSS</span> and
-            powered by <span className="text-purple-300">shadcn/ui</span> —
-            built for fast, beautiful React and Next.js apps.
+            styled using <span className="text-pink-400">Tailwind</span> and
+            powered by <span className="text-purple-300">Framer Motion</span>
+            <br /> — built for fast, beautiful React apps.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">
@@ -86,17 +78,19 @@ const Herosection = () => {
 
           <div className="mt-6 flex flex-col sm:flex-row gap-4 items-center sm:items-start justify-center sm:justify-start">
             <Link to="/components/alerts" className="w-full sm:w-auto">
-              <button className="relative w-full sm:w-auto bg-white bg-gradient-to-r from-pink-400 to-purple-500 text-black px-6 py-3 rounded-xl text-base font-semibold transition transform hover:scale-105 before:absolute before:inset-0 before:-z-10 before:rounded-xl before:blur-xl before:opacity-100 before:transition-all before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 cursor-pointer flex items-center justify-center gap-2">
+              <button className="relative w-full sm:w-auto bg-white bg-gradient-to-r from-pink-400 to-purple-500 text-black px-3 py-3 rounded-xl text-sm font-semibold transition transform hover:scale-105 before:absolute before:inset-0 before:-z-10 before:rounded-xl before:blur-xl before:opacity-100 before:transition-all before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 cursor-pointer flex items-center justify-center gap-2">
                 Browse Components <FiArrowRight />
               </button>
             </Link>
 
-            <button className="w-full sm:w-auto bg-gray-950 border border-white px-6 py-3 rounded-xl text-base font-semibold hover:bg-black transition cursor-pointer flex items-center justify-center gap-2">
+            <button className="w-full sm:w-auto bg-gray-950 border border-white px-4 py-3 rounded-xl text-sm font-semibold hover:bg-black transition cursor-pointer flex items-center justify-center gap-2">
               Go to Templates <FiArrowRight />
             </button>
           </div>
 
-          <h3 className="text-gray-400 font-medium mt-4 text-lg sm:text-left text-center md:text-left">Built with</h3>
+          <h3 className="text-gray-400 font-medium mt-4 text-lg sm:text-left text-center md:text-left">
+            Built with
+          </h3>
           <div className="mt-5 flex justify-center sm:justify-start items-center gap-6 text-white text-3xl">
             <div className="flex items-center gap-2">
               <SiTailwindcss className="text-cyan-400" />
@@ -113,94 +107,65 @@ const Herosection = () => {
           </div>
         </motion.div>
 
-        {/* Right Section */}
+        {/* Right Card Section (Responsive) */}
         <motion.div
-          className="w-full lg:w-[420px] space-y-6 md:mr-5"
-          initial={{ opacity: 0, y: 60 }}
+          className="w-full lg:w-1/2 min-h-[300px] lg:min-h-screen flex items-center justify-center lg:justify-end relative lg:absolute right-0 pt-6 lg:pt-10 mt-8 lg:mt-0"
+          initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
         >
-          {/* Card 1 */}
-          <motion.div
-            className="relative rounded-xl overflow-hidden bg-gradient-to-br from-pink-500 to-purple-800 p-3"
-            whileHover={{ scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <img
-              src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?auto=format&fit=crop&w=400&q=80"
-              alt="New UI"
-              className="rounded-xl object-cover h-52 w-full mix-blend-hard-light cursor-pointer"
-              onClick={() =>
-                handleImageClick(
-                  "https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?auto=format&fit=crop&w=800&q=90"
-                )
-              }
-            />
-            <span className="absolute top-2 right-2 bg-black/50 px-2 py-1 text-xs rounded-full">
-              New
-            </span>
-            <div className="absolute bottom-4 left-4">
-              <h3 className="font-bold text-white text-lg">
-                New UI Design Fundamentals
-              </h3>
-              <p className="text-sm text-gray-200">
-                Explore the fundamentals of contemporary UI design
-              </p>
-              <HiOutlineExternalLink className="text-white text-lg mt-1" />
-            </div>
-          </motion.div>
-
-          {/* Card 2 */}
-          <motion.div
-            className="bg-gray-950 shadow-lg shadow-gray-800 rounded-xl p-6 space-y-4"
-            whileHover={{ scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <div className="flex items-center gap-4">
+          <div className="relative max-w-[90%] max-h-[80%] overflow-hidden group [perspective:1300px] rounded-2xl">
+            <div className="absolute inset-0 z-0 rounded-[20px] bg-fuchsia-600 opacity-20 blur-[120px] pointer-events-none" />
+            <div className="absolute inset-0 z-0 flex items-center justify-center">
               <div
-                className="w-16 h-12 bg-gray-400 rounded-full flex items-center justify-center text-black font-bold cursor-pointer"
-                onClick={() => handleImageClick(profileImage)}
+                className="w-[60%] h-[10%] rounded-full bg-purple-100"
+                style={{ animation: "pingLoop 3s infinite ease-in-out" }}
+              />
+            </div>
+            <div
+              className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[20px] h-full bg-gradient-to-b from-white/0 via-pink-600 to-white/0 opacity-20 z-10"
+              style={{ animation: "shimmer 3s ease-in-out infinite" }}
+            />
+            <div className="p-[6px_0px_0px_6px] rounded-[20px] relative z-10">
+              <motion.div
+                className="relative z-20 bg-black/50 backdrop-blur-md p-4 rounded-[16px] transition-transform duration-300 group-hover:rotate-x-6 group-hover:rotate-y-6"
+                animate={{
+                  boxShadow: [
+                    "0 0 15px #8b5cf6, 0 0 25px #ec4899, 0 0 35px #3b82f6, 0 0 45px #8b5cf6",
+                    "0 0 25px #8b5cf6, 0 0 35px #ec4899, 0 0 45px #3b82f6, 0 0 55px #ec4899",
+                    "0 0 35px #3b82f6, 0 0 45px #8b5cf6, 0 0 55px #ec4899, 0 0 65px #3b82f6",
+                    "0 0 25px #8b5cf6, 0 0 35px #ec4899, 0 0 45px #3b82f6, 0 0 55px #8b5cf6",
+                  ],
+                }}
+                transition={{
+                  duration: 3,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                  repeatType: "mirror",
+                }}
               >
-                <img
-                  src={profileImage}
-                  className="rounded-full h-16 w-24 object-cover"
-                  alt="Profile"
-                />
-              </div>
-              <div>
-                <h4 className="text-lg font-semibold">John Doe</h4>
-                <p className="text-sm text-gray-400">Senior Developer</p>
-                <div className="text-green-400 text-sm">🟢 Open to Work</div>
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              {["Frontend", "Backend", "DevOps"].map((skill) => (
                 <div
-                  key={skill}
-                  className="bg-gray-800 rounded-lg px-4 py-2 flex justify-between items-center"
-                >
-                  <span className="text-sm text-white flex items-center gap-2">
-                    <FaCode /> {skill}
-                  </span>
-                  <div className="flex gap-1">
-                    <span className="w-2 h-2 bg-white rounded-full" />
-                    <span className="w-2 h-2 bg-white/50 rounded-full" />
-                    <span className="w-2 h-2 bg-white/30 rounded-full" />
-                  </div>
+                  className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-white/10 via-white/70 to-white/10 z-30"
+                  style={{ animation: "scanLine 2s linear infinite" }}
+                />
+                <div className="relative w-full h-full">
+                  <img
+                    src={image}
+                    alt="Cyber Card"
+                    className="rounded-[12px] object-contain w-full h-full"
+                  />
+                  <div
+                    className="absolute bottom-0 left-0 w-full h-[30%] z-10 rounded-b-[12px]"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(to top, black, transparent)",
+                      pointerEvents: "none",
+                    }}
+                  />
                 </div>
-              ))}
+              </motion.div>
             </div>
-
-            <div className="flex gap-4 mt-2">
-              <button className="flex-1 bg-white text-black px-4 py-2 rounded-lg text-sm font-medium hover:scale-105 transition flex items-center justify-center gap-1">
-                <HiOutlineExternalLink /> View Portfolio
-              </button>
-              <button className="bg-gray-800 px-4 py-2 rounded-lg text-white hover:bg-gray-700 transition flex items-center gap-1">
-                <FiShare2 /> Share
-              </button>
-            </div>
-          </motion.div>
+          </div>
         </motion.div>
       </div>
 

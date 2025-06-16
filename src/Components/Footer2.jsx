@@ -11,16 +11,16 @@ const Footer2 = () => {
         <div>
           <div className="flex items-center gap-2 mb-4">
             <HiArrowLeft className="text-xl" />
-            <span className="text-lg font-semibold">Spectrum UI</span>
+            <span className="text-lg font-semibold">UIvault</span>
           </div>
           <p className="text-sm mb-2">
-            Build by <a href="#" className="text-sky-400">@biswajit,@biswabhusan</a>
+            Built by <a href="#" className="text-sky-400">@biswajit, @biswabhusan</a>
           </p>
           <button className="flex items-center justify-between bg-zinc-800 px-4 py-2 rounded-md mt-2 text-sm hover:bg-zinc-700 transition">
             Share Your Thoughts On
             <FaXTwitter className="ml-2 text-lg" />
           </button>
-          <p className="text-zinc-500 text-xs mt-6">© 2025 Spectrum UI. All rights reserved.</p>
+          <p className="text-zinc-500 text-xs mt-6">© 2025 UIvault. All rights reserved.</p>
         </div>
 
         {/* Middle Sections */}
@@ -53,7 +53,7 @@ const Footer2 = () => {
 
       {/* Big Blurred Text Background */}
       <div className="absolute bottom-0 left-0 text-[15rem] font-bold text-zinc-900 opacity-10 leading-none select-none pointer-events-none">
-        SPECTRUM UI
+        UIVAULT
       </div>
     </footer>
   );
