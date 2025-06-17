@@ -1,36 +1,45 @@
+
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-
-export default function VideoPopupOverlay() {
+export default function VideoPopupOverlay({
+  thumbnail = "https://wallpapercat.com/w/full/1/d/e/2057212-1920x1080-desktop-full-hd-we-bare-bears-the-movie-wallpaper-photo.jpg",
+  videoSrc = "https://www.youtube.com/embed/dQw4w9WgXcQ",
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
+    <div className="relative min-h flex items-center justify-center bg-black overflow-hidden md:p-8">
       {/* Background image with play button */}
       <div
         onClick={() => setIsOpen(true)}
         className="relative w-full max-w-4xl h-[60vh] rounded-2xl overflow-hidden cursor-pointer group"
         style={{
-          backgroundImage: `url('https://wallpapercat.com/w/full/1/d/e/2057212-1920x1080-desktop-full-hd-we-bare-bears-the-movie-wallpaper-photo.jpg')`, // Replace with your image path
+          backgroundImage: `url('${thumbnail}')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        {/* Pulse button */}
+        {/* Pulse Play Button */}
         <motion.div
           className="absolute inset-0 flex items-center justify-center"
           initial={{ scale: 1 }}
-          animate={{ scale: [1, 1.1, 1], boxShadow: [
-            "0 0 0px rgba(0,255,255,0.3)",
-            "0 0 20px rgba(0,255,255,0.8)",
-            "0 0 0px rgba(0,255,255,0.3)"
-          ] }}
+          animate={{
+            scale: [1, 1.1, 1],
+            boxShadow: [
+              "0 0 0px rgba(0,255,255,0.3)",
+              "0 0 20px rgba(0,255,255,0.8)",
+              "0 0 0px rgba(0,255,255,0.3)",
+            ],
+          }}
           transition={{ duration: 2, repeat: Infinity }}
         >
           <motion.button
-            whileHover={{ scale: 1.3, boxShadow: "0 0 25px 8px rgba(0,255,255,0.8)" }}
+            whileHover={{
+              scale: 1.3,
+              boxShadow: "0 0 25px 8px rgba(0,255,255,0.8)",
+            }}
             className="bg-black backdrop-blur-md p-4 rounded-full border border-cyan-300 shadow-lg group-hover:shadow-cyan-500/50 transition-all duration-300"
           >
             <svg
@@ -63,7 +72,7 @@ export default function VideoPopupOverlay() {
             >
               <iframe
                 className="w-full h-full"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                src={videoSrc}
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

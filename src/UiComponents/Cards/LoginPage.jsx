@@ -11,6 +11,7 @@ import { Copy } from "lucide-react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { toast, Toaster } from "sonner";
+import CardProps from "./CardProps";
 
 function LoginPage() {
   const [obsidianTab, setObsidianTab] = useState("preview");
@@ -107,7 +108,9 @@ export default LoginCard;`;
           <div className="mt-3 bg-black">
             <LoginCard />
           </div>
+          
         )}
+        
         {obsidianTab === "code" && (
           <div className="relative bg-[#1a1a1a] mt-5 p-3 rounded-3xl text-base font-mono">
             <SyntaxHighlighter
@@ -133,6 +136,7 @@ export default LoginCard;`;
             </button>
           </div>
         )}
+        <CardProps/>
 
         {/* Repeat this pattern for Gradient, Neon Pulse, Cotton Bloom themes */}
         {/* Gradient Section */}
@@ -221,6 +225,8 @@ export default LoginCard;`;
             </button>
           </div>
         )}
+
+    
 
         {/* Neon Pulse Section */}
         <h2 className="text-xl font-bold mt-4">Theme : Neon Pulse</h2>
@@ -398,6 +404,7 @@ export default LoginCard;`;
             </button>
           </div>
         )}
+        <CardProps/>
       </div>
     </div>
   );

@@ -1,7 +1,15 @@
 import React, { useRef } from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 
-const TiltLoginCard = () => {
+const TiltLoginCard = ({
+  headtext = "Welcome Back",
+  desc = "Login to continue",
+  emailLabel = "Email",
+  emailPlaceholder = "you@example.com",
+  passwordLabel = "Password",
+  passwordPlaceholder = "••••••••",
+  buttonText = "Login",
+}) => {
   const cardRef = useRef(null);
   const mouseX = useMotionValue(0.5);
   const mouseY = useMotionValue(0.5);
@@ -52,27 +60,27 @@ const TiltLoginCard = () => {
 
         {/* Login Content */}
         <div className="relative z-20 p-7">
-          <h2 className="text-3xl font-bold text-white mb-2">Welcome Back</h2>
-          <p className="text-gray-400 mb-6 text-sm">Login to continue</p>
+          <h2 className="text-3xl font-bold text-white mb-2">{headtext}</h2>
+          <p className="text-gray-400 mb-6 text-sm">{desc}</p>
 
           <form>
             <div className="mb-4">
               <label className="block text-sm font-medium text-white mb-1">
-                Email
+                {emailLabel}
               </label>
               <input
                 type="email"
-                placeholder="you@example.com"
+                placeholder={emailPlaceholder}
                 className="w-full px-4 py-2 bg-black border border-[#333] rounded-lg text-white placeholder-gray-500 focus:ring-2 focus:ring-violet-500 outline-none"
               />
             </div>
             <div className="mb-6">
               <label className="block text-sm font-medium text-white mb-1">
-                Password
+                {passwordLabel}
               </label>
               <input
                 type="password"
-                placeholder="••••••••"
+                placeholder={passwordPlaceholder}
                 className="w-full px-4 py-2 bg-black border border-[#333] rounded-lg text-white placeholder-gray-500 focus:ring-2 focus:ring-pink-500 outline-none"
               />
             </div>
@@ -80,7 +88,7 @@ const TiltLoginCard = () => {
               type="submit"
               className="w-full py-3 bg-gray-200 hover:bg-violet-400 text-black font-semibold rounded-lg transition"
             >
-              Login
+              {buttonText}
             </button>
           </form>
         </div>
@@ -89,4 +97,4 @@ const TiltLoginCard = () => {
   );
 };
 
-export default TiltLoginCard;
+export default TiltLoginCard;                                   

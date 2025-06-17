@@ -1,11 +1,13 @@
 import React, { useRef, useState } from "react";
 
-export default function VisionCard() {
+export default function VisionCard({
+  imageURL = "https://mobilesyrup.com/wp-content/uploads/2024/07/vision-pro-header-scaled.jpg",
+  title = "Apple Vision Pro",
+  description = `Biswajit said it's the future. Biswabhusana wore it once and tried
+to code with hand gestures. Now it's banned in class.`,
+}) {
   const containerRef = useRef();
   const [lensStyle, setLensStyle] = useState({ display: "none" });
-
-  const imageURL =
-    "https://mobilesyrup.com/wp-content/uploads/2024/07/vision-pro-header-scaled.jpg";
 
   const handleMouseMove = (e) => {
     const bounds = containerRef.current.getBoundingClientRect();
@@ -42,12 +44,8 @@ export default function VisionCard() {
 
   return (
     <div className="min-h md:p-8 flex items-center justify-center bg-gray-950">
-
-        
       <div className="max-w-sm rounded-[2rem] overflow-hidden bg-gradient-to-br from-purple-600 to-gray-900 p-[2px]">
-       
         <div className="bg-black rounded-[2rem] p-4">
-             
           <div
             className="relative w-full h-64 rounded-2xl overflow-hidden"
             ref={containerRef}
@@ -56,17 +54,14 @@ export default function VisionCard() {
           >
             <img
               src={imageURL}
-              alt="Apple Vision Pro"
+              alt={title}
               className="w-full h-full object-cover rounded-2xl"
             />
             <div style={lensStyle} className="absolute" />
           </div>
           <div className="mt-6 px-2">
-            <h2 className="text-xl font-bold text-white">Apple Vision Pro</h2>
-            <p className="text-gray-300 mt-2">
-              Biswajit said it's the future. Biswabhusana wore it once and tried
-              to code with hand gestures. Now it's banned in class.
-            </p>
+            <h2 className="text-xl font-bold text-white">{title}</h2>
+            <p className="text-gray-300 mt-2">{description}</p>
           </div>
         </div>
       </div>

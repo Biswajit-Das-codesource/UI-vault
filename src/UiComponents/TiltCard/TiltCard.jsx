@@ -1,6 +1,16 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
+import PropTypes from "prop-types";
 
-export default function Tiltcard() {
+export default function TiltCard(props) {
+  const {
+    title,
+    highlight,
+    description,
+    image,
+    tryButtonText,
+    signUpText,
+  } = { ...TiltCard.defaultProps, ...props }; // <-- Default fallback
+
   const cardRef = useRef(null);
 
   const handleMouseMove = (e) => {
@@ -15,7 +25,6 @@ export default function Tiltcard() {
     const rotateX = -(y - centerY) / 15;
     const rotateY = (x - centerX) / 15;
 
-    // Card rotates and scales up slightly toward the user
     card.style.transform = `
       perspective(1000px)
       rotateX(${rotateX}deg)
@@ -26,13 +35,14 @@ export default function Tiltcard() {
 
   const resetRotation = () => {
     const card = cardRef.current;
-    card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
+    card.style.transform =
+      "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
   };
 
   return (
     <div className="min-h md:p-10 bg-black flex items-center justify-center">
       <div
-        className="w-[340px] md:w-[480px]  rounded-2xl p-6 shadow-xl transition-transform duration-300"
+        className="w-[340px] md:w-[480px] rounded-2xl p-6 shadow-xl transition-transform duration-300"
         style={{ perspective: "1000px" }}
         onMouseMove={handleMouseMove}
         onMouseLeave={resetRotation}
@@ -47,17 +57,15 @@ export default function Tiltcard() {
         >
           <h2 className="text-white text-xl md:text-2xl font-bold mb-2">
             <span className="bg-blue-600 text-white px-1 rounded">
-              Experience
+              {highlight}
             </span>{" "}
-            the future of UI depth
+            {title}
           </h2>
-          <p className="text-gray-400 mb-4">
-            Hover to activate immersive 3D effects with CSS perspective magic.
-          </p>
+          <p className="text-gray-400 mb-4">{description}</p>
 
           <img
-            src="https://static.vecteezy.com/system/resources/previews/010/865/555/non_2x/autumn-rural-landscape-farm-fields-and-forest-trees-with-orang-blue-sky-sunset-cartoon-banner-backdrop-farm-field-harvest-scenery-of-natural-countryside-with-sunrise-for-fall-season-background-vector.jpg"
-            alt="Forest"
+            src={image}
+            alt="Tilt visual"
             className="rounded-xl object-cover w-full h-48"
             style={{
               transform: "translateZ(40px)",
@@ -66,9 +74,9 @@ export default function Tiltcard() {
           />
 
           <div className="flex justify-between items-center mt-6">
-            <button className="text-white underline">Try now →</button>
+            <button className="text-white underline">{tryButtonText}</button>
             <button className="bg-white text-black font-semibold px-4 py-1.5 rounded-full hover:bg-gray-200 transition">
-              Sign up
+              {signUpText}
             </button>
           </div>
         </div>
@@ -76,3 +84,23 @@ export default function Tiltcard() {
     </div>
   );
 }
+
+TiltCard.propTypes = {
+  title: PropTypes.string,
+  highlight: PropTypes.string,
+  description: PropTypes.string,
+  image: PropTypes.string,
+  tryButtonText: PropTypes.string,
+  signUpText: PropTypes.string,
+};
+
+TiltCard.defaultProps = {
+  title: "the future of UI depth",
+  highlight: "Experience",
+  description:
+    "Hover to activate immersive 3D effects with CSS perspective magic.",
+  image:
+    "https://static.vecteezy.com/system/resources/previews/010/865/555/non_2x/autumn-rural-landscape-farm-fields-and-forest-trees-with-orang-blue-sky-sunset-cartoon-banner-backdrop-farm-field-harvest-scenery-of-natural-countryside-with-sunrise-for-fall-season-background-vector.jpg",
+  tryButtonText: "Try now →",
+  signUpText: "Sign up",
+};

@@ -4,6 +4,7 @@ import CursorText from "./Cursor";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { toast, Toaster } from "sonner";
+import CursorTextProps from "./CursorTextProps";
 
 function Cursorpage() {
   const [tab, setTab] = useState("preview");
@@ -116,6 +117,7 @@ export default CursorText;`;
             </button>
           </div>
         )}
+        <CursorTextProps/>
       </div>
     </div>
   );

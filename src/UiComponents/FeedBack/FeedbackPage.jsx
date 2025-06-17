@@ -5,6 +5,7 @@ import GradientFeedbackcard from "./GradientFeedbackpage";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { toast, Toaster } from "sonner";
+import FeedbackCardProps from "./FeedbackCardProps";
 
 function FeedbackPage() {
   const [obsidianTab, setObsidianTab] = useState("preview");
@@ -208,6 +209,7 @@ export default GradientFeedbackcard;`;
             </button>
           </div>
         )}
+        <FeedbackCardProps/>
       </div>
     </div>
   );

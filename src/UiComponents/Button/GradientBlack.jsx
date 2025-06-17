@@ -1,6 +1,6 @@
 import React from "react";
 
-function GradientNeonButton() {
+function GradientNeonButton({ btnText = "Black Button" }) {
   return (
     <div className="min-h p-8 flex items-center justify-center bg-gray-100">
       <button
@@ -12,7 +12,7 @@ function GradientNeonButton() {
         before:bg-[conic-gradient(at_top_left,_#00ffab,_#ff00c8)] 
         before:blur-sm before:opacity-60 hover:before:opacity-100"
       >
-        Black Button
+        {btnText}
       </button>
     </div>
   );

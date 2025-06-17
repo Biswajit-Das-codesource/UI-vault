@@ -4,6 +4,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { toast, Toaster } from "sonner";
 import VideoPopupOverlay from "./VideoPopupOverlay";
+import VideoPopupOverlayProps from "./VideoPopupOverlayProps";
 
 function VideoPopPage() {
   const [tab, setTab] = useState("preview");
@@ -110,6 +111,7 @@ function VideoPopPage() {
             </button>
           </div>
         )}
+        <VideoPopupOverlayProps/>
       </div>
     </div>
   );

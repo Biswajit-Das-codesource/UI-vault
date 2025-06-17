@@ -7,6 +7,7 @@ import NeonPulseButton from "./GradientNeonButton";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { toast, Toaster } from "sonner";
+import ButtonProps from "./ButtonProps";
 
 function ButtonPage() {
   const [tab, setTab] = useState("preview");
@@ -155,6 +156,7 @@ export default NeonPulseButton;`;
             </button>
           </div>
         )}
+        <ButtonProps/>
 
         {/* Aurora Pink Button Section */}
         <h2 className="text-xl font-bold mt-6">Theme : Aurora Pink</h2>
@@ -413,6 +415,7 @@ export default NeonPulseButton;`;
             </button>
           </div>
         )}
+        <ButtonProps/>
       </div>
     </div>
   );

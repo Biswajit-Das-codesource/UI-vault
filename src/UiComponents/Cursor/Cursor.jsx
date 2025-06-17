@@ -1,7 +1,14 @@
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-export default function CursorText() {
+export default function CursorText({
+  initialText = "Can You please Hover on me ?",
+  hoverText = "You're Hovering 😎",
+  cursorText = "Hello I am Biswajit 👋",
+  cursorColor = "bg-white",
+  textColor = "text-white",
+  backgroundColor = "bg-black",
+}) {
   const containerRef = useRef(null);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -10,7 +17,7 @@ export default function CursorText() {
   const cursorX = useSpring(mouseX, { stiffness: 300, damping: 30 });
   const cursorY = useSpring(mouseY, { stiffness: 300, damping: 30 });
 
-  const [mainText, setMainText] = useState("Can You please Hover on me ?");
+  const [mainText, setMainText] = useState(initialText);
 
   useEffect(() => {
     const moveCursor = (e) => {
@@ -32,7 +39,7 @@ export default function CursorText() {
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-[60vh] bg-black overflow-hidden flex items-center justify-center cursor-none"
+      className={`relative w-full h-[60vh] ${backgroundColor} overflow-hidden flex items-center justify-center cursor-none`}
     >
       {/* Custom Cursor */}
       <motion.div
@@ -45,7 +52,7 @@ export default function CursorText() {
         }}
       >
         <motion.div
-          className="rounded-full bg-white flex items-center justify-center text-black font-semibold"
+          className={`rounded-full ${cursorColor} flex items-center justify-center text-black font-semibold`}
           animate={{
             width: hovered ? 170 : 12,
             height: hovered ? 170 : 12,
@@ -55,28 +62,27 @@ export default function CursorText() {
           }}
           transition={{ type: "spring", stiffness: 300, damping: 25 }}
         >
-          {/* Show text only when hovered */}
           <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: hovered ? 1 : 0 }}
             transition={{ duration: 0.3 }}
             className="text-sm pointer-events-none"
           >
-            Hello I am Biswajit 👋
+            {cursorText}
           </motion.span>
         </motion.div>
       </motion.div>
 
       {/* Center Text */}
       <div
-        className="text-white text-3xl font-bold z-10 transition-all duration-300"
+        className={`${textColor} text-3xl font-bold z-10 transition-all duration-300`}
         onMouseEnter={() => {
           setHovered(true);
-          setMainText("You're Hovering 😎");
+          setMainText(hoverText);
         }}
         onMouseLeave={() => {
           setHovered(false);
-          setMainText("Hover Me");
+          setMainText(initialText);
         }}
       >
         {mainText}

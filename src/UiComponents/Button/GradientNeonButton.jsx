@@ -1,6 +1,6 @@
 import React from "react";
 
-function PremiumGlowButton() {
+function PremiumGlowButton({ btnText = "Premium Glow" }) {
   return (
     <div className="min-h p-10 flex items-center justify-center bg-gray-950">
       <button
@@ -15,7 +15,7 @@ function PremiumGlowButton() {
         before:transition-all before:duration-500 before:opacity-0
         hover:before:opacity-100"
       >
-        Premium Glow
+        {btnText}
       </button>
     </div>
   );

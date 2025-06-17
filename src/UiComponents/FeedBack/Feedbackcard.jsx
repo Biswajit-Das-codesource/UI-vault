@@ -1,8 +1,15 @@
 import React, { useRef, useState } from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 
-const FeedbackCard = () => {
-  const [satisfaction, setSatisfaction] = useState(50);
+const FeedbackCard = ({
+  title = "Feedback",
+  subtitle = "Help us improve our product",
+  defaultSatisfaction = 50,
+  placeholder = "Tell us what you think...",
+  submitText = "Submit Feedback",
+  onSubmit = (s, f) => alert(`Satisfaction: ${s}\nFeedback: ${f}`),
+}) => {
+  const [satisfaction, setSatisfaction] = useState(defaultSatisfaction);
   const [feedback, setFeedback] = useState("");
 
   const cardRef = useRef(null);
@@ -29,8 +36,7 @@ const FeedbackCard = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Satisfaction: ${satisfaction}\nFeedback: ${feedback}`);
-    // Add submission logic here
+    onSubmit(satisfaction, feedback);
   };
 
   return (
@@ -46,11 +52,7 @@ const FeedbackCard = () => {
         {/* Cursor Glow */}
         <motion.div
           className="absolute w-40 h-40 bg-pink-500/20 blur-2xl rounded-full pointer-events-none z-0"
-          style={{
-            left: glowX,
-            top: glowY,
-            transform: "translate(-50%, -50%)",
-          }}
+          style={{ left: glowX, top: glowY, transform: "translate(-50%, -50%)" }}
         />
 
         {/* Mirror Shine */}
@@ -62,8 +64,8 @@ const FeedbackCard = () => {
 
         {/* Content */}
         <div className="relative z-20 space-y-4">
-          <h2 className="text-xl font-bold">Feedback</h2>
-          <p className="text-gray-400 text-sm">Help us improve our product</p>
+          <h2 className="text-xl font-bold">{title}</h2>
+          <p className="text-gray-400 text-sm">{subtitle}</p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
@@ -86,7 +88,7 @@ const FeedbackCard = () => {
                 rows="4"
                 value={feedback}
                 onChange={(e) => setFeedback(e.target.value)}
-                placeholder="Tell us what you think..."
+                placeholder={placeholder}
                 className="w-full p-3 rounded-xl bg-black text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-white resize-none"
               ></textarea>
             </div>
@@ -95,7 +97,7 @@ const FeedbackCard = () => {
               type="submit"
               className="w-full py-3 bg-white text-black rounded-xl font-medium hover:bg-gray-200 transition"
             >
-              Submit Feedback
+              {submitText}
             </button>
           </form>
         </div>

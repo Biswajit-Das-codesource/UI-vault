@@ -4,6 +4,7 @@ import Tiltcard from "./TiltCard";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { toast, Toaster } from "sonner";
+import TiltCardProps from "./TiltCardProps";
 
 function TiltCardpage() {
   const [tab, setTab] = useState("preview");
@@ -116,6 +117,7 @@ export default Tiltcard;`;
             </button>
           </div>
         )}
+        <TiltCardProps/>
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { toast, Toaster } from "sonner";
 import VisionCard from "./Lenscard";
+import VisionCardProps from "./VisionCardProps";
 
 function LensPage() {
   const [tab, setTab] = useState("preview");
@@ -116,6 +117,7 @@ export default Lens;`;
             </button>
           </div>
         )}
+        <VisionCardProps/>
       </div>
     </div>
   );
