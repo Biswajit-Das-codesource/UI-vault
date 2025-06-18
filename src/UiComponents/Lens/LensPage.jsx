@@ -8,6 +8,7 @@ import VisionCard from "./Lenscard";
 import VisionCardProps from "./VisionCardProps";
 
 function LensPage() {
+ 
   const [tab, setTab] = useState("preview");
   const [copied, setCopied] = useState("");
 

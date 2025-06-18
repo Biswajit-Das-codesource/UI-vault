@@ -10,8 +10,9 @@ import Herosection from "./Components/Herosection";
 import Navbar from "./Components/Navbar";
 import Quality from "./Components/Quality";
 // import Templatehero from "./Components/Templatehero";
-
+import { useLenis } from "./Components/useLens";
 function App() {
+  useLenis()
   return (
     <>
       <Navbar />
