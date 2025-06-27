@@ -4,10 +4,7 @@ import { motion } from "framer-motion";
 const TOTAL_LINES = 14;
 const lines = Array.from({ length: TOTAL_LINES });
 
-const Beamsbackground = ({ text }) => {
-  const defaultHeading = "What's cooler than Beams?";
-  const defaultSubheading = "Exploding beams.";
-
+const Beamsbackground = ({ children }) => {
   return (
     <div
       className="relative w-full h-screen overflow-hidden bg-black text-white flex items-center justify-center"
@@ -38,17 +35,17 @@ const Beamsbackground = ({ text }) => {
         );
       })}
 
-      {/* Centered Text */}
-      <div className="z-10 text-center px-4">
-        {text ? (
-          <h1 className="text-4xl md:text-6xl font-bold">{text}</h1>
+      {/* Centered Content */}
+      <div className="relative z-10 text-center px-4">
+        {children ? (
+          children
         ) : (
           <>
             <h1 className="text-3xl md:text-5xl font-bold mb-2">
-              {defaultHeading}
+              What's cooler than Beams?
             </h1>
             <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 text-transparent bg-clip-text">
-              {defaultSubheading}
+              Exploding beams.
             </h2>
           </>
         )}
@@ -58,4 +55,3 @@ const Beamsbackground = ({ text }) => {
 };
 
 export default Beamsbackground;
-

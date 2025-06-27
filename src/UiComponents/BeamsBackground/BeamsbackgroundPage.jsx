@@ -93,7 +93,7 @@ export default Beamsbackground;`;
         </div>
         {tab === "preview" && (
           <div className="mt-3 bg-black">
-            <Beamsbackground />
+            <Beamsbackground/> 
           </div>
         )}
         {tab === "code" && (
