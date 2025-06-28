@@ -59,7 +59,7 @@ const Sidebar = () => {
     "Profilecard",
     // "Rating",
     "Shinytext",
-    // "SocialCard",
+    "SocialCard",
     "Tiltcard",
     "Testimonials",
     // "TweetCard",
