@@ -29,7 +29,7 @@ export default Beamsbackground;`;
 
   return (
     <div>
-      <Toaster richColors position="top-center" />
+      <Toaster position="top-center" />
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold">Beams Background</h1>
         <p className="text-gray-400 mt-1">

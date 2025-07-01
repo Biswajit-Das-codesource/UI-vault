@@ -41,7 +41,7 @@ const Sidebar = () => {
     "BeamsBackground",
     "CosmicRayBurst",
     // "Button",
-    "Card",
+    // "Card",
     "Carousel",
     "CursorAura",
     // "Feedback",
@@ -53,13 +53,13 @@ const Sidebar = () => {
     "Marquee",
     "Neonlamb",
     "OrbitingLogo",
-    "Paymentcard",
+    // "Paymentcard",
     "PointerGrid",
-    "Pricing",
-    "Profilecard",
+    // "Pricing",
+    // "Profilecard",
     // "Rating",
-    "Shinytext",
-    "SocialCard",
+    // "Shinytext",
+    // "SocialCard",
     "Tiltcard",
     "Testimonials",
     // "TweetCard",
@@ -92,9 +92,9 @@ const Sidebar = () => {
 
       {open.installation && (
         <div className="ml-3 mb-3 space-y-1 border-l border-gray-700 pl-3">
-          <NavItem name="Installation" to="/getting-started" isChild />
-          <NavItem name="Usage" to="/usage" isChild />
-          <NavItem name="Registry" to="/registry" isChild />
+          <NavItem name="React.js Setup" to="/components/docs/install-react" isChild />
+          <NavItem name="Tailwind Setup" to="/components/docs/install-tailwindcss" isChild />
+          <NavItem name="UI vault Setup" to="/components/docs/install-uivault" isChild />
           <NavItem name="Our Story" to="/our-story" isChild />
         </div>
       )}

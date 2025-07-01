@@ -37,6 +37,9 @@ import NeonLambpage from "./UiComponents/Neonlamp/Neonlamppage.jsx";
 import PointerGridBackgroundPage from "./UiComponents/PointerGridBackground/PointerGridPage.jsx";
 import GridBackgroundPage from "./UiComponents/Gridbackground/Gridbackgroundpage.jsx";
 import VideoPopPage from "./UiComponents/VideoOverlay/VideoPopPage.jsx";
+import ReactInstall from "./Components/ReactInstall.jsx";
+import TailwindInstall from "./Components/TailwindInstall.jsx";
+import UIVaultInitGuide from "./Components/uivaultinstall.jsx";
 const browserRouter = new createBrowserRouter([
   {
     path: "/",
@@ -46,6 +49,22 @@ const browserRouter = new createBrowserRouter([
     path: "/components",
     element: <ComponentMainpage />,
     children: [
+      {
+        path:"/components/installation",
+        element:<ReactInstall/>
+      },
+      {
+        path:"/components/docs/install-react",
+        element:<ReactInstall/>
+      },
+       {
+        path:"/components/docs/install-tailwindcss",
+        element:<TailwindInstall/>
+      },
+      {
+        path:"/components/docs/install-uivault",
+        element:<UIVaultInitGuide/>
+      },
       {
         path: "/components/alerts",
         element: <AlertPage />,
