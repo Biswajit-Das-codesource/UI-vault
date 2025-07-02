@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -6,7 +7,7 @@ const lines = Array.from({ length: TOTAL_LINES });
 
 const getMotionProps = (i) => {
   const baseAngle = (i / TOTAL_LINES) * 2 * Math.PI;
-  const jitter = (Math.random() - 0.5) * 0.5; // small angle randomness
+  const jitter = (Math.random() - 0.5) * 0.5;
   const angle = baseAngle + jitter;
 
   const baseX = Math.cos(angle) * 600;
@@ -27,7 +28,7 @@ const getMotionProps = (i) => {
   return {
     backgroundColor: colors[i % colors.length],
     blur: Math.random() > 0.5 ? "" : "blur-md",
-    size: Math.random() * 0.5 + 0.5, // vary thickness
+    size: Math.random() * 0.5 + 0.5,
     animate: {
       x: [0, baseX * 0.3 + waveX, baseX * 0.6, baseX + waveX, baseX, 0],
       y: [0, baseY * 0.3 + waveY, baseY * 0.6, baseY + waveY, baseY, 0],
@@ -44,21 +45,52 @@ const getMotionProps = (i) => {
   };
 };
 
-export default function Gradientlinebackground() {
+export default function Gradientlinebackground({ children }) {
+  // Default fallback content
+  const defaultChildren = (
+    <>
+      <h1 className="text-6xl font-bold text-white mb-4 leading-[1.1]">
+        Ui <br /> Vault
+      </h1>
+      <p className="text-gray-300 max-w-xl mx-auto">
+        Get the best advice from our experts, including artists, painters,
+        marathoners, and RDX — totally free.
+      </p>
+    </>
+  );
+
+  // Enhance user children if provided, add default classes if missing
+  const renderChildren = () => {
+    if (!children) return defaultChildren;
+
+    return React.Children.map(children, (child) => {
+      if (!React.isValidElement(child)) return child;
+
+      const isHeading = child.type === "h1" || child.type === "h2";
+      const isParagraph = child.type === "p";
+
+      if (isHeading && !child.props.className) {
+        return React.cloneElement(child, {
+          className: "text-6xl font-bold text-white mb-4 leading-[1.1]",
+        });
+      }
+
+      if (isParagraph && !child.props.className) {
+        return React.cloneElement(child, {
+          className: "text-gray-300 max-w-xl mx-auto",
+        });
+      }
+
+      return child;
+    });
+  };
+
   return (
     <div className="relative h-screen w-full bg-black overflow-hidden flex items-center justify-center">
-      {/* Centered Text */}
-      <div className="z-10 text-center">
-        <h1 className="text-6xl font-bold text-white mb-4 leading-[1.1]">
-          Ui <br/>Vault
-        </h1>
-        <p className="text-gray-300 max-w-xl mx-auto">
-          Get the best advice from our experts, including artists, painters,
-          marathoners, and RDX — totally free.
-        </p>
-      </div>
+      {/* Foreground Text */}
+      <div className="z-10 text-center">{renderChildren()}</div>
 
-      {/* More Watery Bursting Lines */}
+      {/* Background Animations */}
       {lines.map((_, i) => {
         const { backgroundColor, animate, blur, size } = getMotionProps(i);
         return (

@@ -5,6 +5,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { toast, Toaster } from "sonner";
 import Gradientlinebackground from "./Gradientlinebackground";
+import GradientlineBackgroundProps from "./GradientlinebackgroundPropsTable";
 
 function Gradientlinepage() {
   const [tab, setTab] = useState("preview");
@@ -90,7 +91,8 @@ export default GradientLineBackground;`;
         </div>
         {tab === "preview" && (
           <div className="mt-3 bg-black">
-            <Gradientlinebackground />
+            <Gradientlinebackground/>
+            <GradientlineBackgroundProps/>
           </div>
         )}
         {tab === "code" && (

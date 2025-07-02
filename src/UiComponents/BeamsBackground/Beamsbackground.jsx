@@ -1,10 +1,32 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { motion } from "framer-motion";
 
 const TOTAL_LINES = 14;
 const lines = Array.from({ length: TOTAL_LINES });
 
+const defaultH2Class =
+  "text-3xl md:text-5xl font-bold bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 text-transparent bg-clip-text";
+
 const Beamsbackground = ({ children }) => {
+  const enhancedChildren = React.Children.map(children, (child) => {
+    // Only modify if it's a valid React element and a heading (h1/h2)
+    if (React.isValidElement(child) && typeof child.type === "string") {
+      const tag = child.type.toLowerCase();
+      if ((tag === "h1" || tag === "h2") && !child.props.className) {
+        const defaultClass =
+          tag === "h1"
+            ? "text-3xl md:text-5xl font-bold mb-2"
+            : defaultH2Class;
+
+        return React.cloneElement(child, {
+          className: defaultClass,
+        });
+      }
+    }
+    return child;
+  });
+
   return (
     <div
       className="relative w-full h-screen overflow-hidden bg-black text-white flex items-center justify-center"
@@ -37,16 +59,14 @@ const Beamsbackground = ({ children }) => {
 
       {/* Centered Content */}
       <div className="relative z-10 text-center px-4">
-        {children ? (
-          children
+        {React.Children.count(children) > 0 ? (
+          enhancedChildren
         ) : (
           <>
             <h1 className="text-3xl md:text-5xl font-bold mb-2">
               What's cooler than Beams?
             </h1>
-            <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 text-transparent bg-clip-text">
-              Exploding beams.
-            </h2>
+            <h2 className={defaultH2Class}>Exploding beams.</h2>
           </>
         )}
       </div>

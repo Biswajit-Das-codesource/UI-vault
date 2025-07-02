@@ -4,6 +4,7 @@ import Beamsbackground from "./Beamsbackground";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { toast, Toaster } from "sonner";
+import BeamsBackgroundProps from "./BeamsBackgroundProps";
 
 function BeamsbackgroundPage() {
   const [tab, setTab] = useState("preview");
@@ -93,7 +94,8 @@ export default Beamsbackground;`;
         </div>
         {tab === "preview" && (
           <div className="mt-3 bg-black">
-            <Beamsbackground/> 
+            <Beamsbackground/>
+            <BeamsBackgroundProps/> 
           </div>
         )}
         {tab === "code" && (
