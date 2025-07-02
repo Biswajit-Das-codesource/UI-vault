@@ -77,7 +77,7 @@ const Herosection = () => {
           </div>
 
           <div className="mt-6 flex flex-col sm:flex-row gap-4 items-center sm:items-start justify-center sm:justify-start">
-            <Link to="/components/alerts" className="w-full sm:w-auto">
+            <Link to="/components/Lens" className="w-full sm:w-auto">
               <button className="relative w-full sm:w-auto bg-white bg-gradient-to-r from-pink-400 to-purple-500 text-black px-3 py-3 rounded-xl text-sm font-semibold transition transform hover:scale-105 before:absolute before:inset-0 before:-z-10 before:rounded-xl before:blur-xl before:opacity-100 before:transition-all before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 cursor-pointer flex items-center justify-center gap-2">
                 Browse Components <FiArrowRight />
               </button>

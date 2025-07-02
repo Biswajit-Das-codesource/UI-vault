@@ -3,6 +3,7 @@ import { Outlet, useLocation } from "react-router";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
+import UiVaultBetaBanner from "../assets/UIvaultbeta";
 
 const ComponentMainpage = () => {
   const location = useLocation();
@@ -34,6 +35,7 @@ const ComponentMainpage = () => {
   return (
     <div className="bg-black text-white h-screen flex flex-col">
       {/* Navbar */}
+      <UiVaultBetaBanner/>
       <Navbar />
 
       {/* Content wrapper */}

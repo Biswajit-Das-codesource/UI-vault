@@ -1,4 +1,5 @@
 import "./App.css";
+import UiVaultBetaBanner from "./assets/UIvaultbeta";
 import DashboardUI from "./Components/Dashboard";
 import WelcomePage from "./Components/Dashboard2";
 import Feature from "./Components/Feature";
@@ -15,9 +16,12 @@ function App() {
   useLenis()
   return (
     <>
+
+      <UiVaultBetaBanner/>
       <Navbar />
       <Herosection />
       <Feature/>
+
       <Quality/>
       <Featuretext/>
       {/* <Templatehero/> */}
