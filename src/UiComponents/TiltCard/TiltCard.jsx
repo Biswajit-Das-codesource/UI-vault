@@ -1,15 +1,14 @@
 import React, { useRef } from "react";
-import PropTypes from "prop-types";
 
 export default function TiltCard(props) {
   const {
-    title,
-    highlight,
-    description,
-    image,
-    tryButtonText,
-    signUpText,
-  } = { ...TiltCard.defaultProps, ...props }; // <-- Default fallback
+    title = "the future of UI depth",
+    highlight = "Experience",
+    description = "Hover to activate immersive 3D effects with CSS perspective magic.",
+    image = "https://static.vecteezy.com/system/resources/previews/010/865/555/non_2x/autumn-rural-landscape-farm-fields-and-forest-trees-with-orang-blue-sky-sunset-cartoon-banner-backdrop-farm-field-harvest-scenery-of-natural-countryside-with-sunrise-for-fall-season-background-vector.jpg",
+    tryButtonText = "Try now →",
+    signUpText = "Sign up",
+  } = props;
 
   const cardRef = useRef(null);
 
@@ -84,23 +83,3 @@ export default function TiltCard(props) {
     </div>
   );
 }
-
-TiltCard.propTypes = {
-  title: PropTypes.string,
-  highlight: PropTypes.string,
-  description: PropTypes.string,
-  image: PropTypes.string,
-  tryButtonText: PropTypes.string,
-  signUpText: PropTypes.string,
-};
-
-TiltCard.defaultProps = {
-  title: "the future of UI depth",
-  highlight: "Experience",
-  description:
-    "Hover to activate immersive 3D effects with CSS perspective magic.",
-  image:
-    "https://static.vecteezy.com/system/resources/previews/010/865/555/non_2x/autumn-rural-landscape-farm-fields-and-forest-trees-with-orang-blue-sky-sunset-cartoon-banner-backdrop-farm-field-harvest-scenery-of-natural-countryside-with-sunrise-for-fall-season-background-vector.jpg",
-  tryButtonText: "Try now →",
-  signUpText: "Sign up",
-};
