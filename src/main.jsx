@@ -21,7 +21,7 @@ import CrouselPage from "./UiComponents/Crousels/CrouselPage.jsx";
 import SocialCardPage from "./UiComponents/SocialCards/SocialCardPage.jsx";
 import TestimonialPage from "./UiComponents/AnimatedTestimonials/TestimonialPage.jsx";
 import Bentogridpage from "./UiComponents/Bentogrid/Bentogridpage.jsx";
-import BackgroundPage from "./UiComponents/Backgrounds/BackgroundPage.jsx";
+// import BackgroundPage from "./UiComponents/Backgrounds/BackgroundPage.jsx";
 import InfiniteScrollpage from "./UiComponents/InfiniteScroll/InfiniteScrollpage.jsx";
 import GlobePage from "./UiComponents/Globe/GlobePage.jsx";
 import LensPage from "./UiComponents/Lens/LensPage.jsx";
@@ -127,10 +127,7 @@ const browserRouter = new createBrowserRouter([
         path: "/components/bentogrid",
         element: <Bentogridpage />,
       },
-      {
-        path: "/components/backgrounds",
-        element: <BackgroundPage />,
-      },
+ 
       {
         path: "/components/marquee",
         element: <InfiniteScrollpage />,
@@ -188,10 +185,7 @@ const browserRouter = new createBrowserRouter([
         path:"/components/bentogrid",
         element:<Bentogridpage/>
        },
-      {
-        path:"/components/backgrounds",
-        element:<BackgroundPage/>
-      },
+      
       {
         path:"/components/orbitinglogo",
         element:<OrbitLogoPage/>

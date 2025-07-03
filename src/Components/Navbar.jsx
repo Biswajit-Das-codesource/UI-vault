@@ -23,7 +23,6 @@ function Navbar() {
     "Installation",
     "Documentation",
     "Components",
-    "Backgrounds",
   ];
 
   const specialLinks = [
@@ -44,7 +43,6 @@ function Navbar() {
      "Alerts",
     "Barchart",
     "Bentogrid",
-    "Backgrounds",
     "Button",
     "Card",
     "Carousel",
