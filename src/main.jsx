@@ -44,6 +44,7 @@ import MeteorBgPage from "./UiComponents/Meteor_Background/MeteorBgPage.jsx";
 import SilkBgPage from "./UiComponents/Silk_Background/SilkBgPage.jsx";
 import Documentation from './Components/Documentation';
 import FeedbackWidget from "./Components/FeedWidget.jsx";
+import PinContainerPage from "./UiComponents/3dPinContainer/PinContainerPage.jsx";
 const browserRouter = new createBrowserRouter([
   {
     path: "/",
@@ -214,6 +215,10 @@ const browserRouter = new createBrowserRouter([
       {
         path: "/components/Silk",
         element: <SilkBgPage />,
+      },
+      {
+        path: "/components/3dPin",
+        element: <PinContainerPage/>,
       },
     ],
   },

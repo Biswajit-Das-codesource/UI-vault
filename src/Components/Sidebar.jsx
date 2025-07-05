@@ -72,7 +72,8 @@ const Sidebar = () => {
     "Imageeffect",
     "Marquee",
     "Meteors",
-    "Silk"
+    "Silk",
+    "3dPin"
   ];
 
   const normalComponents = allComponents.filter(

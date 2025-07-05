@@ -29,6 +29,7 @@ function Navbar() {
     "Marquee",
     "Meteors",
     "Silk",
+    "3dPin",
   ];
   const otherLinks = [
     // "Alerts",
