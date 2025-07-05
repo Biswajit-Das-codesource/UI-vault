@@ -84,7 +84,7 @@ const Herosection = () => {
             </Link>
 
             <button className="w-full sm:w-auto bg-gray-950 border border-white px-4 py-3 rounded-xl text-sm font-semibold hover:bg-black transition cursor-pointer flex items-center justify-center gap-2">
-              Go to Projects <FiArrowRight />
+              Go to Projects<FiArrowRight />
             </button>
           </div>
 
