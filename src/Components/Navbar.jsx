@@ -38,9 +38,11 @@ function Navbar() {
     "Marquee",
     "PointerGrid",
     "Tiltcard",
+    "Meteors",
+    "Silk"
   ];
   const otherLinks = [
-     "Alerts",
+    "Alerts",
     "Barchart",
     "Bentogrid",
     "Button",

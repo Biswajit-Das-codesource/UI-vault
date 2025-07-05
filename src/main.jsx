@@ -40,6 +40,8 @@ import VideoPopPage from "./UiComponents/VideoOverlay/VideoPopPage.jsx";
 import ReactInstall from "./Components/ReactInstall.jsx";
 import TailwindInstall from "./Components/TailwindInstall.jsx";
 import UIVaultInitGuide from "./Components/uivaultinstall.jsx";
+import MeteorBgPage from "./UiComponents/Meteor_Background/MeteorBgPage.jsx";
+import SilkBgPage from "./UiComponents/Silk_Background/SilkBgPage.jsx";
 const browserRouter = new createBrowserRouter([
   {
     path: "/",
@@ -193,6 +195,14 @@ const browserRouter = new createBrowserRouter([
       {
         path:"/components/iframepop",
         element:<VideoPopPage/>
+      },
+      {
+        path:"/components/Meteors",
+        element:<MeteorBgPage/>
+      },
+      {
+        path:"/components/Silk",
+        element:<SilkBgPage/>
       }
 
     ],

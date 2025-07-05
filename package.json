@@ -13,7 +13,7 @@
     "@monaco-editor/react": "^4.7.0",
     "@react-spring/web": "^10.0.1",
     "@react-three/drei": "^10.2.0",
-    "@react-three/fiber": "^9.1.2",
+    "@react-three/fiber": "^9.2.0",
     "@studio-freight/lenis": "^1.0.42",
     "@tailwindcss/vite": "^4.1.8",
     "chart.js": "^4.4.9",
