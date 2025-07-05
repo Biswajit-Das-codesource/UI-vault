@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
     "@react-spring/web": "^10.0.1",
     "@react-three/drei": "^10.2.0",
     "@react-three/fiber": "^9.1.2",
@@ -18,7 +19,9 @@
     "chart.js": "^4.4.9",
     "d3-geo": "^3.1.1",
     "framer-motion": "^12.16.0",
+    "jetbrains-mono": "^1.0.6",
     "lucide-react": "^0.514.0",
+    "monaco-themes": "^0.4.5",
     "prismjs": "^1.30.0",
     "react": "^19.1.0",
     "react-chartjs-2": "^5.3.0",

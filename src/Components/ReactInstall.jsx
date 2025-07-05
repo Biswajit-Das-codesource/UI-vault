@@ -1,11 +1,13 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom"; // ← if using React Router
+import { Link, useNavigate } from "react-router-dom";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const ReactInstall = () => {
-  const navigate = useNavigate(); // React Router navigation
+  const navigate = useNavigate();
 
   const goToTailwindSetup = () => {
-    navigate("/tailwind-setup"); // Replace with your actual route
+    navigate("/tailwind-setup");
   };
 
   return (
@@ -18,60 +20,103 @@ const ReactInstall = () => {
         </p>
 
         {/* Vertical Line Starts Here */}
-        <div className="border-l border-blue-200 pl-6">
+        <div className="border-l border-blue-200 pl-6 space-y-8">
 
           {/* Create Project */}
-          <div className="flex items-center justify-between bg-[#1a1a1a] border border-gray-700 text-green-400 px-5 py-4 text-sm rounded-2xl mt-4">
-            <code className="geist-mono text-sm overflow-x-auto">
-              <span className="text-cyan-400">npm</span> create vite@latest
-            </code>
+          <div>
+            <h2 className="text-xl font-semibold mb-2">Create a project</h2>
+            <SyntaxHighlighter
+              language="bash"
+              style={dracula}
+              customStyle={{
+                fontFamily: "JetBrains Mono, monospace",
+                fontSize: "15px",
+                background: "#1a1a1a",
+                padding: "1rem",
+                borderRadius: "0.75rem",
+                lineHeight: "1.7",
+              }}
+              className="text-sm"
+            >
+              npm create vite@latest
+            </SyntaxHighlighter>
           </div>
 
           {/* Prompts */}
-          <section className="mb-8">
-            <h2 className="text-xl font-semibold mt-4">
+          <div>
+            <h2 className="text-xl font-semibold">
               On installation, you'll see the following prompts:
             </h2>
-            <pre className="bg-[#1e1e1e] text-cyan-300 p-4 rounded-md overflow-auto text-sm mt-4">
-              <code className="geist-mono text-sm overflow-x-auto">
+            <SyntaxHighlighter
+              language="bash"
+              style={dracula}
+              customStyle={{
+                fontFamily: "JetBrains Mono, monospace",
+                fontSize: "15px",
+                background: "#1a1a1a",
+                padding: "1rem",
+                borderRadius: "0.75rem",
+                lineHeight: "1.7",
+              }}
+              className="text-sm"
+            >
 {`✔ Project name: » my-app
 ✔ Select a framework: » React
 ✔ Select a variant: » JavaScript / TypeScript`}
-              </code>
-            </pre>
-          </section>
+            </SyntaxHighlighter>
+          </div>
 
-          {/* Install dependencies */}
-          <section className="mb-8">
+          {/* Install Dependencies */}
+          <div>
             <h2 className="text-xl font-semibold mb-2">Install dependencies</h2>
-            <pre className="bg-[#1e1e1e] text-yellow-300 p-4 rounded-md overflow-auto">
-              <code className="geist-mono text-sm overflow-x-auto">
+            <SyntaxHighlighter
+              language="bash"
+              style={dracula}
+              customStyle={{
+                fontFamily: "JetBrains Mono, monospace",
+                fontSize: "15px",
+                background: "#1a1a1a",
+                padding: "1rem",
+                borderRadius: "0.75rem",
+                lineHeight: "1.7",
+              }}
+              className="text-sm"
+            >
 {`cd my-app
 npm install`}
-              </code>
-            </pre>
-          </section>
+            </SyntaxHighlighter>
+          </div>
 
-          {/* Start the app */}
-          <section>
+          {/* Start App */}
+          <div>
             <h2 className="text-xl font-semibold mb-2">Start the app</h2>
-            <pre className="bg-[#1e1e1e] text-green-400 p-4 rounded-md overflow-auto">
-              <code className="geist-mono text-sm overflow-x-auto">
-                npm run dev
-              </code>
-            </pre>
-          </section>
+            <SyntaxHighlighter
+              language="bash"
+              style={dracula}
+              customStyle={{
+                fontFamily: "JetBrains Mono, monospace",
+                fontSize: "15px",
+                background: "#1a1a1a",
+                padding: "1rem",
+                borderRadius: "0.75rem",
+                lineHeight: "1.7",
+              }}
+              className="text-sm"
+            >
+              npm run dev
+            </SyntaxHighlighter>
+          </div>
         </div>
 
         {/* 🔹 Next Button */}
         <div className="flex justify-end mt-12">
-            <Link to="/components/docs/install-tailwindcss">
-          <button
-            onClick={goToTailwindSetup}
-            className="bg-gradient-to-r bg-black border border-white cursor-pointer text-white font-semibold px-6 py-4 rounded-xl shadow-md hover:opacity-90 transition-all"
-          >
-            Next: Setup Tailwind CSS →
-          </button>
+          <Link to="/components/docs/install-tailwindcss">
+            <button
+              onClick={goToTailwindSetup}
+              className="bg-gradient-to-r bg-black border border-white cursor-pointer text-white font-semibold px-6 py-4 rounded-xl shadow-md hover:opacity-90 transition-all"
+            >
+              Next: Setup Tailwind CSS →
+            </button>
           </Link>
         </div>
       </div>
