@@ -13,9 +13,28 @@ const Footer2 = () => {
             <HiArrowLeft className="text-xl" />
             <span className="text-lg font-semibold">UIvault</span>
           </div>
-          <p className="text-sm mb-2">
-            Built by <a href="#" className="text-sky-400">@biswajit, @biswabhusan</a>
-          </p>
+         <p className="text-sm mb-2">
+  Built by{" "}
+  <a
+    href="https://www.linkedin.com/in/biswajitdas-/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-sky-400 hover:underline"
+  >
+    @biswajit
+  </a>
+  {" "}
+  &{" "}
+  <a
+    href="https://www.linkedin.com/in/biswabhusan-sahoo-22b704292/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-sky-400 hover:underline"
+  >
+    @biswabhusan
+  </a>
+</p>
+
           <button className="flex items-center justify-between bg-zinc-800 px-4 py-2 rounded-md mt-2 text-sm hover:bg-zinc-700 transition">
             Share Your Thoughts On
             <FaXTwitter className="ml-2 text-lg" />

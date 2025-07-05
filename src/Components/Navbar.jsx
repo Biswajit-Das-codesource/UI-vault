@@ -19,51 +19,47 @@ function Navbar() {
     document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
   }, [isMenuOpen]);
 
-  const coreLinks = [
-    "Installation",
-    "Documentation",
-    "Components",
-  ];
+  const coreLinks = ["Installation", "Documentation"];
 
   const specialLinks = [
     "Lens",
-    "Bentogrid",
-    "BeamsBackground",
-    "CosmicRayBurst",
-    "CursorAura",
     "Globe",
     "GridBackground",
     "Imageeffect",
-    "IframePop",
     "Marquee",
-    "PointerGrid",
-    "Tiltcard",
     "Meteors",
-    "Silk"
+    "Silk",
   ];
   const otherLinks = [
-    "Alerts",
-    "Barchart",
+    // "Alerts",
+    // "Barchart",
     "Bentogrid",
-    "Button",
-    "Card",
+    // "Backgrounds",
+    "BeamsBackground",
+    "CosmicRayBurst",
+    // "Button",
+    // "Card",
     "Carousel",
-    "Documentation",
-    "Feedback",
+    "CursorAura",
+    // "Feedback",
     "Globe",
     "Hovercard",
+    "IframePop",
     "Imageeffect",
     "Lens",
     "Marquee",
     "Neonlamb",
-    "Paymentcard",
-    "Pricing",
-    "Profilecard",
-    "Rating",
-    "Shinytext",
-    "SocialCard",
+    "OrbitingLogo",
+    // "Paymentcard",
+    "PointerGrid",
+    // "Pricing",
+    // "Profilecard",
+    // "Rating",
+    // "Shinytext",
+    // "SocialCard",
+    "Tiltcard",
     "Testimonials",
-    "TweetCard",
+    // "TweetCard",
   ];
 
   const renderLink = (link) => (
@@ -107,21 +103,21 @@ function Navbar() {
             />
             <div className="flex items-center gap-4 ml-2 text-white text-xl">
               <a
-                href="https://x.com/uivaultdev"
+                href="https://x.com/Uivault?t=ycYRDQQ3srMZN30gnLT7mQ&s=09"
                 target="_blank"
                 rel="noreferrer"
               >
                 <FaXTwitter className="hover:text-gray-400 transition" />
               </a>
               <a
-                href="https://instagram.com/uivaultdev"
+                href="https://www.instagram.com/_uivault._?utm_source=qr&igsh=cXM1aDhobXZrZmwy"
                 target="_blank"
                 rel="noreferrer"
               >
                 <FaInstagram className="hover:text-pink-400 transition" />
               </a>
               <a
-                href="https://github.com/uivaultdev/ui-vault"
+                href="https://github.com/Biswajit-Das-codesource/UI-vault"
                 target="_blank"
                 rel="noreferrer"
               >

@@ -97,7 +97,7 @@ const Sidebar = () => {
           <NavItem name="React.js Setup" to="/components/docs/install-react" isChild />
           <NavItem name="Tailwind Setup" to="/components/docs/install-tailwindcss" isChild />
           <NavItem name="UI vault Setup" to="/components/docs/install-uivault" isChild />
-          <NavItem name="Our Story" to="/our-story" isChild />
+          {/* <NavItem name="Why UIvault ?" to="/components/documentation" isChild /> */}
         </div>
       )}
 

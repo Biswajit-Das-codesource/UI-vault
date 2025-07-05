@@ -3,17 +3,17 @@ import { HiOutlineExternalLink } from "react-icons/hi";
 import Tiltcard from "../UiComponents/TiltCard/TiltCard";
 import Herotilt from "./HeroTilt";
 import GlobeScene from "../UiComponents/Globe/Globecard";
-import Gridlinehero from "./Gridlinehero";
+import beamsbackground from "./Gridlinehero";
 import Marqueehero from "./Marqueehero";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const FeatureComponents = [Herotilt, GlobeScene, Gridlinehero, Marqueehero];
+const FeatureComponents = [Herotilt, GlobeScene, beamsbackground, Marqueehero];
 const ComponentRoutes = [
   "/components/tiltcard",
   "/components/globe",
-  "/components/gridline",
+  "/components/beamsbackground",
   "/components/marquee",
 ];
 

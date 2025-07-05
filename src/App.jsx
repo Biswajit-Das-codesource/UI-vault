@@ -4,6 +4,7 @@ import DashboardUI from "./Components/Dashboard";
 import WelcomePage from "./Components/Dashboard2";
 import Feature from "./Components/Feature";
 import Featuretext from "./Components/Featuretext";
+import FeedbackWidget from "./Components/FeedWidget";
 import Footer from "./Components/Footer";
 import Footer2 from "./Components/Footer2";
 
@@ -21,7 +22,6 @@ function App() {
       <Navbar />
       <Herosection />
       <Feature/>
-
       <Quality/>
       <Featuretext/>
       {/* <Templatehero/> */}

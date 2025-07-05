@@ -42,6 +42,8 @@ import TailwindInstall from "./Components/TailwindInstall.jsx";
 import UIVaultInitGuide from "./Components/uivaultinstall.jsx";
 import MeteorBgPage from "./UiComponents/Meteor_Background/MeteorBgPage.jsx";
 import SilkBgPage from "./UiComponents/Silk_Background/SilkBgPage.jsx";
+import Documentation from './Components/Documentation';
+import FeedbackWidget from "./Components/FeedWidget.jsx";
 const browserRouter = new createBrowserRouter([
   {
     path: "/",
@@ -52,20 +54,20 @@ const browserRouter = new createBrowserRouter([
     element: <ComponentMainpage />,
     children: [
       {
-        path:"/components/installation",
-        element:<ReactInstall/>
+        path: "/components/installation",
+        element: <ReactInstall />,
       },
       {
-        path:"/components/docs/install-react",
-        element:<ReactInstall/>
-      },
-       {
-        path:"/components/docs/install-tailwindcss",
-        element:<TailwindInstall/>
+        path: "/components/docs/install-react",
+        element: <ReactInstall />,
       },
       {
-        path:"/components/docs/install-uivault",
-        element:<UIVaultInitGuide/>
+        path: "/components/docs/install-tailwindcss",
+        element: <TailwindInstall />,
+      },
+      {
+        path: "/components/docs/install-uivault",
+        element: <UIVaultInitGuide />,
       },
       {
         path: "/components/alerts",
@@ -129,7 +131,7 @@ const browserRouter = new createBrowserRouter([
         path: "/components/bentogrid",
         element: <Bentogridpage />,
       },
- 
+
       {
         path: "/components/marquee",
         element: <InfiniteScrollpage />,
@@ -147,10 +149,19 @@ const browserRouter = new createBrowserRouter([
         element: <Floatingcardpage />,
       },
       {
+        path: "/components/Documentation",
+        element: <Documentation/>,
+      },
+      {
         path: "/components/orbitinglogo",
         element: <OrbitLogoPage />,
       },
-     
+      //  {
+      //   path: "/components/feedbackwidget",
+      //   element: <FeedbackWidget />,
+      // },
+      
+
       {
         path: "/components/CosmicRayBurst",
         element: <Gradientlinepage />,
@@ -163,48 +174,47 @@ const browserRouter = new createBrowserRouter([
         path: "/components/cursorAura",
         element: <Cursorpage />,
       },
-       {
+      {
         path: "/components/tiltcard",
-        element: <TiltCardpage/>,
+        element: <TiltCardpage />,
       },
-       {
-        path: "/components/hovercard", 
-        element:<Hoverswitchpage/>,
+      {
+        path: "/components/hovercard",
+        element: <Hoverswitchpage />,
       },
-        {
+      {
         path: "/components/neonlamb", //add
-        element:<NeonLambpage/>,
+        element: <NeonLambpage />,
       },
-       {
+      {
         path: "/components/pointergrid",
-        element:<PointerGridBackgroundPage/>,
+        element: <PointerGridBackgroundPage />,
       },
-       {
+      {
         path: "/components/gridbackground",
-        element:<GridBackgroundPage/>,
+        element: <GridBackgroundPage />,
       },
       {
-        path:"/components/bentogrid",
-        element:<Bentogridpage/>
-       },
-      
-      {
-        path:"/components/orbitinglogo",
-        element:<OrbitLogoPage/>
+        path: "/components/bentogrid",
+        element: <Bentogridpage />,
       },
-      {
-        path:"/components/iframepop",
-        element:<VideoPopPage/>
-      },
-      {
-        path:"/components/Meteors",
-        element:<MeteorBgPage/>
-      },
-      {
-        path:"/components/Silk",
-        element:<SilkBgPage/>
-      }
 
+      {
+        path: "/components/orbitinglogo",
+        element: <OrbitLogoPage />,
+      },
+      {
+        path: "/components/iframepop",
+        element: <VideoPopPage />,
+      },
+      {
+        path: "/components/Meteors",
+        element: <MeteorBgPage />,
+      },
+      {
+        path: "/components/Silk",
+        element: <SilkBgPage />,
+      },
     ],
   },
 ]);

@@ -2,14 +2,55 @@ import React from "react";
 import { toast, Toaster } from "sonner";
 import { Copy } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-// ✅ Reusable code block with copy button
-const CopyBlock = ({ code }) => {
+// 🎨 Styled line renderer
+const getStyledLine = (line) => {
+  const keywords = line.split(" ").map((word, i) => {
+    if (word.startsWith("<!") || word.startsWith("</") || word.startsWith("<")) {
+      return (
+        <span key={i} className="geist-mono text-yellow-400">{word} </span>
+      );
+    }
+    if (["npm", "cd", "npx", "import", "export", "from"].includes(word)) {
+      return (
+        <span key={i} className="text-yellow-400 geist-mono">{word} </span>
+      );
+    }
+    if (
+      ["tailwindcss", "@tailwindcss/vite", "postcss", "autoprefixer"].includes(word) ||
+      word.includes("vite") || word.includes("style.css")
+    ) {
+      return (
+        <span key={i} className="text-green-400 geist-mono">{word} </span>
+      );
+    }
+    if (["run", "dev", "init", "-D"].includes(word)) {
+      return (
+        <span key={i} className="text-cyan-400 geist-mono">{word} </span>
+      );
+    }
+    return (
+      <span key={i} className="text-white geist-mono">{word} </span>
+    );
+
+     if (["name", "dev", "@import", "-D"].includes(word)) {
+      return (
+        <span key={i} className="text-cyan-400 geist-mono">{word} </span>
+      );
+    }
+    return (
+      <span key={i} className="text-white geist-mono">{word} </span>
+    );
+  });
+
+  return <div>{keywords}</div>;
+};
+
+// 📦 Copyable and styled code block
+const CopyBlock = ({ lines }) => {
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(code);
+      await navigator.clipboard.writeText(lines.join("\n"));
       toast.success("Copied to clipboard!");
     } catch {
       toast.error("Failed to copy!");
@@ -17,23 +58,12 @@ const CopyBlock = ({ code }) => {
   };
 
   return (
-    <div className="relative bg-[#1a1a1a] mt-5  rounded-3xl text-base font-mono">
-      <SyntaxHighlighter
-        language="bash"
-        style={dracula}
-        customStyle={{
-          fontFamily: "JetBrains Mono, monospace",
-          fontSize: "15px",
-          background: "#1a1a1a",
-          padding: "1rem",
-          borderRadius: "0.75rem",
-          lineHeight: "1.7",
-        }}
-        className="text-sm"
-      >
-        {code}
-      </SyntaxHighlighter>
-
+    <div className="relative bg-[#1a1a1a] mt-4 rounded-2xl font-mono text-sm sm:text-base overflow-hidden">
+      <pre className="px-4 py-4 whitespace-pre-wrap leading-relaxed">
+        {lines.map((line, i) => (
+          <div key={i}>{getStyledLine(line)}</div>
+        ))}
+      </pre>
       <button
         onClick={handleCopy}
         className="absolute top-2 right-2 text-xs bg-white/10 hover:bg-white/20 px-2 py-1 rounded-md flex items-center gap-1"
@@ -45,6 +75,7 @@ const CopyBlock = ({ code }) => {
   );
 };
 
+// 🌟 Main component
 const TailwindInstall = () => {
   const navigate = useNavigate();
 
@@ -53,46 +84,69 @@ const TailwindInstall = () => {
       <Toaster richColors position="top-right" />
       <div className="max-w-4xl w-full">
         <h1 className="text-3xl sm:text-4xl font-bold mb-2">Install Tailwind CSS</h1>
-        <p className="text-gray-400 mb-10">
-          Full setup with Vite plugin and configuration.
-        </p>
+        <p className="text-gray-400 mb-10">Full setup using the Vite plugin and configuration.</p>
 
-        <div className="border-l border-blue-300 pl-6 space-y-10">
-          {/* Step 1 */}
-          <section>
-            <h2 className="text-xl font-semibold mb-2">Install Tailwind and Plugin</h2>
-            <CopyBlock code={`npm install tailwindcss @tailwindcss/vite`} />
-          </section>
+        <div className="border-l border-blue-200 pl-6 space-y-10">
+          <div>
+            <h2 className="text-xl font-semibold mb-2"> Create your project</h2>
+            <CopyBlock lines={["npm create vite@latest my-project", "cd my-project"]} />
+          </div>
 
-          {/* Step 5 */}
-          <section>
-            <h2 className="text-xl font-semibold mb-2">Use Tailwind in HTML</h2>
-            <p className="text-gray-400">
-              Link compiled CSS in your <code>&lt;head&gt;</code>:
-            </p>
+          <div>
+            <h2 className="text-xl font-semibold mb-2"> Install Tailwind CSS</h2>
+            <CopyBlock lines={["npm install tailwindcss @tailwindcss/vite"]} />
+          </div>
+
+          <div>
+            <h2 className="text-xl font-semibold mb-2"> Configure the Vite plugin</h2>
             <CopyBlock
-              code={`<!doctype html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/src/style.css" rel="stylesheet">
-</head>
-<body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-</body>
-</html>`}
+              lines={[
+                "import { defineConfig } from 'vite'",
+                "import tailwindcss from '@tailwindcss/vite'",
+                "",
+                "export default defineConfig({",
+                "  plugins: [",
+                "    tailwindcss(),",
+                "  ],",
+                "})",
+              ]}
             />
-          </section>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-semibold mb-2">Import Tailwind CSS</h2>
+            <CopyBlock lines={["@import \"tailwindcss\";"]} />
+          </div>
+
+          <div>
+            <h2 className="text-xl font-semibold mb-2">Start your build process</h2>
+            <CopyBlock lines={["npm run dev"]} />
+          </div>
+
+          <div>
+            <h2 className="text-xl font-semibold mb-2"> Start using Tailwind</h2>
+            <CopyBlock
+              lines={[
+                "<!doctype html>",
+                "<html>",
+                "  <head>",
+                "    <meta charset=\"UTF-8\" />",
+                "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+                "    <link href=\"/src/style.css\" rel=\"stylesheet\">",
+                "  </head>",
+                "  <body>",
+                "    <h1 class=\"text-3xl font-bold underline\">Hello world!</h1>",
+                "  </body>",
+                "</html>",
+              ]}
+            />
+          </div>
         </div>
 
-        {/* 🔹 Next Button */}
-        <div className="flex justify-end mt-10">
+        <div className="flex justify-end mt-12">
           <button
             onClick={() => navigate("/components/docs/install-uivault")}
-            className="bg-gradient-to-r border border-white hover:opacity-90 text-white px-6 py-4 rounded-lg font-semibold transition-all shadow-md"
+            className="bg-gradient-to-r bg-black border border-white cursor-pointer text-white font-semibold px-6 py-4 rounded-xl shadow-md hover:opacity-90 transition-all"
           >
             Next: Setup UI Vault →
           </button>
