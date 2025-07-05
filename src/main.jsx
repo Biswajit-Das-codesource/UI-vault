@@ -45,6 +45,7 @@ import SilkBgPage from "./UiComponents/Silk_Background/SilkBgPage.jsx";
 import Documentation from './Components/Documentation';
 import FeedbackWidget from "./Components/FeedWidget.jsx";
 import PinContainerPage from "./UiComponents/3dPinContainer/PinContainerPage.jsx";
+import DraggablePage from "./UiComponents/Draggablecard/DraggablePage.jsx";
 const browserRouter = new createBrowserRouter([
   {
     path: "/",
@@ -156,6 +157,10 @@ const browserRouter = new createBrowserRouter([
       {
         path: "/components/orbitinglogo",
         element: <OrbitLogoPage />,
+      },
+        {
+        path: "/components/draggablecards",
+        element: <DraggablePage />,
       },
       //  {
       //   path: "/components/feedbackwidget",

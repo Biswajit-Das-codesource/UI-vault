@@ -68,12 +68,13 @@ const Sidebar = () => {
   const specialComponents = [
     "Lens",
     "Globe",
+    "Draggablecards",
     "GridBackground",
     "Imageeffect",
     "Marquee",
     "Meteors",
     "Silk",
-    "3dPin"
+    "3dPin",
   ];
 
   const normalComponents = allComponents.filter(
@@ -95,9 +96,21 @@ const Sidebar = () => {
 
       {open.installation && (
         <div className="ml-3 mb-3 space-y-1 border-l border-gray-700 pl-3">
-          <NavItem name="React.js Setup" to="/components/docs/install-react" isChild />
-          <NavItem name="Tailwind Setup" to="/components/docs/install-tailwindcss" isChild />
-          <NavItem name="UI vault Setup" to="/components/docs/install-uivault" isChild />
+          <NavItem
+            name="React.js Setup"
+            to="/components/docs/install-react"
+            isChild
+          />
+          <NavItem
+            name="Tailwind Setup"
+            to="/components/docs/install-tailwindcss"
+            isChild
+          />
+          <NavItem
+            name="UI vault Setup"
+            to="/components/docs/install-uivault"
+            isChild
+          />
           {/* <NavItem name="Why UIvault ?" to="/components/documentation" isChild /> */}
         </div>
       )}

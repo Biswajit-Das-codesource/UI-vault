@@ -24,6 +24,7 @@ function Navbar() {
   const specialLinks = [
     "Lens",
     "Globe",
+    "Draggablecards",
     "GridBackground",
     "Imageeffect",
     "Marquee",
