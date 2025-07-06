@@ -66,11 +66,11 @@ export default LoginCard;`;
             className="geist-mono overflow-x-auto text-sm"
             style={{ letterSpacing: "1px" }}
           >
-            <span className="text-cyan-400">npx</span> ui-vault card-Obsidian
+            <span className="text-cyan-400">npx</span> ui-vault add card-Obsidian
           </code>
           <button
             onClick={() =>
-              handleCopy("npx ui-vault card-Obsidian", "obsidian-cli")
+              handleCopy("npx ui-vault add card-Obsidian", "obsidian-cli")
             }
             className="ml-4 text-white transition"
             title="Copy to clipboard"
@@ -155,11 +155,11 @@ export default LoginCard;`;
             className="geist-mono overflow-x-auto text-sm"
             style={{ letterSpacing: "1px" }}
           >
-            <span className="text-cyan-400">npx</span> ui-vault card-gradient
+            <span className="text-cyan-400">npx</span> ui-vault add card-gradient
           </code>
           <button
             onClick={() =>
-              handleCopy("npx ui-vault card-gradient", "gradient-cli")
+              handleCopy("npx ui-vault add card-gradient", "gradient-cli")
             }
             className="ml-4 text-white transition"
             title="Copy to clipboard"
@@ -244,11 +244,11 @@ export default LoginCard;`;
             className="geist-mono overflow-x-auto text-sm"
             style={{ letterSpacing: "1px" }}
           >
-            <span className="text-cyan-400">npx</span> ui-vault card-NeonPulse
+            <span className="text-cyan-400">npx</span> ui-vault add card-NeonPulse
           </code>
           <button
             onClick={() =>
-              handleCopy("npx ui-vault card-NeonPulse", "neon-cli")
+              handleCopy("npx ui-vault add card-NeonPulse", "neon-cli")
             }
             className="ml-4 text-white transition"
             title="Copy to clipboard"
@@ -331,11 +331,11 @@ export default LoginCard;`;
             className="geist-mono overflow-x-auto text-sm"
             style={{ letterSpacing: "1px" }}
           >
-            <span className="text-cyan-400">npx</span> ui-vault card-CottonBloom
+            <span className="text-cyan-400">npx</span> ui-vault add card-CottonBloom
           </code>
           <button
             onClick={() =>
-              handleCopy("npx ui-vault card-CottonBloom", "cotton-cli")
+              handleCopy("npx ui-vault add card-CottonBloom", "cotton-cli")
             }
             className="ml-4 text-white transition"
             title="Copy to clipboard"

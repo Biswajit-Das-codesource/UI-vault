@@ -52,10 +52,10 @@ export default App;`;
             className="geist-mono overflow-x-auto text-sm"
             style={{ letterSpacing: "1px" }}
           >
-            <span className="text-cyan-400">npx</span> ui-vault pincontainer
+            <span className="text-cyan-400">npx</span> ui-vault add pincontainer
           </code>
           <button
-            onClick={() => handleCopy("npx ui-vault pincontainer", "pin-cli")}
+            onClick={() => handleCopy("npx ui-vault add pincontainer", "pin-cli")}
             className="ml-4 text-white transition"
             title="Copy to clipboard"
           >

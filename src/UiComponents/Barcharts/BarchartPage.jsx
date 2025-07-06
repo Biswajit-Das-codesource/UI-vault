@@ -65,12 +65,12 @@ export default AuroraGradientBarchart;`;
             className="geist-mono overflow-x-auto text-sm"
             style={{ letterSpacing: "1px" }}
           >
-            <span className="text-cyan-400">npx</span> ui-vault
+            <span className="text-cyan-400">npx</span> ui-vault add
             barchart-obsidian
           </code>
           <button
             onClick={() =>
-              handleCopy("npx ui-vault barchart-obsidian", "obsidian-cli")
+              handleCopy("npx ui-vault add barchart-obsidian", "obsidian-cli")
             }
             className="ml-4 text-white transition"
             title="Copy to clipboard"
@@ -151,12 +151,12 @@ export default AuroraGradientBarchart;`;
             className="geist-mono overflow-x-auto text-sm"
             style={{ letterSpacing: "1px" }}
           >
-            <span className="text-cyan-400">npx</span> ui-vault
+            <span className="text-cyan-400">npx</span> ui-vault add
             barchart-aurora-gradient
           </code>
           <button
             onClick={() =>
-              handleCopy("npx ui-vault barchart-aurora-gradient", "aurora-cli")
+              handleCopy("npx ui-vault add barchart-aurora-gradient", "aurora-cli")
             }
             className="ml-4 text-white transition"
             title="Copy to clipboard"

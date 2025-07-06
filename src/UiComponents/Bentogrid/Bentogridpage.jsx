@@ -53,12 +53,12 @@ export default BentoGrid;`;
             className="geist-mono overflow-x-auto text-sm"
             style={{ letterSpacing: "1px" }}
           >
-            <span className="text-cyan-400">npx</span> ui-vault
+            <span className="text-cyan-400">npx</span> ui-vault add
             bentogrid 
           </code>
           <button
             onClick={() =>
-              handleCopy("npx ui-vault bentogrid-obsidian", "bento-cli")
+              handleCopy("npx ui-vault add bentogrid-obsidian", "bento-cli")
             }
             className="ml-4 text-white transition"
             title="Copy to clipboard"

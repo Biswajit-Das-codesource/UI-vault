@@ -70,10 +70,10 @@ function CrouselPage() {
           className="geist-mono overflow-x-auto text-sm"
           style={{ letterSpacing: "1px" }}
         >
-          <span className="text-cyan-400">npx</span> ui-vault carousel-DarkCarousel
+          <span className="text-cyan-400">npx</span> ui-vault add carousel-DarkCarousel
         </code>
         <button
-          onClick={() => handleCopy("npx ui-vault carousel-DarkCarousel", "carousel-cli")}
+          onClick={() => handleCopy("npx ui-vault add carousel-DarkCarousel", "carousel-cli")}
           className="ml-4 text-white transition"
           title="Copy to clipboard"
         >
@@ -155,10 +155,10 @@ function CrouselPage() {
           className="geist-mono overflow-x-auto text-sm"
           style={{ letterSpacing: "1px" }}
         >
-          <span className="text-cyan-400">npx</span> ui-vault carousel-AutoCarousel
+          <span className="text-cyan-400">npx</span> ui-vault add carousel-AutoCarousel
         </code>
         <button
-          onClick={() => handleCopy("npx ui-vault carousel-AutoCrousel", "carousel-cli")}
+          onClick={() => handleCopy("npx ui-vault add carousel-AutoCrousel", "carousel-cli")}
           className="ml-4 text-white transition"
           title="Copy to clipboard"
         >

@@ -51,10 +51,10 @@ export default Globe;`;
             className="geist-mono overflow-x-auto text-sm"
             style={{ letterSpacing: "1px" }}
           >
-            <span className="text-cyan-400">npx</span> ui-vault globe-obsidian
+            <span className="text-cyan-400">npx</span> ui-vault add globe-obsidian
           </code>
           <button
-            onClick={() => handleCopy("npx ui-vault globe-obsidian", "globe-cli")}
+            onClick={() => handleCopy("npx ui-vault add globe-obsidian", "globe-cli")}
             className="ml-4 text-white transition"
             title="Copy to clipboard"
           >

@@ -50,11 +50,11 @@ export default Floatingcard;`;
             className="geist-mono overflow-x-auto text-sm"
             style={{ letterSpacing: "1px" }}
           >
-            <span className="text-cyan-400">npx</span> ui-vault floatingcard
+            <span className="text-cyan-400">npx</span> ui-vault add floatingcard
           </code>
           <button
             onClick={() =>
-              handleCopy("npx ui-vault floatingcard", "floating-cli")
+              handleCopy("npx ui-vault add floatingcard", "floating-cli")
             }
             className="ml-4 text-white transition"
             title="Copy to clipboard"

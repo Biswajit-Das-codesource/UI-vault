@@ -50,11 +50,11 @@ export default InfiniteScroll;`;
             className="geist-mono overflow-x-auto text-sm"
             style={{ letterSpacing: "1px" }}
           >
-            <span className="text-cyan-400">npx</span> ui-vault infinitescroll
+            <span className="text-cyan-400">npx</span> ui-vault add infinitescroll
           </code>
           <button
             onClick={() =>
-              handleCopy("npx ui-vault infinitescroll-obsidian", "infinite-cli")
+              handleCopy("npx ui-vault add infinitescroll-obsidian", "infinite-cli")
             }
             className="ml-4 text-white transition"
             title="Copy to clipboard"

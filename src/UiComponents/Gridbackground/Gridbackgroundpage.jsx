@@ -51,10 +51,10 @@ export default GridBackground;`;
             className="geist-mono overflow-x-auto text-sm"
             style={{ letterSpacing: "1px" }}
           >
-            <span className="text-cyan-400">npx</span> ui-vault gridbackground
+            <span className="text-cyan-400">npx</span> ui-vault add gridbackground
           </code>
           <button
-            onClick={() => handleCopy("npx ui-vault gridbackground", "grid-cli")}
+            onClick={() => handleCopy("npx ui-vault add gridbackground", "grid-cli")}
             className="ml-4 text-white transition"
             title="Copy to clipboard"
           >

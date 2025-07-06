@@ -54,11 +54,11 @@ export default Beamsbackground;`;
             className="geist-mono overflow-x-auto text-sm"
             style={{ letterSpacing: "1px" }}
           >
-            <span className="text-cyan-400">npx</span> ui-vault background-beams
+            <span className="text-cyan-400">npx</span> ui-vault add background-beams
           </code>
           <button
             onClick={() =>
-              handleCopy("npx ui-vault background-beams", "beams-cli")
+              handleCopy("npx ui-vault add background-beams", "beams-cli")
             }
             className="ml-4 text-white transition"
             title="Copy to clipboard"

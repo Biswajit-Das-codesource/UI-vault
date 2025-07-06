@@ -52,10 +52,10 @@ export default Lens;`;
             className="geist-mono overflow-x-auto text-sm"
             style={{ letterSpacing: "1px" }}
           >
-            <span className="text-cyan-400">npx</span> ui-vault lens
+            <span className="text-cyan-400">npx</span> ui-vault add lens
           </code>
           <button
-            onClick={() => handleCopy("npx ui-vault lens-obsidian", "lens-cli")}
+            onClick={() => handleCopy("npx ui-vault add lens-obsidian", "lens-cli")}
             className="ml-4 text-white transition"
             title="Copy to clipboard"
           >

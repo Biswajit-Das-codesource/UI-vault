@@ -88,11 +88,11 @@ export default NeonPulseButton;`;
             className="geist-mono overflow-x-auto text-sm"
             style={{ letterSpacing: "1px" }}
           >
-            <span className="text-cyan-400">npx</span> ui-vault button-obsidian
+            <span className="text-cyan-400">npx</span> ui-vault add button-obsidian
           </code>
           <button
             onClick={() =>
-              handleCopy("npx ui-vault button-obsidian", "obsidian-cli")
+              handleCopy("npx ui-vault add button-obsidian", "obsidian-cli")
             }
             className="ml-4 text-white transition"
             title="Copy to clipboard"
@@ -174,12 +174,12 @@ export default NeonPulseButton;`;
             className="geist-mono overflow-x-auto text-sm"
             style={{ letterSpacing: "1px" }}
           >
-            <span className="text-cyan-400">npx</span> ui-vault
+            <span className="text-cyan-400">npx</span> ui-vault add
             button-aurora-pink
           </code>
           <button
             onClick={() =>
-              handleCopy("npx ui-vault button-aurora-pink", "aurora-cli")
+              handleCopy("npx ui-vault add button-aurora-pink", "aurora-cli")
             }
             className="ml-4 text-white transition"
             title="Copy to clipboard"
@@ -260,12 +260,12 @@ export default NeonPulseButton;`;
             className="geist-mono overflow-x-auto text-sm"
             style={{ letterSpacing: "1px" }}
           >
-            <span className="text-cyan-400">npx</span> ui-vault
+            <span className="text-cyan-400">npx</span> ui-vault add
             button-frost-white
           </code>
           <button
             onClick={() =>
-              handleCopy("npx ui-vault button-frost-white", "frost-cli")
+              handleCopy("npx ui-vault add button-frost-white", "frost-cli")
             }
             className="ml-4 text-white transition"
             title="Copy to clipboard"
@@ -346,12 +346,12 @@ export default NeonPulseButton;`;
             className="geist-mono overflow-x-auto text-sm"
             style={{ letterSpacing: "1px" }}
           >
-            <span className="text-cyan-400">npx</span> ui-vault
+            <span className="text-cyan-400">npx</span> ui-vault add
             button-neon-pulse
           </code>
           <button
             onClick={() =>
-              handleCopy("npx ui-vault button-neon-pulse", "neon-cli")
+              handleCopy("npx ui-vault add button-neon-pulse", "neon-cli")
             }
             className="ml-4 text-white transition"
             title="Copy to clipboard"
