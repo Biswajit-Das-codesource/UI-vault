@@ -62,6 +62,7 @@ const Sidebar = () => {
     // "SocialCard",
     "Tiltcard",
     "Testimonials",
+    "ToggleButtons",
     // "TweetCard",
   ];
 

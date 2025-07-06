@@ -143,10 +143,10 @@ export default GradientFeedbackcard;`;
         </div>
         <div className="flex items-center justify-between bg-[#1a1a1a] border border-gray-700 text-green-400 px-5 py-4 text-sm rounded-2xl mt-4">
           <code className="geist-mono overflow-x-auto text-sm" style={{ letterSpacing: "1px" }}>
-            <span className="text-cyan-400">npx</span> ui-vault feedback-aurora-gradient
+            <span className="text-cyan-400">npx</span> ui-vault add feedback-aurora-gradient
           </code>
           <button
-            onClick={() => handleCopy("npx ui-vault feedback-aurora-gradient", "aurora-cli")}
+            onClick={() => handleCopy("npx ui-vault add feedback-aurora-gradient", "aurora-cli")}
             className="ml-4 text-white transition"
             title="Copy to clipboard"
           >

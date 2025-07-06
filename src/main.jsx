@@ -46,6 +46,7 @@ import Documentation from './Components/Documentation';
 import FeedbackWidget from "./Components/FeedWidget.jsx";
 import PinContainerPage from "./UiComponents/3dPinContainer/PinContainerPage.jsx";
 import DraggablePage from "./UiComponents/Draggablecard/DraggablePage.jsx";
+import ToggleButtonPage from "./UiComponents/Toggle-Buttons/ToggleButtonPage.jsx";
 const browserRouter = new createBrowserRouter([
   {
     path: "/",
@@ -224,6 +225,10 @@ const browserRouter = new createBrowserRouter([
       {
         path: "/components/3dPin",
         element: <PinContainerPage/>,
+      },
+      {
+        path: "/components/ToggleButtons",
+        element: <ToggleButtonPage/>,
       },
     ],
   },
