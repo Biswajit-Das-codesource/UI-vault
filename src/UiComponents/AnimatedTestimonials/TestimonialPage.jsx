@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { Clipboard, ClipboardCheck, Copy } from "lucide-react";
 
@@ -53,11 +54,11 @@ export default TestimonialCard;`;
           className="geist-mono overflow-x-auto text-sm"
           style={{ letterSpacing: "1px" }}
         >
-          <span className="text-cyan-400">npx</span> ui-vault testimonial-neon
+          <span className="text-cyan-400">npx</span> ui-vault add testimonial-neon
         </code>
         <button
           onClick={() =>
-            handleCopy("npx ui-vault testimonial-neon", "neon-cli")
+            handleCopy("npx ui-vault add testimonial-neon", "neon-cli")
           }
           className="ml-4 text-white transition"
           title="Copy to clipboard"
