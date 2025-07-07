@@ -39,10 +39,10 @@ function VideoPopPage() {
         </div>
         <div className="flex items-center justify-between bg-[#1a1a1a] border border-gray-700 text-green-400 px-5 py-4 text-sm rounded-2xl mt-2">
           <code className="geist-mono overflow-x-auto text-sm" style={{ letterSpacing: "1px" }}>
-            <span className="text-cyan-400">npx</span> ui-vault add video-popup
+            <span className="text-cyan-400">npx</span> ui-vault add iframepop
           </code>
           <button
-            onClick={() => handleCopy("npx ui-vault add video-popup", "video-cli")}
+            onClick={() => handleCopy("npx ui-vault add iframepop", "video-cli")}
             className="ml-4 text-white transition"
             title="Copy to clipboard"
           >

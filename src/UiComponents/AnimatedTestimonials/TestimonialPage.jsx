@@ -54,11 +54,11 @@ export default TestimonialCard;`;
           className="geist-mono overflow-x-auto text-sm"
           style={{ letterSpacing: "1px" }}
         >
-          <span className="text-cyan-400">npx</span> ui-vault add testimonial-neon
+          <span className="text-cyan-400">npx</span> ui-vault add testimonials
         </code>
         <button
           onClick={() =>
-            handleCopy("npx ui-vault add testimonial-neon", "neon-cli")
+            handleCopy("npx ui-vault add testimonials", "neon-cli")
           }
           className="ml-4 text-white transition"
           title="Copy to clipboard"

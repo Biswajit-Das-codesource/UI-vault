@@ -47,10 +47,10 @@ export default OrbitLogo;`;
         </div>
         <div className="flex items-center justify-between bg-[#1a1a1a] border border-gray-700 text-green-400 px-5 py-4 text-sm rounded-2xl mt-4">
           <code className="geist-mono text-sm overflow-x-auto" style={{ letterSpacing: "1px" }}>
-            <span className="text-cyan-400">npx</span> ui-vault add background-OrbitLogo
+            <span className="text-cyan-400">npx</span> ui-vault add orbitLogo
           </code>
           <button
-            onClick={() => handleCopy("npx ui-vault add background-OrbitLogo", "orbit-cli")}
+            onClick={() => handleCopy("npx ui-vault add orbitLogo", "orbit-cli")}
             className="ml-4 text-white transition"
             title="Copy to clipboard"
           >

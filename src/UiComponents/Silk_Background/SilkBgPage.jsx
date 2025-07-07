@@ -53,10 +53,10 @@ export default SilkBackground;`;
             className="geist-mono overflow-x-auto text-sm"
             style={{ letterSpacing: "1px" }}
           >
-            <span className="text-cyan-400">npx</span> ui-vault silkbg
+            <span className="text-cyan-400">npx</span> ui-vault add silkbg
           </code>
           <button
-            onClick={() => handleCopy("npx ui-vault silkbg", "silk-cli")}
+            onClick={() => handleCopy("npx ui-vault add silkbg", "silk-cli")}
             className="ml-4 text-white transition"
             title="Copy to clipboard"
           >

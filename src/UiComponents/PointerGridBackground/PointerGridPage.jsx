@@ -51,10 +51,10 @@ export default PointerGridBackground;`;
             className="geist-mono overflow-x-auto text-sm"
             style={{ letterSpacing: "1px" }}
           >
-            <span className="text-cyan-400">npx</span> ui-vault add pointergridbackground
+            <span className="text-cyan-400">npx</span> ui-vault add pointergrid
           </code>
           <button
-            onClick={() => handleCopy("npx ui-vault add pointergridbackground", "pointergrid-cli")}
+            onClick={() => handleCopy("npx ui-vault add pointergrid", "pointergrid-cli")}
             className="ml-4 text-white transition"
             title="Copy to clipboard"
           >

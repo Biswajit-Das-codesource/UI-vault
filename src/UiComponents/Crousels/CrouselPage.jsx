@@ -70,10 +70,10 @@ function CrouselPage() {
           className="geist-mono overflow-x-auto text-sm"
           style={{ letterSpacing: "1px" }}
         >
-          <span className="text-cyan-400">npx</span> ui-vault add carousel-DarkCarousel
+          <span className="text-cyan-400">npx</span> ui-vault add darkCarousel
         </code>
         <button
-          onClick={() => handleCopy("npx ui-vault add carousel-DarkCarousel", "carousel-cli")}
+          onClick={() => handleCopy("npx ui-vault add darkCarousel", "carousel-cli")}
           className="ml-4 text-white transition"
           title="Copy to clipboard"
         >
@@ -139,7 +139,7 @@ function CrouselPage() {
 
     {/* You can add more carousel themes below in the same style */}
 
-    <h2 className="text-xl font-bold mt-6">Theme : AUto Carousel</h2>
+    <h2 className="text-xl font-bold mt-6">Theme : Auto Carousel</h2>
       <h1 className="text-2xl font-bold mb-2 mt-4">Installation</h1>
 
       <div className="flex border-b border-white/10 mt-7">
@@ -155,10 +155,10 @@ function CrouselPage() {
           className="geist-mono overflow-x-auto text-sm"
           style={{ letterSpacing: "1px" }}
         >
-          <span className="text-cyan-400">npx</span> ui-vault add carousel-AutoCarousel
+          <span className="text-cyan-400">npx</span> ui-vault add autoCarousel
         </code>
         <button
-          onClick={() => handleCopy("npx ui-vault add carousel-AutoCrousel", "carousel-cli")}
+          onClick={() => handleCopy("npx ui-vault add autoCrousel", "carousel-cli")}
           className="ml-4 text-white transition"
           title="Copy to clipboard"
         >
