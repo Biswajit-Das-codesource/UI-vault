@@ -47,6 +47,7 @@ import FeedbackWidget from "./Components/FeedWidget.jsx";
 import PinContainerPage from "./UiComponents/3dPinContainer/PinContainerPage.jsx";
 import DraggablePage from "./UiComponents/Draggablecard/DraggablePage.jsx";
 import ToggleButtonPage from "./UiComponents/Toggle-Buttons/ToggleButtonPage.jsx";
+import ToolTipPage from "./UiComponents/ToolTips/ToolTipPage.jsx";
 const browserRouter = new createBrowserRouter([
   {
     path: "/",
@@ -229,6 +230,10 @@ const browserRouter = new createBrowserRouter([
       {
         path: "/components/ToggleButtons",
         element: <ToggleButtonPage/>,
+      },
+      {
+        path: "/components/ToolTips",
+        element: <ToolTipPage/>,
       },
     ],
   },

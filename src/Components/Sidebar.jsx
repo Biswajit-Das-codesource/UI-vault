@@ -63,6 +63,7 @@ const Sidebar = () => {
     "Tiltcard",
     "Testimonials",
     "ToggleButtons",
+    "ToolTips"
     // "TweetCard",
   ];
 

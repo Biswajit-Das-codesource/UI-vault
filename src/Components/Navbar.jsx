@@ -61,7 +61,8 @@ function Navbar() {
     // "SocialCard",
     "Tiltcard",
     "Testimonials",
-    "ToggleButtons"
+    "ToggleButtons",
+    "ToolTips",
     // "TweetCard",
   ];
 
