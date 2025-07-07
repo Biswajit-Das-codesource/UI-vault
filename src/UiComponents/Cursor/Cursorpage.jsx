@@ -51,10 +51,10 @@ export default CursorText;`;
             className="geist-mono overflow-x-auto text-sm"
             style={{ letterSpacing: "1px" }}
           >
-            <span className="text-cyan-400">npx</span> ui-vault cursor
+            <span className="text-cyan-400">npx</span> ui-vault add cursor
           </code>
           <button
-            onClick={() => handleCopy("npx ui-vault cursor", "cursor-cli")}
+            onClick={() => handleCopy("npx ui-vault add cursor", "cursor-cli")}
             className="ml-4 text-white transition"
             title="Copy to clipboard"
           >

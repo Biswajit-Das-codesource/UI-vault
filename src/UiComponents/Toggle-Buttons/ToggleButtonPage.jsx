@@ -61,7 +61,7 @@ function LockOpenToggle() {
 export default LockOpenToggle;`;
 
   return (
-    <div className="max-w-4xl mx-auto px-4">
+    <div className="max-w-4xl mx-auto ">
       {/* ✅ Mount the Toaster for toast messages */}
       <Toaster position="top-center" richColors />
 

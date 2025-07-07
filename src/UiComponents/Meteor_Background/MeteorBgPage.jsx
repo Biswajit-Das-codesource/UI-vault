@@ -53,10 +53,10 @@ export default MeteorBackground;
             className="geist-mono overflow-x-auto text-sm"
             style={{ letterSpacing: "1px" }}
           >
-            <span className="text-cyan-400">npx</span> ui-vault meteorbg
+            <span className="text-cyan-400">npx</span> ui-vault add meteorbg
           </code>
           <button
-            onClick={() => handleCopy("npx ui-vault meteorbg", "meteor-cli")}
+            onClick={() => handleCopy("npx ui-vault add meteorbg", "meteor-cli")}
             className="ml-4 text-white transition"
             title="Copy to clipboard"
           >
