@@ -53,10 +53,10 @@ export default GradientLineBackground;`;
             className="geist-mono overflow-x-auto text-sm"
             style={{ letterSpacing: "1px" }}
           >
-            <span className="text-cyan-400">npx</span> ui-vault add background-cosmicrayburst
+            <span className="text-cyan-400">npx</span> ui-vault add cosmicrayburst
           </code>
           <button
-            onClick={() => handleCopy("npx ui-vault add background-cosmicrayburst", "gradient-cli")}
+            onClick={() => handleCopy("npx ui-vault add cosmicrayburst", "gradient-cli")}
             className="ml-4 text-white transition"
             title="Copy to clipboard"
           >
