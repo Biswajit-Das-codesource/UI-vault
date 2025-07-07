@@ -47,7 +47,7 @@ const Herosection = () => {
             initial={{ opacity: 0, filter: "blur(8px)", y: 40 }}
             animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="text-4xl sm:text-6xl md:text-5xl font-extrabold leading-tight mt-8 sm:mt-1 text-white"
+            className="text-5xl sm:text-6xl md:text-5xl font-extrabold leading-tight mt-8 sm:mt-1 text-white "
           >
             Design{" "}
             <span className="bg-gradient-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text">
@@ -90,7 +90,7 @@ const Herosection = () => {
             initial={{ opacity: 0, filter: "blur(10px)", y: 30 }}
             animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
-            className="mt-10 flex flex-col sm:flex-row gap-4 items-center sm:items-start justify-center sm:justify-start px-6 md:px-0 md:mt-8"
+            className="mt-10 flex flex-col sm:flex-row gap-4 items-center sm:items-start justify-center sm:justify-start px-3 md:px-0 md:mt-8"
           >
             <Link to="/components/Lens" className="w-full sm:w-auto">
               <button className="relative w-full sm:w-auto bg-white bg-gradient-to-r from-pink-400 to-purple-500 text-black px-3 py-3 rounded-xl text-sm font-semibold transition transform hover:scale-105 before:absolute before:inset-0 before:-z-10 before:rounded-xl before:blur-xl before:opacity-100 before:transition-all before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 cursor-pointer flex items-center justify-center gap-2">
