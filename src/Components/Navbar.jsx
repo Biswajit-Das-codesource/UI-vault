@@ -82,7 +82,9 @@ function Navbar() {
   );
 
   return (
-    <div>
+    <motion.div
+     
+    >
       <nav className="relative z-50 bg-black text-white p-5 w-full">
         <div className="flex items-center justify-between flex-wrap">
           {/* Logo + Desktop Links */}
@@ -211,7 +213,7 @@ function Navbar() {
           )}
         </AnimatePresence>
       </nav>
-    </div>
+    </motion.div>
   );
 }
 

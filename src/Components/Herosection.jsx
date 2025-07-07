@@ -35,15 +35,20 @@ const Herosection = () => {
       </motion.div> */}
 
       {/* Hero Section */}
-      <div className="relative z-10 bg-black text-white min-h-[94vh] px-4 py-2 flex flex-col lg:flex-row gap-8 overflow-hidden">
+      <div className="relative z-10 bg-black text-white min-h-[90vh] px-4 py-2 flex flex-col lg:flex-row gap-8 overflow-hidden">
         {/* Left Section */}
         <motion.div
-          className="flex-1 flex flex-col justify-center md:ml-4"
+          className="flex-1 flex flex-col justify-center md:ml-4 md:mt-0 mt-4"
           initial={{ opacity: 0, x: -60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <h1 className="text-4xl sm:text-6xl md:text-5xl font-extrabold leading-tight mt-8 sm:mt-1">
+          <motion.h1
+            initial={{ opacity: 0, filter: "blur(8px)", y: 40 }}
+            animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="text-4xl sm:text-6xl md:text-5xl font-extrabold leading-tight mt-8 sm:mt-1 text-white"
+          >
             Design{" "}
             <span className="bg-gradient-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text">
               clarity
@@ -54,19 +59,24 @@ const Herosection = () => {
               confidence
             </span>
             .
-          </h1>
+          </motion.h1>
 
-          <p className="mt-4 text-base sm:text-base text-gray-300 max-w-2xl">
+          <motion.p
+            initial={{ opacity: 0, filter: "blur(8px)", y: 20 }}
+            animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+            transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
+            className="mt-4 text-base sm:text-base text-gray-300 max-w-2xl"
+          >
             Elevate your UI game with{" "}
             <span className="font-bold text-white">
               20+ Animated components
             </span>
-            ,<br />
+            ,
+            <br />
             styled using <span className="text-pink-400">Tailwind</span> and
             powered by <span className="text-purple-300">Framer Motion</span>
             <br /> — built for fast, beautiful React apps.
-          </p>
-
+          </motion.p>
           <div className="mt-6 flex flex-wrap gap-3">
             <span className="bg-gray-800 text-cyan-300 text-sm px-3 py-1 rounded-full">
               ~ Now updated for Tailwind CSS 4.0!
@@ -76,7 +86,12 @@ const Herosection = () => {
             </span>
           </div>
 
-          <div className="mt-6 flex flex-col sm:flex-row gap-4 items-center sm:items-start justify-center sm:justify-start">
+          <motion.div
+            initial={{ opacity: 0, filter: "blur(10px)", y: 30 }}
+            animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
+            className="mt-10 flex flex-col sm:flex-row gap-4 items-center sm:items-start justify-center sm:justify-start px-6 md:px-0 md:mt-8"
+          >
             <Link to="/components/Lens" className="w-full sm:w-auto">
               <button className="relative w-full sm:w-auto bg-white bg-gradient-to-r from-pink-400 to-purple-500 text-black px-3 py-3 rounded-xl text-sm font-semibold transition transform hover:scale-105 before:absolute before:inset-0 before:-z-10 before:rounded-xl before:blur-xl before:opacity-100 before:transition-all before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 cursor-pointer flex items-center justify-center gap-2">
                 Browse Components <FiArrowRight />
@@ -84,14 +99,20 @@ const Herosection = () => {
             </Link>
 
             <button className="w-full sm:w-auto bg-gray-950 border border-white px-4 py-3 rounded-xl text-sm font-semibold hover:bg-black transition cursor-pointer flex items-center justify-center gap-2">
-              Go to Projects<FiArrowRight />
+              Go to Projects
+              <FiArrowRight />
             </button>
-          </div>
+          </motion.div>
 
           <h3 className="text-gray-400 font-medium mt-4 text-lg sm:text-left text-center md:text-left">
             Built with
           </h3>
-          <div className="mt-5 flex justify-center sm:justify-start items-center gap-6 text-white text-3xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.9 }}
+            className="mt-5 flex justify-center sm:justify-start items-center gap-6 text-white text-3xl"
+          >
             <div className="flex items-center gap-2">
               <SiTailwindcss className="text-cyan-400" />
               <span className="text-base text-gray-300">Tailwind</span>
@@ -104,7 +125,7 @@ const Herosection = () => {
               <SiFramer className="text-pink-500" />
               <span className="text-base text-gray-300">Framer</span>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Right Card Section (Responsive) */}
