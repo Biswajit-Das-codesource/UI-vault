@@ -17,16 +17,16 @@ function GlobePage() {
     setTimeout(() => setCopied(""), 2000);
   };
 
-  const globeCode = `import React from "react";
-function Globe() {
+  const globeCode = `import './App.css'
+import { Globe } from './UIvault/globe/Globe';
+function App() {
   return (
-    <div className="bg-black text-white p-6 rounded-xl">
-      <h1 className="text-blue-400">Obsidian Globe</h1>
-      {/* ...globe visualization here... */}
+    <div>
+      <Globe/>
     </div>
-  );
+  )
 }
-export default Globe;`;
+export default App;`;
 
   return (
     <div>

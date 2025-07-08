@@ -17,16 +17,16 @@ function GridBackgroundPage() {
     setTimeout(() => setCopied(""), 2000);
   };
 
-  const gridCode = `import React from "react";
-function GridBackground() {
+  const gridCode = `import './App.css'
+import { Gridbackground } from './UIvault/gridbackground/Gridbackground';
+function App() {
   return (
-    <div className="bg-black text-white p-6 rounded-xl">
-      <h1 className="text-green-400">Obsidian Grid Background</h1>
-      {/* ...grid background content... */}
+    <div>
+      <Gridbackground/>
     </div>
-  );
+  )
 }
-export default GridBackground;`;
+export default App;`;
 
   return (
     <div>

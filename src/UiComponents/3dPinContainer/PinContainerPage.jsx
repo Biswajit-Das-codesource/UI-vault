@@ -16,18 +16,17 @@ function PinContainerPage() {
     setTimeout(() => setCopied(""), 2000);
   };
 
-  const pinCode = `import React from "react";
-import PinContainer from "./PinContainer";
-
+  const pinCode = `import './App.css'
+import PinContainer from './UIvault/pincontainer/pincontainer';
 function App() {
   return (
-    <div className="relative h-screen w-screen flex items-center justify-center">
-      <PinContainer />
+    <div>
+      <PinContainer/>
     </div>
-  );
+  )
 }
-
-export default App;`;
+export default App;
+`;
 
   return (
     <div>

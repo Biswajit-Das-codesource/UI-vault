@@ -17,13 +17,17 @@ function DraggablePage() {
     setTimeout(() => setCopied(""), 2000);
   };
 
-  const draggableCode = `import { DraggableCardGallery } from "./DraggableCardGallery";
-
+  const draggableCode = `import './App.css'
+import DraggableCardGallery from './UIvault/draggablecard/Draggablecard';
 function App() {
-  return <DraggableCardGallery />;
+  return (
+    <div>
+      <DraggableCardGallery/>
+    </div>
+  )
 }
-
-export default App;`;
+export default App;
+`;
 
   return (
     <div>
@@ -48,11 +52,11 @@ export default App;`;
             className="geist-mono overflow-x-auto text-sm"
             style={{ letterSpacing: "1px" }}
           >
-            <span className="text-cyan-400">npx</span> ui-vault draggablecard
+            <span className="text-cyan-400">npx</span> ui-vault add draggablecard
           </code>
           <button
             onClick={() =>
-              handleCopy("npx ui-vault draggablecard", "draggable-cli")
+              handleCopy("npx ui-vault add draggablecard", "draggable-cli")
             }
             className="ml-4 text-white transition"
             title="Copy to clipboard"

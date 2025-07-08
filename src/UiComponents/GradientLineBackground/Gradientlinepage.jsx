@@ -18,16 +18,19 @@ function Gradientlinepage() {
     setTimeout(() => setCopied(""), 2000);
   };
 
-  const gradientCode = `import React from "react";
-function GradientLineBackground() {
+  const gradientCode = `import './App.css'
+import { Gradientlinebackground } from './UIvault/cosmicrayburst/Cosmicrayburst';
+function App() {
   return (
-    <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 p-6 rounded-xl">
-      <h1 className="text-white font-bold">Obsidian Gradient Line</h1>
-      {/* ...gradient line content... */}
+    <div>
+      <Gradientlinebackground>
+        {/* Your code goes here */}
+      </Gradientlinebackground>
     </div>
-  );
+  )
 }
-export default GradientLineBackground;`;
+export default App;
+`;
 
   return (
     <div>

@@ -17,16 +17,18 @@ function PointerGridBackgroundPage() {
     setTimeout(() => setCopied(""), 2000);
   };
 
-  const pointerGridCode = `import React from "react";
-function PointerGridBackground() {
+  const pointerGridCode = `import './App.css'
+import { Pointergrid } from './UIvault/pointergrid/Pointergrid';
+function App() {
   return (
-    <div className="bg-black text-white p-6 rounded-xl">
-      <h1 className="text-cyan-400">Obsidian Pointer Grid Background</h1>
-      {/* ...pointer grid background content... */}
+    <div>
+      <Pointergrid>
+        {/* Your code goes here */}
+      </Pointergrid>
     </div>
-  );
+  )
 }
-export default PointerGridBackground;`;
+export default App;`;
 
   return (
     <div>

@@ -10,29 +10,29 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { toast, Toaster } from "sonner";
 
-const DarkcarouselCodeString = `import React from "react";
-
-function DarkCarousel() {
+const DarkcarouselCodeString = `import './App.css'
+import DarkCarousel from './UIvault/darkCarousel/DarkCarousel';
+function App() {
   return (
-    <div className="bg-black text-white p-4 rounded-xl">
-      <h1 className="text-pink-400">Dark Carousel</h1>
+    <div>
+      <DarkCarousel/>
     </div>
-  );
+  )
 }
+export default App;
+`;
 
-export default DarkCarousel;`;
-
-const AutocarouselCodeString = `import React from "react";
-
-function AutoCarousel() {
+const AutocarouselCodeString = `import './App.css'
+import AutoCarousel from './UIvault/autoCarousel/AutoCarousel';
+function App() {
   return (
-    <div className="bg-black text-white p-4 rounded-xl">
-      <h1 className="text-pink-400">Auto Carousel</h1>
+    <div>
+      <AutoCarousel/>
     </div>
-  );
+  )
 }
-
-export default AutoCarousel;`;
+export default App;
+`;
 
 function CrouselPage() {
   const [tab, setTab] = useState("preview");
@@ -158,7 +158,7 @@ function CrouselPage() {
           <span className="text-cyan-400">npx</span> ui-vault add autoCarousel
         </code>
         <button
-          onClick={() => handleCopy("npx ui-vault add autoCrousel", "carousel-cli")}
+          onClick={() => handleCopy("npx ui-vault add autoCarousel", "carousel-cli")}
           className="ml-4 text-white transition"
           title="Copy to clipboard"
         >

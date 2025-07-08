@@ -17,7 +17,17 @@ function VideoPopPage() {
     setTimeout(() => setCopied(""), 2000);
   };
 
-  const videoPopCode = ``; // You will add your VideoPopup code later here
+  const videoPopCode = `import './App.css'
+import { Iframepop } from './UIvault/iframepop/Iframepop';
+function App() {
+  return (
+    <div>
+      <Iframepop/>
+    </div>
+  )
+}
+export default App;
+`; // You will add your VideoPopup code later here
 
   return (
     <div>

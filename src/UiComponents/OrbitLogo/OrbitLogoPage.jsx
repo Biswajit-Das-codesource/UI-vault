@@ -17,17 +17,17 @@ function OrbitLogoPage() {
     setTimeout(() => setCopied(""), 2000);
   };
 
-  const orbitCode = `import React from "react";
-
-function OrbitLogo() {
+  const orbitCode = `import './App.css'
+import { Orbitlogo } from './UIvault/orbitlogo/Orbitlogo';
+function App() {
   return (
-    <div className="relative w-full h-screen bg-black overflow-hidden">
-      {/* Orbiting icons logic here */}
+    <div>
+      <Orbitlogo/>
     </div>
-  );
+  )
 }
-
-export default OrbitLogo;`;
+export default App;
+`;
 
   return (
     <div>

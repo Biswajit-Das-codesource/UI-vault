@@ -16,16 +16,17 @@ function Floatingcardpage() {
     setTimeout(() => setCopied(""), 2000);
   };
 
-  const floatingCode = `import React from "react";
-function Floatingcard() {
+  const floatingCode = `import './App.css'
+import { Floatingcard } from './UIvault/floatingcard/Floatingcard';
+function App() {
   return (
-    <div className="bg-black text-white p-6 rounded-xl shadow-2xl">
-      <h1 className="text-blue-400">Obsidian Floating Card</h1>
-      {/* ...floating card content... */}
+    <div>
+      <Floatingcard/>
     </div>
-  );
+  )
 }
-export default Floatingcard;`;
+export default App;
+`;
 
   return (
     <div>

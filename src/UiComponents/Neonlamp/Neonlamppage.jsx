@@ -17,16 +17,17 @@ function NeonLambpage() {
     setTimeout(() => setCopied(""), 2000);
   };
 
-  const neonLambCode = `import React from "react";
-function NeonLamb() {
+  const neonLambCode = `import './App.css'
+import { Neonlamb } from './UIvault/neonlamb/Neonlamb';
+function App() {
   return (
-    <div className="bg-black text-white p-6 rounded-xl shadow-2xl">
-      <h1 className="text-pink-400">NeonLamb Effect</h1>
-      {/* ...neon lamb content... */}
+    <div>
+      <Neonlamb/>
     </div>
-  );
+  )
 }
-export default NeonLamb;`;
+export default App;
+`;
 
   return (
     <div>

@@ -16,18 +16,18 @@ function MeteorBgPage() {
     setTimeout(() => setCopied(""), 2000);
   };
 
-  const meteorCode = `import React from "react";
-import Meteors from "./Meteors";
-
-function MeteorBackground() {
+  const meteorCode = `import './App.css'
+import Meteorbg from './UIvault/meteorbg/Meteorbg';
+function App() {
   return (
-    <div className="relative h-screen w-screen">
-      <Meteors />
+    <div>
+      <Meteorbg>
+        {/* Your code goes here */}
+      </Meteorbg>
     </div>
-  );
+  )
 }
-
-export default MeteorBackground;
+export default App;
 `;
 
   return (

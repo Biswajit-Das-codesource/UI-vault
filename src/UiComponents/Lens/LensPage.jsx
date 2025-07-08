@@ -19,16 +19,17 @@ function LensPage() {
     setTimeout(() => setCopied(""), 2000);
   };
 
-  const lensCode = `import React from "react";
-function Lens() {
+  const lensCode = `import './App.css'
+import { Lens } from './UIvault/lens/Lens';
+function App() {
   return (
-    <div className="bg-black text-white p-6 rounded-xl">
-      <h1 className="text-blue-400">Obsidian Lens</h1>
-      {/* ...lens visualization here... */}
+    <div>
+      <Lens/>
     </div>
-  );
+  )
 }
-export default Lens;`;
+export default App;
+`;
 
   return (
     <div>

@@ -16,16 +16,16 @@ function InfinitescrollPage() {
     setTimeout(() => setCopied(""), 2000);
   };
 
-  const infiniteCode = `import React from "react";
-function InfiniteScroll() {
+  const infiniteCode = `import './App.css'
+import { Infinitescroll } from './UIvault/infinitescroll/Infinitescroll';
+function App() {
   return (
-    <div className="bg-black text-white p-6 rounded-xl">
-      <h1 className="text-purple-400">Obsidian Infinite Scroll</h1>
-      {/* ...infinite scroll content... */}
+    <div>
+      <Infinitescroll/>
     </div>
-  );
+  )
 }
-export default InfiniteScroll;`;
+export default App;`;
 
   return (
     <div>
@@ -54,7 +54,7 @@ export default InfiniteScroll;`;
           </code>
           <button
             onClick={() =>
-              handleCopy("npx ui-vault add infinitescroll-obsidian", "infinite-cli")
+              handleCopy("npx ui-vault add infinitescroll", "infinite-cli")
             }
             className="ml-4 text-white transition"
             title="Copy to clipboard"

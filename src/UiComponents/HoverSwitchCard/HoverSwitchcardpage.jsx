@@ -16,16 +16,17 @@ function Hoverswitchpage() {
     setTimeout(() => setCopied(""), 2000);
   };
 
-  const hoveeCode = `import React from "react";
-function Hoveeswitchcard() {
+  const hoveeCode = `import './App.css'
+import HoverSwitchCard from './UIvault/hovercard/Hovercard';
+function App() {
   return (
-    <div className="bg-black text-white p-6 rounded-xl shadow-2xl transition-transform duration-300 hover:scale-105">
-      <h1 className="text-green-400">Obsidian Hoveeswitch Card</h1>
-      {/* ...hoveeswitch card content... */}
+    <div>
+      <HoverSwitchCard/>
     </div>
-  );
+  )
 }
-export default Hoveeswitchcard;`;
+export default App;
+`;
 
   return (
     <div>
@@ -50,10 +51,10 @@ export default Hoveeswitchcard;`;
             className="geist-mono overflow-x-auto text-sm"
             style={{ letterSpacing: "1px" }}
           >
-            <span className="text-cyan-400">npx</span> ui-vault hoveeswitchcard
+            <span className="text-cyan-400">npx</span> ui-vault add hovercard
           </code>
           <button
-            onClick={() => handleCopy("npx ui-vault hoveeswitchcard", "hovee-cli")}
+            onClick={() => handleCopy("npx ui-vault add hovercard", "hovee-cli")}
             className="ml-4 text-white transition"
             title="Copy to clipboard"
           >

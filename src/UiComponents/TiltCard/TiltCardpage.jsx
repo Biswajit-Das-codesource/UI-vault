@@ -17,16 +17,17 @@ function TiltCardpage() {
     setTimeout(() => setCopied(""), 2000);
   };
 
-  const tiltCode = `import React from "react";
-function Tiltcard() {
+  const tiltCode = `import './App.css'
+import { Tiltcard } from './UIvault/tiltcard/Tiltcard';
+function App() {
   return (
-    <div className="bg-black text-white p-6 rounded-xl shadow-2xl">
-      <h1 className="text-pink-400">Obsidian Tilt Card</h1>
-      {/* ...tilt card content... */}
+    <div>
+      <Tiltcard/>
     </div>
-  );
+  )
 }
-export default Tiltcard;`;
+export default App;
+`;
 
   return (
     <div>

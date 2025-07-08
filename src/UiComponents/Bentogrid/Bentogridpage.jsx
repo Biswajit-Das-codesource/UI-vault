@@ -16,18 +16,16 @@ function Bentogridpage() {
     setTimeout(() => setCopied(""), 2000);
   };
 
-  const bentoCode = `import React from "react";
-function BentoGrid() {
+  const bentoCode = `import './App.css'
+import { Bentogrid } from './UIvault/bentogrid/Bentogrid';
+function App() {
   return (
-    <div className="bg-black text-white p-6 rounded-xl grid grid-cols-3 gap-4">
-      {/* ...bento grid content... */}
-      <div className="col-span-2 bg-gray-800 rounded-lg p-4">Obsidian Bento</div>
-      <div className="bg-gray-700 rounded-lg p-4">Item</div>
-      <div className="bg-gray-700 rounded-lg p-4">Item</div>
+    <div>
+      <Bentogrid/>
     </div>
-  );
+  )
 }
-export default BentoGrid;`;
+export default App;`;
 
   return (
     <div>

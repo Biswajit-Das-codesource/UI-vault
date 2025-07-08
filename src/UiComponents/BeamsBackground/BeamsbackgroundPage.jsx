@@ -17,16 +17,19 @@ function BeamsbackgroundPage() {
     setTimeout(() => setCopied(""), 2000);
   };
 
-  const beamsCode = `import React from "react";
-function Beamsbackground() {
+  const beamsCode = `import './App.css'
+import { Beamsbackground } from './UIvault/beamsbackground/Beamsbackground';
+function App() {
   return (
-    <div className="bg-black text-white p-6 rounded-xl">
-      <h1 className="text-pink-400">Obsidian Beams Background</h1>
-      {/* ...beams background content... */}
+    <div>
+      <Beamsbackground>
+        {/* Your code goes here */}
+      </Beamsbackground>
     </div>
-  );
+  )
 }
-export default Beamsbackground;`;
+export default App;
+`;
 
   return (
     <div>

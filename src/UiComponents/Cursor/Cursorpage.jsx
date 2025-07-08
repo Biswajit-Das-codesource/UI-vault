@@ -17,16 +17,17 @@ function Cursorpage() {
     setTimeout(() => setCopied(""), 2000);
   };
 
-  const cursorCode = `import React from "react";
-function CursorText() {
+  const cursorCode = `import './App.css'
+import Cursoraura from './UIvault/cursoraura/Cursoraura';
+function App() {
   return (
-    <div className="bg-black text-white p-6 rounded-xl">
-      <h1 className="text-blue-400">Obsidian Cursor Effect</h1>
-      {/* ...cursor effect content... */}
+    <div>
+      <Cursoraura/>
     </div>
-  );
+  )
 }
-export default CursorText;`;
+export default App;
+`;
 
   return (
     <div>
@@ -51,10 +52,10 @@ export default CursorText;`;
             className="geist-mono overflow-x-auto text-sm"
             style={{ letterSpacing: "1px" }}
           >
-            <span className="text-cyan-400">npx</span> ui-vault add cursor
+            <span className="text-cyan-400">npx</span> ui-vault add cursoraura
           </code>
           <button
-            onClick={() => handleCopy("npx ui-vault add cursor", "cursor-cli")}
+            onClick={() => handleCopy("npx ui-vault add cursoraura", "cursor-cli")}
             className="ml-4 text-white transition"
             title="Copy to clipboard"
           >

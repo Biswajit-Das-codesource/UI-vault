@@ -19,16 +19,17 @@ function TestimonialPage() {
     setTimeout(() => setCopied(""), 2000);
   };
 
-  const neonCode = `import React from "react";
-function TestimonialCard() {
+  const neonCode = `import './App.css'
+import { Testimonials } from './UIvault/testimonials/Testimonials';
+function App() {
   return (
-    <div className="bg-black text-white p-6 rounded-xl shadow-lg">
-      <h1 className="text-pink-400 font-bold">Neon Testimonial</h1>
-      <p>"This UI library is amazing!"</p>
+    <div>
+      <Testimonials/>
     </div>
-  );
+  )
 }
-export default TestimonialCard;`;
+export default App;
+`;
 
 
   return (
