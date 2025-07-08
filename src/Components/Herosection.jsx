@@ -97,11 +97,12 @@ const Herosection = () => {
                 Browse Components <FiArrowRight />
               </button>
             </Link>
-
+          <Link to="/uiavult-kit">
             <button className="w-full sm:w-auto bg-gray-950 border border-white px-4 py-3 rounded-xl text-sm font-semibold hover:bg-black transition cursor-pointer flex items-center justify-center gap-2">
-              Go to Projects
+             Browse UIvault Kit
               <FiArrowRight />
             </button>
+            </Link>
           </motion.div>
 
           <h3 className="text-gray-400 font-medium mt-4 text-lg sm:text-left text-center md:text-left">

@@ -48,10 +48,15 @@ import PinContainerPage from "./UiComponents/3dPinContainer/PinContainerPage.jsx
 import DraggablePage from "./UiComponents/Draggablecard/DraggablePage.jsx";
 import ToggleButtonPage from "./UiComponents/Toggle-Buttons/ToggleButtonPage.jsx";
 import ToolTipPage from "./UiComponents/ToolTips/ToolTipPage.jsx";
+import UivaultKitHeroSection from "./Uivaultkit/uivaultHerosection.jsx";
 const browserRouter = new createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path:"/uiavult-kit",
+    element:<UivaultKitHeroSection />
   },
   {
     path: "/components",
