@@ -49,6 +49,7 @@ import DraggablePage from "./UiComponents/Draggablecard/DraggablePage.jsx";
 import ToggleButtonPage from "./UiComponents/Toggle-Buttons/ToggleButtonPage.jsx";
 import ToolTipPage from "./UiComponents/ToolTips/ToolTipPage.jsx";
 import UivaultKitHeroSection from "./Uivaultkit/uivaultHerosection.jsx";
+import GravityScrollPage from "./UiComponents/Gravityscroll/Gravityscrollpage.jsx";
 const browserRouter = new createBrowserRouter([
   {
     path: "/",
@@ -239,6 +240,10 @@ const browserRouter = new createBrowserRouter([
       {
         path: "/components/ToolTips",
         element: <ToolTipPage/>,
+      },
+       {
+        path: "/components/gravityscroll",
+        element: <GravityScrollPage/>,
       },
     ],
   },

@@ -97,7 +97,7 @@ const Herosection = () => {
                 Browse Components <FiArrowRight />
               </button>
             </Link>
-          <Link to="/uiavult-kit">
+          <Link to="/uiavult-kit" className="w-full sm:w-auto">
             <button className="w-full sm:w-auto bg-gray-950 border border-white px-4 py-3 rounded-xl text-sm font-semibold hover:bg-black transition cursor-pointer flex items-center justify-center gap-2">
              Browse UIvault Kit
               <FiArrowRight />
