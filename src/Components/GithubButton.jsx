@@ -1,44 +1,43 @@
 import React, { useEffect, useState } from "react";
-import { FaGithub, FaStar } from "react-icons/fa";
+import { FaBoxOpen } from "react-icons/fa";
 
-const GithubStarButton = () => {
-  const [stars, setStars] = useState(null);
+const NpmDownloadButton = () => {
+  const [downloads, setDownloads] = useState("");
 
   useEffect(() => {
-    const fetchStars = async () => {
+    const fetchDownloads = async () => {
       try {
-        const res = await fetch("https://api.github.com/repos/Biswajit-Das-codesource/UI-library");
+        const res = await fetch("https://img.shields.io/npm/dt/ui-vault.json");
         const data = await res.json();
 
-        if (typeof data?.stargazers_count === "number") {
-          setStars(data.stargazers_count);
+        if (data?.value) {
+          setDownloads(data.value);
         } else {
-          setStars(0);
+          setDownloads("0");
         }
       } catch (err) {
-        console.error("Failed to fetch GitHub stars:", err);
-        setStars(0);
+        console.error("Failed to fetch NPM downloads:", err);
+        setDownloads("0");
       }
     };
 
-    fetchStars();
+    fetchDownloads();
   }, []);
 
   return (
     <a
-      href="https://github.com/Biswajit-Das-codesource/UI-library"
+      href="https://www.npmjs.com/package/ui-vault"
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 px-4 py-2.5 border rounded-full text-sm font-medium bg-white backdrop-blur border-white/10 text-black hover:bg-white/100 hover:shadow-[0_0_20px_2px_rgba(255,255,255,0.2)] transition-all duration-300 ease-in-out"
+      className="inline-flex items-center gap-2 px-2 py-2 border rounded-full text-sm font-medium bg-white backdrop-blur border-white/10 text-black hover:bg-white/100 hover:shadow-[0_0_20px_2px_rgba(255,255,255,0.2)] transition-all duration-300 ease-in-out"
     >
-      <FaGithub className="text-black text-lg" />
-      Star on GitHub
+      <FaBoxOpen className="text-black text-lg" />
+      Downloads on NPM
       <span className="flex items-center gap-1 text-sm font-semibold">
-        <FaStar className="text-yellow-400 text-lg" />
-        {stars !== null ? stars.toLocaleString() : "Loading..."}
+        📦 {downloads !== "" ? downloads : "Loading..."}
       </span>
     </a>
   );
 };
 
-export default GithubStarButton;
+export default NpmDownloadButton;

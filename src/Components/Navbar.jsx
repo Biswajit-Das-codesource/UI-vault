@@ -5,9 +5,11 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaXTwitter, FaInstagram, FaGithub } from "react-icons/fa6";
 import GithubStarButton from "./GithubButton";
+import NpmDownloadButton from "./GithubButton";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [search, setSearch] = useState("");
   const location = useLocation();
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
@@ -20,51 +22,20 @@ function Navbar() {
   }, [isMenuOpen]);
 
   const coreLinks = ["Installation", "Documentation"];
+  const components = [
+    "Lens", "Globe", "Draggablecards", "GridBackground", "Imageeffect",
+    "Marquee", "Meteors", "Silk", "3dPin", "Bentogrid", "BeamsBackground",
+    "CosmicRayBurst", "Carousel", "CursorAura", "Hovercard", "IframePop",
+    "Neonlamb", "OrbitingLogo", "PointerGrid", "Tiltcard", "Testimonials",
+    "ToggleButtons", "ToolTips"
+  ];
 
-  const specialLinks = [
-    "Lens",
-    "Globe",
-    "Draggablecards",
-    "GridBackground",
-    "Imageeffect",
-    "Marquee",
-    "Meteors",
-    "Silk",
-    "3dPin",
-  ];
-  const otherLinks = [
-    // "Alerts",
-    // "Barchart",
-    "Bentogrid",
-    // "Backgrounds",
-    "BeamsBackground",
-    "CosmicRayBurst",
-    // "Button",
-    // "Card",
-    "Carousel",
-    "CursorAura",
-    // "Feedback",
-    "Globe",
-    "Hovercard",
-    "IframePop",
-    "Imageeffect",
-    "Lens",
-    "Marquee",
-    "Neonlamb",
-    "OrbitingLogo",
-    // "Paymentcard",
-    "PointerGrid",
-    // "Pricing",
-    // "Profilecard",
-    // "Rating",
-    // "Shinytext",
-    // "SocialCard",
-    "Tiltcard",
-    "Testimonials",
-    "ToggleButtons",
-    "ToolTips",
-    // "TweetCard",
-  ];
+  const specialLinks = components.slice(0, 9);
+  const otherLinks = [...new Set(components.slice(9))];
+
+  const filtered = components.filter((item) =>
+    item.toLowerCase().includes(search.toLowerCase())
+  );
 
   const renderLink = (link) => (
     <Link
@@ -82,12 +53,10 @@ function Navbar() {
   );
 
   return (
-    <motion.div
-     
-    >
+    <motion.div>
       <nav className="relative z-50 bg-black text-white p-5 w-full">
         <div className="flex items-center justify-between flex-wrap">
-          {/* Logo + Desktop Links */}
+          {/* Logo & Desktop Nav */}
           <div className="flex items-center space-x-4">
             <div className="text-2xl font-bold bg-gradient-to-r from-slate-100 via-[#C0C0C0] to-slate-200 text-transparent bg-clip-text tracking-wide drop-shadow-md">
               UIVault
@@ -97,22 +66,45 @@ function Navbar() {
             </div>
           </div>
 
-          {/* Right Actions */}
-          <div className="flex items-center gap-4">
+          {/* Right Side */}
+          <div className="flex items-center gap-4 relative">
             <div className="hidden md:block">
-              <GithubStarButton />
+              <NpmDownloadButton />
             </div>
-            <input
-              type="text"
-              placeholder="Search documentation..."
-              className="hidden md:block bg-gray-900 text-gray-300 text-sm rounded-lg px-5 py-1.5 focus:outline-none focus:ring-2 focus:ring-gray-500"
-            />
+
+            {/* Search */}
+            <div className="relative hidden md:block w-60">
+              <input
+                type="text"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder="Search documentation..."
+                className="w-full bg-gray-900 text-gray-300 text-sm rounded-lg px-5 py-1.5 focus:outline-none focus:ring-2 focus:ring-gray-500"
+              />
+              {search && (
+                <ul className="absolute mt-1 w-full bg-gray-900 text-white rounded-md shadow-lg max-h-60 overflow-y-auto border border-gray-200 z-50">
+                  {filtered.length > 0 ? (
+                    filtered.map((item) => (
+                      <li key={item}>
+                        <Link
+                          to={`/components/${item.toLowerCase()}`}
+                          className="block px-4 py-2 text-sm hover:bg-gray-100 transition"
+                          onClick={() => setSearch("")}
+                        >
+                          {item}
+                        </Link>
+                      </li>
+                    ))
+                  ) : (
+                    <li className="px-4 py-2 text-sm text-gray-500">No results found</li>
+                  )}
+                </ul>
+              )}
+            </div>
+
+            {/* Social Icons */}
             <div className="flex items-center gap-4 ml-2 text-white text-xl">
-              <a
-                href="https://x.com/Uivault?t=ycYRDQQ3srMZN30gnLT7mQ&s=09"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href="https://x.com/Uivault" target="_blank" rel="noreferrer">
                 <FaXTwitter className="hover:text-gray-400 transition" />
               </a>
               <a
@@ -155,7 +147,6 @@ function Navbar() {
                 {coreLinks.map(renderLink)}
               </div>
 
-              {/* Special Section */}
               <div className="mt-4">
                 <div className="text-xs uppercase text-pink-400 font-bold mb-2 flex items-center gap-2">
                   ✨ Special
@@ -168,44 +159,53 @@ function Navbar() {
                 </div>
               </div>
 
-              {/* Other Links */}
               <div className="mt-6 space-y-2 flex flex-col">
                 {otherLinks.map(renderLink)}
               </div>
 
-              {/* GitHub Button */}
-              <div className="pt-2">
-                <GithubStarButton />
+              <GithubStarButton />
+
+              {/* Mobile Search */}
+              <div className="relative mt-4">
+                <input
+                  type="text"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  placeholder="Search documentation..."
+                  className="w-full bg-gray-900 text-gray-300 text-sm rounded-lg px-5 py-2 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                />
+                {search && (
+                  <ul className="absolute mt-1 w-full bg-gray-900 text-black rounded-md shadow-lg max-h-60 overflow-y-auto border border-gray-200 z-50">
+                    {filtered.length > 0 ? (
+                      filtered.map((item) => (
+                        <li key={item}>
+                          <Link
+                            to={`/components/${item.toLowerCase()}`}
+                            className="block px-4 py-2 text-sm hover:bg-gray-100 transition"
+                            onClick={() => {
+                              setIsMenuOpen(false);
+                              setSearch("");
+                            }}
+                          >
+                            {item}
+                          </Link>
+                        </li>
+                      ))
+                    ) : (
+                      <li className="px-4 py-2 text-sm text-gray-500">No results found</li>
+                    )}
+                  </ul>
+                )}
               </div>
 
-              {/* Search */}
-              <input
-                type="text"
-                placeholder="Search documentation..."
-                className="mt-4 w-full bg-gray-900 text-gray-300 text-sm rounded-lg px-5 py-1.5 focus:outline-none focus:ring-2 focus:ring-gray-500"
-              />
-
-              {/* Social Icons */}
               <div className="flex justify-center items-center gap-6 mt-5 text-2xl text-white">
-                <a
-                  href="https://x.com/uivaultdev"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href="https://x.com/uivaultdev" target="_blank" rel="noreferrer">
                   <FaXTwitter />
                 </a>
-                <a
-                  href="https://instagram.com/uivaultdev"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href="https://instagram.com/uivaultdev" target="_blank" rel="noreferrer">
                   <FaInstagram />
                 </a>
-                <a
-                  href="https://github.com/uivaultdev/ui-vault"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href="https://github.com/uivaultdev/ui-vault" target="_blank" rel="noreferrer">
                   <FaGithub />
                 </a>
               </div>

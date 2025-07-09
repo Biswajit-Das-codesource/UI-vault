@@ -27,7 +27,7 @@ function App() {
       {/* <Templatehero/> */}
       <Footer/>
       <Footer2/>
-    
+      
     </>
   );
 }
