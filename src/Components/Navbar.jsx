@@ -103,7 +103,7 @@ function Navbar() {
 
           {isCommandPaletteOpen && (
             <div
-              className="fixed inset-0 z-50 bg-black/60 backdrop-blur-md flex items-start justify-center pt-32"
+              className="fixed inset-0 z-230 bg-black/60 backdrop-blur-md flex items-start justify-center pt-32"
               onClick={() => setIsCommandPaletteOpen(false)}
             >
               <div
@@ -227,15 +227,15 @@ function Navbar() {
 
               {/* Mobile Search */}
               <div className="relative mt-4">
-                <input
-                  type="text"
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
-                  placeholder="Search documentation..."
-                  className="w-full bg-gray-900 text-gray-300 text-sm rounded-lg px-5 py-2 focus:outline-none focus:ring-2 focus:ring-gray-500"
-                />
+                 <input
+                type="text"
+                value={search}
+                onClick={() => setIsCommandPaletteOpen(true)}
+                placeholder="Search components     CTRL + K"
+                className="w-full bg-gray-900 text-gray-300 text-sm rounded-lg px-5 py-1.5 focus:outline-none focus:ring-2 focus:ring-gray-500"
+              />
                 {search && (
-                  <ul className="absolute mt-1 w-full bg-gray-900 text-black rounded-md shadow-lg max-h-60 overflow-y-auto border border-gray-200 z-50">
+                  <ul className="absolute mt-1 w-full bg-gray-900 text-black rounded-md shadow-lg max-h-60 overflow-y-auto border border-gray-200 z-0">
                     {filtered.length > 0 ? (
                       filtered.map((item) => (
                         <li key={item}>
