@@ -10,25 +10,25 @@ const getStyledLine = (line) => {
       {line.split(" ").map((word, i) => {
         if (word.startsWith("✔"))
           return (
-            <span key={i} className="text-green-400 geist-mono">
+            <span key={i} className="text-green-400 geist-mono text-[14.5px]">
               {word}{" "}
             </span>
           );
         if (word === "npx")
           return (
-            <span key={i} className="text-yellow-400 geist-mono">
+            <span key={i} className="text-yellow-400 geist-mono text-[14.5px]">
               {word}{" "}
             </span>
           );
         if (["init", "add", "choose"].includes(word))
           return (
-            <span key={i} className="text-cyan-400 geist-mono">
+            <span key={i} className="text-cyan-400 geist-mono text-[14.5px]">
               {word}{" "}
             </span>
           );
         if (["Choose", "add", "format", "Components"].includes(word))
           return (
-            <span key={i} className="text-cyan-400 geist-mono">
+            <span key={i} className="text-cyan-400 geist-mono text-[14.5px]">
               {word}{" "}
             </span>
           );
@@ -36,12 +36,12 @@ const getStyledLine = (line) => {
           ["TSX", "JSX", "card", "src/UIvault", "Themes:"].includes(word)
         )
           return (
-            <span key={i} className="text-green-400 geist-mono">
+            <span key={i} className="text-green-400 geist-mono text-[14.5px]">
               {word}{" "}
             </span>
           );
         return (
-          <span key={i} className="text-white geist-mono">
+          <span key={i} className="text-white geist-mono text-[14.5px]">
             {word}{" "}
           </span>
         );

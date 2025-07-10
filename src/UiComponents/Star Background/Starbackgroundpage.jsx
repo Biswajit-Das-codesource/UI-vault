@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import { Clipboard, ClipboardCheck, Copy } from "lucide-react";
-
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { toast, Toaster } from "sonner";
-import VisionCard from "./Lenscard";
-import VisionCardProps from "./VisionCardProps";
-import ScrollToTop from "../../Components/ScrollTop";
+import StarsBackground from "./Starbackground";
+ // replace with actual component
 
-function LensPage() {
- 
+function StarBgPage() {
   const [tab, setTab] = useState("preview");
   const [copied, setCopied] = useState("");
 
@@ -20,28 +17,30 @@ function LensPage() {
     setTimeout(() => setCopied(""), 2000);
   };
 
-  const lensCode = `import './App.css'
-import { Lens } from './UIvault/lens/Lens';
-function App() {
+  const starCode = `import React from "react";
+import StarBackground from "./StarBackground";
+
+function StarPage() {
   return (
-    <div>
-      <Lens/>
+    <div className="relative h-screen w-screen">
+      <StarBackground />
     </div>
-  )
+  );
 }
-export default App;
-`;
+
+export default StarPage;`;
 
   return (
     <div>
-       <ScrollToTop/>
       <Toaster richColors position="top-center" />
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold">Lens (Magnify Effect)</h1>
+      <div className="max-w-4xl mx-auto px-4">
+        <h1 className="text-4xl font-bold">Star Background</h1>
         <p className="text-gray-400 mt-1">
-          Flexible and beautiful lens visualization component for your UI.
+          A stunning animated starfield background built with Three.js and R3F.
         </p>
-        <h1 className="text-2xl font-bold mb-2 mt-2">Installation</h1>
+
+        {/* Installation */}
+        <h1 className="text-2xl font-bold mb-2 mt-4">Installation</h1>
         <div className="flex border-b border-white/10 mt-4">
           <button className="px-4 py-2 text-white font-medium border-b-2 border-white">
             CLI
@@ -51,24 +50,23 @@ export default App;
           <p className="font-medium">Run the following command</p>
         </div>
         <div className="flex items-center justify-between bg-[#1a1a1a] border border-gray-700 text-green-400 px-5 py-4 text-sm rounded-2xl mt-4">
-          <code
-            className="geist-mono overflow-x-auto text-sm"
-            style={{ letterSpacing: "1px" }}
-          >
-            <span className="text-cyan-400">npx</span> ui-vault add lens
+          <code className="geist-mono overflow-x-auto text-sm">
+            <span className="text-cyan-400">npx</span> ui-vault add starbg
           </code>
           <button
-            onClick={() => handleCopy("npx ui-vault add lens-obsidian", "lens-cli")}
+            onClick={() => handleCopy("npx ui-vault add starbg", "star-cli")}
             className="ml-4 text-white transition"
             title="Copy to clipboard"
           >
-            {copied === "lens-cli" ? (
+            {copied === "star-cli" ? (
               <ClipboardCheck size={18} />
             ) : (
               <Clipboard size={18} />
             )}
           </button>
         </div>
+
+        {/* Tabs */}
         <div className="flex border-b border-white/10 mt-5">
           <button
             onClick={() => setTab("preview")}
@@ -91,11 +89,15 @@ export default App;
             Code
           </button>
         </div>
+
+        {/* Preview */}
         {tab === "preview" && (
-          <div className="mt-3 bg-black">
-            <VisionCard />
+          <div className="relative mt-5 w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-xl overflow-hidden">
+            <StarsBackground />
           </div>
         )}
+
+        {/* Code */}
         {tab === "code" && (
           <div className="relative bg-[#1a1a1a] mt-5 p-3 rounded-3xl text-base font-mono">
             <SyntaxHighlighter
@@ -111,20 +113,19 @@ export default App;
               }}
               className="text-sm geist-mono mt-5"
             >
-              {lensCode}
+              {starCode}
             </SyntaxHighlighter>
             <button
-              onClick={() => handleCopy(lensCode, "lens-code")}
+              onClick={() => handleCopy(starCode, "star-code")}
               className="absolute top-4 right-4 text-xs bg-white text-black px-2 py-1 rounded hover:bg-gray-200 flex items-center gap-1"
             >
-              {copied === "lens-code" ? "Copied!" : <Copy size={16} />}
+              {copied === "star-code" ? "Copied!" : <Copy size={16} />}
             </button>
           </div>
         )}
-        <VisionCardProps/>
       </div>
     </div>
   );
 }
 
-export default LensPage;
+export default StarBgPage;

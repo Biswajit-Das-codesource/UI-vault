@@ -23,11 +23,30 @@ function Navbar() {
 
   const coreLinks = ["Installation", "Documentation"];
   const components = [
-    "Lens", "Globe", "Draggablecards", "GridBackground", "Imageeffect",
-    "Marquee", "Meteors", "Silk", "3dPin", "Bentogrid", "BeamsBackground",
-    "CosmicRayBurst", "Carousel", "CursorAura", "Hovercard", "IframePop",
-    "Neonlamb", "OrbitingLogo", "PointerGrid", "Tiltcard", "Testimonials",
-    "ToggleButtons", "ToolTips"
+    "Lens",
+    "Globe",
+    "Draggablecards",
+    "GridBackground",
+    "Imageeffect",
+    "Marquee",
+    "Meteors",
+    // "StarBackground",
+    "Silk",
+    "3dPin",
+    "Bentogrid",
+    "BeamsBackground",
+    "CosmicRayBurst",
+    "Carousel",
+    "CursorAura",
+    "Hovercard",
+    "IframePop",
+    "Neonlamb",
+    "OrbitingLogo",
+    "PointerGrid",
+    "Tiltcard",
+    "Testimonials",
+    "ToggleButtons",
+    "ToolTips",
   ];
 
   const specialLinks = components.slice(0, 9);
@@ -52,6 +71,22 @@ function Navbar() {
     </Link>
   );
 
+  const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        setIsCommandPaletteOpen(true);
+      }
+      if (e.key === "Escape") {
+        setIsCommandPaletteOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   return (
     <motion.div>
       <nav className="relative z-50 bg-black text-white p-5 w-full">
@@ -66,6 +101,50 @@ function Navbar() {
             </div>
           </div>
 
+          {isCommandPaletteOpen && (
+            <div
+              className="fixed inset-0 z-50 bg-black/60 backdrop-blur-md flex items-start justify-center pt-32"
+              onClick={() => setIsCommandPaletteOpen(false)}
+            >
+              <div
+                className="bg-[#0f0f0f] w-full max-w-xl mx-auto rounded-xl shadow-xl p-4 border border-gray-700"
+                onClick={(e) => e.stopPropagation()} // prevent close when clicking inside
+              >
+                <input
+                  type="text"
+                  autoFocus
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  placeholder="Search components..."
+                  className="w-full bg-gray-900 text-gray-300 text-base rounded-lg px-5 py-3 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                />
+
+                <ul className="mt-3 max-h-60 overflow-y-auto text-sm">
+                  {filtered.length > 0 ? (
+                    filtered.map((item) => (
+                      <li key={item}>
+                        <Link
+                          to={`/components/${item.toLowerCase()}`}
+                          className="block px-4 py-2 hover:bg-gray-800 rounded-md text-white"
+                          onClick={() => {
+                            setIsCommandPaletteOpen(false);
+                            setSearch("");
+                          }}
+                        >
+                          {item}
+                        </Link>
+                      </li>
+                    ))
+                  ) : (
+                    <li className="px-4 py-2 text-gray-500">
+                      No results found
+                    </li>
+                  )}
+                </ul>
+              </div>
+            </div>
+          )}
+
           {/* Right Side */}
           <div className="flex items-center gap-4 relative">
             <div className="hidden md:block">
@@ -77,29 +156,10 @@ function Navbar() {
               <input
                 type="text"
                 value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search documentation..."
+                onClick={() => setIsCommandPaletteOpen(true)}
+                placeholder="Search components     CTRL + K"
                 className="w-full bg-gray-900 text-gray-300 text-sm rounded-lg px-5 py-1.5 focus:outline-none focus:ring-2 focus:ring-gray-500"
               />
-              {search && (
-                <ul className="absolute mt-1 w-full bg-gray-900 text-white rounded-md shadow-lg max-h-60 overflow-y-auto border border-gray-200 z-50">
-                  {filtered.length > 0 ? (
-                    filtered.map((item) => (
-                      <li key={item}>
-                        <Link
-                          to={`/components/${item.toLowerCase()}`}
-                          className="block px-4 py-2 text-sm hover:bg-gray-100 transition"
-                          onClick={() => setSearch("")}
-                        >
-                          {item}
-                        </Link>
-                      </li>
-                    ))
-                  ) : (
-                    <li className="px-4 py-2 text-sm text-gray-500">No results found</li>
-                  )}
-                </ul>
-              )}
             </div>
 
             {/* Social Icons */}
@@ -192,20 +252,34 @@ function Navbar() {
                         </li>
                       ))
                     ) : (
-                      <li className="px-4 py-2 text-sm text-gray-500">No results found</li>
+                      <li className="px-4 py-2 text-sm text-gray-500">
+                        No results found
+                      </li>
                     )}
                   </ul>
                 )}
               </div>
 
               <div className="flex justify-center items-center gap-6 mt-5 text-2xl text-white">
-                <a href="https://x.com/uivaultdev" target="_blank" rel="noreferrer">
+                <a
+                  href="https://x.com/uivaultdev"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <FaXTwitter />
                 </a>
-                <a href="https://instagram.com/uivaultdev" target="_blank" rel="noreferrer">
+                <a
+                  href="https://instagram.com/uivaultdev"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <FaInstagram />
                 </a>
-                <a href="https://github.com/uivaultdev/ui-vault" target="_blank" rel="noreferrer">
+                <a
+                  href="https://github.com/uivaultdev/ui-vault"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <FaGithub />
                 </a>
               </div>

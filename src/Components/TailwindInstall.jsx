@@ -2,18 +2,19 @@ import React from "react";
 import { toast, Toaster } from "sonner";
 import { Copy } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import ScrollToTop from "./ScrollTop";
 
 // 🎨 Styled line renderer
 const getStyledLine = (line) => {
   const keywords = line.split(" ").map((word, i) => {
     if (word.startsWith("<!") || word.startsWith("</") || word.startsWith("<")) {
       return (
-        <span key={i} className="geist-mono text-yellow-400">{word} </span>
+        <span key={i} className="geist-mono text-yellow-400 text-[14.5px]">{word} </span>
       );
     }
     if (["npm", "cd", "npx", "import", "export", "from"].includes(word)) {
       return (
-        <span key={i} className="text-yellow-400 geist-mono">{word} </span>
+        <span key={i} className="text-yellow-400 geist-mono text-[14.5px]">{word} </span>
       );
     }
     if (
@@ -21,25 +22,25 @@ const getStyledLine = (line) => {
       word.includes("vite") || word.includes("style.css")
     ) {
       return (
-        <span key={i} className="text-green-400 geist-mono">{word} </span>
+        <span key={i} className="text-green-400 geist-mono text-[14.5px]">{word} </span>
       );
     }
     if (["run", "dev", "init", "-D"].includes(word)) {
       return (
-        <span key={i} className="text-cyan-400 geist-mono">{word} </span>
+        <span key={i} className="text-cyan-400 geist-mono text-[14.5px]">{word} </span>
       );
     }
     return (
-      <span key={i} className="text-white geist-mono">{word} </span>
+      <span key={i} className="text-white geist-mono text-[14.5px]">{word} </span>
     );
 
      if (["name", "dev", "@import", "-D"].includes(word)) {
       return (
-        <span key={i} className="text-cyan-400 geist-mono">{word} </span>
+        <span key={i} className="text-cyan-400 geist-mono text-[14.5px]">{word} </span>
       );
     }
     return (
-      <span key={i} className="text-white geist-mono">{word} </span>
+      <span key={i} className="text-white geist-mono text-[14.5px]">{word} </span>
     );
   });
 
@@ -59,6 +60,8 @@ const CopyBlock = ({ lines }) => {
 
   return (
     <div className="relative bg-[#1a1a1a] mt-4 rounded-2xl font-mono text-sm sm:text-base overflow-hidden">
+
+      <ScrollToTop/>
       <pre className="px-4 py-4 whitespace-pre-wrap leading-relaxed">
         {lines.map((line, i) => (
           <div key={i}>{getStyledLine(line)}</div>

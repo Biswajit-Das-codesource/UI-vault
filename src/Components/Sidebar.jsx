@@ -75,6 +75,7 @@ const Sidebar = () => {
     "Imageeffect",
     "Marquee",
     "Meteors",
+    // "StarBackground",
     "Silk",
     "3dPin",
   ];

@@ -1,7 +1,5 @@
-/* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useRef, useEffect } from "react";
 import { Outlet, useLocation } from "react-router";
-import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import UiVaultBetaBanner from "../assets/UIvaultbeta";
@@ -9,46 +7,31 @@ import FeedbackWidget from "./FeedWidget";
 
 const ComponentMainpage = () => {
   const location = useLocation();
-  const [tab, setTab] = useState("preview");
-  const [copied, setCopied] = useState(false);
+  const mainRef = useRef(null); // 👈 main scroll container ref
 
-  const components = [
-    "Alerts",
-    "Barchart",
-    "Bentogrid",
-    "Button",
-    "Card",
-    "Carousel",
-    "Feedback",
-    "Globe",
-    "Imageeffect",
-    "Lens",
-    "Marquee",
-    "Paymentcard",
-    "Pricing",
-    "Profilecard",
-    "Rating",
-    "Shinytext",
-    "SocialCard",
-    "Testimonials",
-    "TweetCard",
-  ].sort();
+  useEffect(() => {
+    // 👇 scroll on route change
+    if (mainRef.current) {
+      mainRef.current.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [location.pathname]);
 
   return (
     <div className="bg-black text-white h-screen flex flex-col">
-      {/* Navbar */}
-      <UiVaultBetaBanner/>
+      <UiVaultBetaBanner />
       <Navbar />
 
-      {/* Content wrapper */}
       <div className="flex flex-1 min-h-0 overflow-hidden">
-        {/* Sidebar */}
-        <Sidebar/>
-        {/* Main content area */}
-        <main className="flex-1 overflow-y-auto p-4 md:p-6 scrollbar-hide bg-black">
+        <Sidebar />
+
+        <main
+          ref={mainRef}
+          className="flex-1 overflow-y-auto p-4 md:p-6 scrollbar-hide bg-black"
+        >
           <Outlet />
         </main>
-        <FeedbackWidget/>
+
+        <FeedbackWidget />
       </div>
     </div>
   );

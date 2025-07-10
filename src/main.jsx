@@ -50,9 +50,12 @@ import ToggleButtonPage from "./UiComponents/Toggle-Buttons/ToggleButtonPage.jsx
 import ToolTipPage from "./UiComponents/ToolTips/ToolTipPage.jsx";
 import UivaultKitHeroSection from "./Uivaultkit/uivaultHerosection.jsx";
 import GravityScrollPage from "./UiComponents/Gravityscroll/Gravityscrollpage.jsx";
+import StarBgPage from "./UiComponents/Star Background/Starbackgroundpage.jsx";
+
 const browserRouter = new createBrowserRouter([
   {
     path: "/",
+    
     element: <App />,
   },
   {
@@ -71,6 +74,7 @@ const browserRouter = new createBrowserRouter([
         path: "/components/docs/install-react",
         element: <ReactInstall />,
       },
+      
       {
         path: "/components/docs/install-tailwindcss",
         element: <TailwindInstall />,
@@ -245,12 +249,17 @@ const browserRouter = new createBrowserRouter([
         path: "/components/gravityscroll",
         element: <GravityScrollPage/>,
       },
+       {
+        path: "/components/starbackground",
+        element: <StarBgPage />,
+      },
     ],
   },
 ]);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+
     <RouterProvider router={browserRouter}>
       <App />
     </RouterProvider>

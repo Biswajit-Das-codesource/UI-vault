@@ -29,12 +29,12 @@ function Documentation() {
         {/* Why It's Different */}
         <div>
           <h2 className="text-2xl font-bold mb-4 text-white">
-             Why Choose UI Vault?
+            Why Choose UI Vault?
           </h2>
           <ul className="space-y-4 text-gray-300 list-disc list-inside">
             <li>
               <span className="text-white font-medium">
-                 One-Line Integration:
+                One-Line Integration:
               </span>{" "}
               Instantly add any component with a single command like{" "}
               <code className="bg-white/10 px-1 py-[2px] rounded">
@@ -44,14 +44,14 @@ function Documentation() {
             </li>
             <li>
               <span className="text-white font-medium">
-                 Production-Ready by Default:
+                Production-Ready by Default:
               </span>{" "}
               All components are clean, responsive, and styled using Tailwind
               CSS and Framer Motion — fully optimized for modern UI workflows.
             </li>
             <li>
               <span className="text-white font-medium">
-                 Developer-First Design:
+                Developer-First Design:
               </span>{" "}
               UI Vault prioritizes clarity, reusability, and simplicity — making
               it easy to plug into any React project and start building
@@ -59,7 +59,7 @@ function Documentation() {
             </li>
             <li>
               <span className="text-white font-medium">
-                 Zero Config Hassle:
+                Zero Config Hassle:
               </span>{" "}
               All required dependencies such as <code>react-icons</code> and{" "}
               <code>framer-motion</code> are automatically installed when you
@@ -70,7 +70,7 @@ function Documentation() {
             </li>
             <li>
               <span className="text-white font-medium">
-                 Organized Output Structure:
+                Organized Output Structure:
               </span>{" "}
               When you run <code>npx ui-vault add [component]</code>, a
               dedicated <code>src/UIvault</code> folder is automatically created
@@ -165,9 +165,92 @@ function Documentation() {
           <span className="text-yellow-400 font-medium">use</span> it in your
           React application without any extra configuration.
         </p>
-      </div>
 
-     
+        {/* Why We Chose React, Tailwind CSS, and Framer Motion */}
+        <div className="mt-10">
+          <h2 className="text-2xl font-bold mb-4 text-white">
+            Why React.js, Tailwind CSS & Framer Motion?
+          </h2>
+          <p className="text-gray-300 text-base leading-relaxed">
+            UI Vault is built on a stack that prioritizes developer experience,
+            speed, and design consistency.{" "}
+            <span className="text-white font-semibold">React.js</span> was
+            chosen as the foundation because of its component-based
+            architecture, declarative UI syntax, and massive ecosystem — making
+            it ideal for building reusable components that can be dropped into
+            any modern web app.
+            <br />
+            <br />
+            <span className="text-white font-semibold">Tailwind CSS</span>{" "}
+            allows us to craft fully responsive, accessible, and elegant UI
+            components without writing custom CSS. Its utility-first approach
+            drastically speeds up development and ensures pixel-perfect styling
+            that adapts easily across screen sizes.
+            <br />
+            <br />
+            We also integrated{" "}
+            <span className="text-white font-semibold">Framer Motion</span> to
+            bring seamless animations and transitions to life. It's intuitive,
+            performant, and works beautifully with React — letting us animate
+            complex interactions with minimal code.
+            <br />
+            <br />
+            Together, this trio delivers blazing-fast UI development, stunning
+            visuals, and maximum reusability. Every decision in UI Vault's stack
+            is focused on building fast, beautiful interfaces with zero hassle.
+          </p>
+        </div>
+
+        <h2 className="text-2xl font-bold mb-4 text-white">Requirements</h2>
+        <p className="text-gray-300 leading-relaxed">
+          Before installing UI Vault, ensure your project is set up with:
+          <ul className="list-disc list-inside mt-2">
+            <li>React version 18 or higher</li>
+            <li>Tailwind CSS properly configured</li>
+            <li>Vite or Create React App setup</li>
+            <li>Node.js version 16+</li>
+          </ul>
+        </p>
+
+        <h2 className="text-2xl font-bold mb-4 text-white">
+          Available CLI Commands
+        </h2>
+        <ul className="list-disc list-inside text-gray-300 space-y-2">
+          <li>
+            <code className="bg-white/10 px-2 py-1 rounded">
+              npx ui-vault init
+            </code>{" "}
+            – Add UI vault in your project
+          </li>
+          <li>
+            <code className="bg-white/10 px-2 py-1 rounded">
+              npx ui-vault add [component]
+            </code>{" "}
+            – Add a single component
+          </li>
+          
+        
+        </ul>
+
+        <h2 className="text-2xl font-bold mb-4 text-white">FAQ</h2>
+        <ul className="space-y-3 text-gray-300">
+          <li>
+            <strong className="text-white">
+              Q: Does UI Vault work with CRA?
+            </strong>
+            <br />
+            A: Yes, as long as Tailwind CSS is configured properly.
+          </li>
+          <li>
+            <strong className="text-white">
+              Q: How can I customize a component?
+            </strong>
+            <br />
+            A: All components are editable. Just open the generated file in{" "}
+            <code>src/UIvault/</code> and modify the JSX or styles as needed.
+          </li>
+        </ul>
+      </div>
     </section>
   );
 }
