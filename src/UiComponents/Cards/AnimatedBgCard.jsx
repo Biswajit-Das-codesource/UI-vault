@@ -1,116 +1,127 @@
 import React from "react";
 import { motion } from "framer-motion";
-import "../../App.css";
 
-const AnimatedBgCard = ({
-  headtext = "Login",
-  desc = "Enter your credentials to access your account.",
-  emailLabel = "Email",
-  emailPlaceholder = "Enter your email",
-  passwordLabel = "Password",
-  passwordPlaceholder = "Enter your password",
-  cancelText = "Cancel",
-  loginText = "Login",
-}) => {
+// 🔆 Static torchlight at top-left
+const TorchLight = () => {
   return (
-    <div className="min-h flex items-center justify-center bg-black p-4 sm:p-8 relative overflow-hidden">
-      {/* Animated Background Glows */}
-      <motion.div
-        className="absolute w-[600px] h-[600px] rounded-full blur-[150px] opacity-40 z-0"
-        style={{ background: "radial-gradient(circle, teal, transparent)" }}
-        animate={{
-          x: [-200, 200, -200],
-          y: [-150, 150, -150],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-
-      <motion.div
-        className="absolute w-[500px] h-[500px] rounded-full blur-[90px] opacity-30 z-0"
-        style={{ background: "radial-gradient(circle, yellow, transparent)" }}
-        animate={{
-          x: [200, -200, 200],
-          y: [100, -100, 100],
-        }}
-        transition={{
-          duration: 25,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-
-      {/* Card */}
-      <div className="relative z-10 bg-black border-2 border-gray-800 rounded-2xl p-6 sm:p-8 w-full max-w-sm shadow-[0_0_20px_rgba(255,255,255,0.1)] overflow-hidden">
-        <h2 className="text-3xl font-bold text-white mb-2">{headtext}</h2>
-        <p className="text-gray-300 mb-6">{desc}</p>
-        <form>
-          <div className="mb-4">
-            <label
-              htmlFor="email"
-              className="block text-white font-semibold mb-2"
-            >
-              {emailLabel}
-            </label>
-            <input
-              id="email"
-              type="email"
-              placeholder={emailPlaceholder}
-              className="w-full px-4 py-2 rounded-xl bg-black border border-white text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-400"
-              autoComplete="email"
-            />
-          </div>
-          <div className="mb-6">
-            <label
-              htmlFor="password"
-              className="block text-white font-semibold mb-2"
-            >
-              {passwordLabel}
-            </label>
-            <input
-              id="password"
-              type="password"
-              placeholder={passwordPlaceholder}
-              className="w-full px-4 py-2 rounded-xl bg-black border border-white text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-              autoComplete="current-password"
-            />
-          </div>
-          <div className="flex flex-col sm:flex-row justify-between gap-4">
-            <button
-              type="button"
-              className="w-full sm:w-auto px-8 py-3 rounded-xl bg-black border border-white text-white hover:bg-white hover:text-black transition"
-            >
-              {cancelText}
-            </button>
-            <button
-              type="submit"
-              className="w-full sm:w-auto px-8 py-3 rounded-xl bg-white text-black font-semibold hover:bg-gray-200 transition"
-            >
-              {loginText}
-            </button>
-          </div>
-        </form>
-
-        {/* Mirror Shine Effect */}
-        <motion.div
-          className="absolute inset-0 rounded-2xl pointer-events-none z-20"
-          initial={{ x: "-150%", y: "-150%", rotate: 45 }}
-          animate={{ x: "150%", y: "150%" }}
-          transition={{
-            duration: 1.2,
-            repeat: Infinity,
-            repeatDelay: 3,
-            ease: "easeInOut",
-          }}
-        >
-          <div className="w-full h-full bg-gradient-to-tr from-transparent via-violet-400/30 to-transparent blur-sm opacity-50" />
-        </motion.div>
-      </div>
-    </div>
+    <motion.div
+      className="absolute inset-0 z-0 rounded-2xl pointer-events-none"
+      style={{
+        background: `radial-gradient(
+          500px at 0px 0px,
+          rgba(255, 255, 255, 0.10),
+          rgba(255, 255, 255, 0.01),
+          transparent
+        )`,
+        borderRadius: "inherit",
+      }}
+    />
   );
 };
 
-export default AnimatedBgCard;
+// 🌈 Border beam animation
+const BorderBeam = () => {
+  return (
+    <svg
+      className="absolute -inset-1.5 w-[calc(100%+12px)] h-[calc(100%+12px)] z-10 pointer-events-none"
+      viewBox="0 0 104 104"
+      preserveAspectRatio="none"
+    >
+      <defs>
+        <linearGradient id="beamGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#9c40ff" />
+          <stop offset="100%" stopColor="#ff69b4" />
+        </linearGradient>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="2" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+
+      <motion.rect
+        x="2"
+        y="2"
+        width="100"
+        height="100"
+        rx="8"
+        ry="8"
+        fill="none"
+        stroke="url(#beamGradient)"
+        strokeWidth="0.5"
+        strokeDasharray="20 380"
+        strokeDashoffset="0"
+        filter="url(#glow)"
+        animate={{
+          strokeDashoffset: [0, -400],
+        }}
+        transition={{
+          repeat: Infinity,
+          duration: 8,
+          ease: "linear",
+        }}
+      />
+    </svg>
+  );
+};
+
+export default function AnimateBgCard (){
+  return (
+    <div className="h-min w-full md:p-10 p-3 py-10 flex justify-center items-center"> 
+    <div className="relative w-[350px] bg-black p-5 rounded-3xl overflow-hidden border border-gray-700 shadow-2xl">
+      <TorchLight />
+      <BorderBeam />
+      <div className="relative z-20 space-y-4">
+
+
+      <div>
+        <h2 className="text-2xl font-bold text-white">Login</h2>
+        <p className="text-sm text-gray-400">
+          Enter your credentials to access your account
+        </p>
+    </div>
+       <div className="border border-gray-800 w-full"></div>
+
+        {/* Email Field */}
+        <div className="">
+          <label htmlFor="email" className="text-sm text-gray-300 font-medium">
+            Email
+          </label>
+          <input
+            id="email"
+            type="email"
+            placeholder="you@example.com"
+            className="w-full px-3 py-2 mt-1 border border-gray-600 rounded-md text-sm bg-transparent text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-500"
+          />
+        </div>
+
+        {/* Password Field */}
+        <div className="space-y-1">
+          <label
+            htmlFor="password"
+            className="text-sm text-gray-300 font-medium"
+          >
+            Password
+          </label>
+          <input
+            id="password"
+            type="password"
+            placeholder="••••••••"
+            className="w-full px-3 py-2 mt-1 border border-gray-600 rounded-md text-sm bg-transparent text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-500"
+          />
+        </div>
+   
+        <div className=" mt-5">
+          <button className="bg-white w-full text-black font-semibold px-5 py-2.5 rounded-xl text-sm transition">
+            Login
+          </button>
+        
+         
+        </div>
+      </div>
+    </div>
+    </div>
+  );
+};

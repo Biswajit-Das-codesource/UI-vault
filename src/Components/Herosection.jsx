@@ -44,9 +44,7 @@ const Herosection = () => {
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
           <motion.h1
-            initial={{ opacity: 0, filter: "blur(8px)", y: 40 }}
-            animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
+          
             className="text-5xl sm:text-6xl md:text-5xl font-extrabold leading-tight mt-8 sm:mt-1 text-white "
           >
             Design{" "}
@@ -62,9 +60,7 @@ const Herosection = () => {
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, filter: "blur(8px)", y: 20 }}
-            animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-            transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
+           
             className="mt-4 text-base sm:text-base text-gray-300 max-w-2xl"
           >
             Elevate your UI game with{" "}
@@ -87,9 +83,7 @@ const Herosection = () => {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, filter: "blur(10px)", y: 30 }}
-            animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
+            
             className="mt-10 flex flex-col sm:flex-row gap-4 items-center sm:items-start justify-center sm:justify-start px-3 md:px-0 md:mt-8"
           >
             <Link to="/components/Lens" className="w-full sm:w-auto">
