@@ -40,6 +40,7 @@ function Navbar() {
     "CursorAura",
     "Hovercard",
     "IframePop",
+    "MotionHighlight",
     "Neonlamb",
     "OrbitingLogo",
     "PointerGrid",

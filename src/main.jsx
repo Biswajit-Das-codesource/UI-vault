@@ -51,6 +51,7 @@ import ToolTipPage from "./UiComponents/ToolTips/ToolTipPage.jsx";
 import UivaultKitHeroSection from "./Uivaultkit/uivaultHerosection.jsx";
 import GravityScrollPage from "./UiComponents/Gravityscroll/Gravityscrollpage.jsx";
 import StarBgPage from "./UiComponents/Star Background/Starbackgroundpage.jsx";
+import MotionHighlightPage from "./UiComponents/MotionHighlight/MotionHighlightPage.jsx";
 
 const browserRouter = new createBrowserRouter([
   {
@@ -252,6 +253,10 @@ const browserRouter = new createBrowserRouter([
        {
         path: "/components/starbackground",
         element: <StarBgPage />,
+      },
+      {
+        path:"/components/motionHighlight",
+        element:<MotionHighlightPage/>
       },
     ],
   },

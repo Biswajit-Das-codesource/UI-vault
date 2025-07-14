@@ -51,6 +51,7 @@ const Sidebar = () => {
     "Imageeffect",
     "Lens",
     "Marquee",
+    "MotionHighlight",
     "Neonlamb",
     "OrbitingLogo",
     // "Paymentcard",
