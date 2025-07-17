@@ -44,7 +44,7 @@ const Sidebar = () => {
     // "Card",
     "Carousel",
     "CursorAura",
-    "Dialouge",
+    // "Dialouge",
     // "Feedback",
     "Globe",
     "Hovercard",
