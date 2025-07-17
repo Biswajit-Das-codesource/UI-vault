@@ -87,7 +87,7 @@ const Sidebar = () => {
   );
 
   return (
-    <aside className="w-60 bg-black border-r border-gray-800 p-4 hidden md:block overflow-y-auto scrollbar-hide">
+    <aside className="w-68 bg-black border-r border-gray-800 p-7 hidden md:block overflow-y-auto scrollbar-hide">
       {/* Installation Group */}
       <button
         onClick={() => toggle("installation")}
@@ -132,7 +132,7 @@ const Sidebar = () => {
       </button>
 
       {open.components && (
-        <div className="ml-3 mb-3 space-y-1 border-l border-gray-700 pl-3">
+        <div className="ml-3 mb-3 space-y-1 border-l border-gray-700 pl-3 ">
           {/* Special Components First */}
           <div className="mb-2">
             <div className="text-xs uppercase text-pink-400 font-bold mb-1 pl-1 flex items-center gap-1">
