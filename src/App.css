@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+
+
 .bear{
     background-size: contain;
 }
@@ -39,6 +41,8 @@
   font-weight: 400;
   font-style: normal;
 }
+
+
 
 
 @keyframes moveGradient {
