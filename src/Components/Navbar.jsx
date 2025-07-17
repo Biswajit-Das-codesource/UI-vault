@@ -48,6 +48,7 @@ function Navbar() {
     "Testimonials",
     "ToggleButtons",
     "ToolTips",
+    "Cardcrousel"
   ];
 
   const specialLinks = components.slice(0, 9);

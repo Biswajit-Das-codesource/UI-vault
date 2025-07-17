@@ -52,6 +52,7 @@ import UivaultKitHeroSection from "./Uivaultkit/uivaultHerosection.jsx";
 import GravityScrollPage from "./UiComponents/Gravityscroll/Gravityscrollpage.jsx";
 import StarBgPage from "./UiComponents/Star Background/Starbackgroundpage.jsx";
 import MotionHighlightPage from "./UiComponents/MotionHighlight/MotionHighlightPage.jsx";
+import CardCarouselPage from "./UiComponents/CardCrousel/CardCrouselPage.jsx";
 // import DialoguePage from "./UiComponents/Dialouge/DialoguePage.jsx";
 
 const browserRouter = new createBrowserRouter([
@@ -259,10 +260,11 @@ const browserRouter = new createBrowserRouter([
         path:"/components/motionHighlight",
         element:<MotionHighlightPage/>
       },
-      // {
-      //   path:"/components/dialouge",
-      //   element:<DialoguePage/>
-      // },
+       {
+        path:"/components/cardcrousel",
+        element:<CardCarouselPage/>
+      },
+     
     ],
   },
 ]);

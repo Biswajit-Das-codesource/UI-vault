@@ -80,6 +80,7 @@ const Sidebar = () => {
     // "StarBackground",
     "Silk",
     "3dPin",
+    "Cardcrousel"
   ];
 
   const normalComponents = allComponents.filter(
