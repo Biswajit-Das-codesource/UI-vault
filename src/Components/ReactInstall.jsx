@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import ScrollToTop from "./ScrollTop";
+// import ScrollToTop from "./ScrollTop";
 
 // 🎨 Syntax styling
 const getStyledLine = (line) => {
@@ -58,7 +58,7 @@ const ReactInstall = () => {
     navigate("/tailwind-setup");
   };
 
-  <ScrollToTop/>
+  // <ScrollToTop/>
   return (
     <div className="min-h-screen bg-black text-white flex justify-center px-4 py-4">
       <div className="max-w-4xl w-full">

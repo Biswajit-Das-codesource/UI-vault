@@ -6,7 +6,7 @@ import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { toast, Toaster } from "sonner";
 import VisionCard from "./Lenscard";
 import VisionCardProps from "./VisionCardProps";
-import ScrollToTop from "../../Components/ScrollTop";
+// import ScrollToTop from "../../Components/ScrollTop";
 
 function LensPage() {
  
@@ -34,7 +34,7 @@ export default App;
 
   return (
     <div>
-       <ScrollToTop/>
+       {/* <ScrollToTop/> */}
       <Toaster richColors position="top-center" />
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold">Lens (Magnify Effect)</h1>

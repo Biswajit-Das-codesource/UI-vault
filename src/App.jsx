@@ -11,7 +11,7 @@ import Footer2 from "./Components/Footer2";
 import Herosection from "./Components/Herosection";
 import Navbar from "./Components/Navbar"; 
 import Quality from "./Components/Quality";
-import ScrollToTop from "./Components/ScrollTop";
+// import ScrollToTop from "./Components/ScrollTop";
 // import Templatehero from "./Components/Templatehero";
 
 
@@ -19,7 +19,7 @@ function App() {
   
   return (
     <>
-      <ScrollToTop/>
+      {/* <ScrollToTop/> */}
       <UiVaultBetaBanner/>
       
       <Navbar />

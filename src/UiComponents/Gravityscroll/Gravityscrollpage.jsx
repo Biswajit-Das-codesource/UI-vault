@@ -4,7 +4,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { toast, Toaster } from "sonner";
 import GravityScroll from "./Gravityscroll";
-import ScrollToTop from "../../Components/ScrollTop";
+// import ScrollToTop from "../../Components/ScrollTop";
 
 function GravityScrollPage() {
   const [tab, setTab] = useState("preview");
@@ -33,7 +33,7 @@ export default App;
 
   return (
     <div>
-       <ScrollToTop/>
+       {/* <ScrollToTop/> */}
       <Toaster richColors position="top-center" />
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold">GravityScroll (Scroll Animation)</h1>

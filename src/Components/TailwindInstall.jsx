@@ -2,7 +2,7 @@ import React from "react";
 import { toast, Toaster } from "sonner";
 import { Copy } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import ScrollToTop from "./ScrollTop";
+// import ScrollToTop from "./ScrollTop";
 
 // 🎨 Styled line renderer
 const getStyledLine = (line) => {
@@ -61,7 +61,7 @@ const CopyBlock = ({ lines }) => {
   return (
     <div className="relative bg-[#1a1a1a] mt-4 rounded-2xl font-mono text-sm sm:text-base overflow-hidden">
 
-      <ScrollToTop/>
+      {/* <ScrollToTop/> */}
       <pre className="px-4 py-4 whitespace-pre-wrap leading-relaxed">
         {lines.map((line, i) => (
           <div key={i}>{getStyledLine(line)}</div>
