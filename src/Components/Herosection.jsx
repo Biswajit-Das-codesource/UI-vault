@@ -39,9 +39,9 @@ const Herosection = () => {
         {/* Left Section */}
         <motion.div
           className="flex-1 flex flex-col justify-center md:ml-4 md:mt-0 mt-4"
-          initial={{ opacity: 0, x: -60 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          // initial={{ opacity: 0, x: -60 }}
+          // animate={{ opacity: 1, x: 0 }}
+          // transition={{ duration: 0.7, ease: "easeOut" }}
         >
           <motion.h1
           
@@ -103,9 +103,9 @@ const Herosection = () => {
             Built with
           </h3>
           <motion.div
-            initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.9 }}
+            // initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
+            // animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            // transition={{ duration: 1, ease: "easeOut", delay: 0.9 }}
             className="mt-5 flex justify-center sm:justify-start items-center gap-6 text-white text-3xl"
           >
             <div className="flex items-center gap-2">
@@ -126,9 +126,9 @@ const Herosection = () => {
         {/* Right Card Section (Responsive) */}
         <motion.div
           className="w-full lg:w-1/2 min-h-[300px] lg:min-h-screen flex items-center justify-center lg:justify-end relative lg:absolute right-0 pt-6 lg:pt-10 mt-8 lg:mt-0"
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
+          // initial={{ opacity: 0, x: 100 }}
+          // animate={{ opacity: 1, x: 0 }}
+          // transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
         >
           <div className="relative max-w-[90%] max-h-[80%] overflow-hidden group [perspective:1300px] rounded-2xl">
             <div className="absolute inset-0 z-0 rounded-[20px] bg-fuchsia-600 opacity-20 blur-[120px] pointer-events-none" />
