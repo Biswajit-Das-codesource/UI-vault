@@ -94,9 +94,11 @@ function Navbar() {
         <div className="flex items-center justify-between flex-wrap">
           {/* Logo & Desktop Nav */}
           <div className="flex items-center space-x-4">
+            <Link to="/">
             <div className="text-2xl font-bold bg-gradient-to-r from-slate-100 via-[#C0C0C0] to-slate-200 text-transparent bg-clip-text tracking-wide drop-shadow-md">
               UIVault
             </div>
+            </Link>
             <div className="hidden md:flex items-center space-x-6 ml-10 font-semibold">
               {coreLinks.map(renderLink)}
             </div>
