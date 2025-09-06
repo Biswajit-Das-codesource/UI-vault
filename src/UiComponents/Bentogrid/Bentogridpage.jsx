@@ -56,7 +56,7 @@ export default App;`;
           </code>
           <button
             onClick={() =>
-              handleCopy("npx ui-vault add bentogrid-obsidian", "bento-cli")
+              handleCopy("npx ui-vault add bentogrid", "bento-cli")
             }
             className="ml-4 text-white transition"
             title="Copy to clipboard"
